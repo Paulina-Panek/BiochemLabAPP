@@ -1,3 +1,9 @@
+## Code by Paulina Panek
+## For Chemistry 463 Adv Biochem Lab
+## University of Hawaii at Manoa
+## 2019
+############################################
+
 import kivy
 from kivy.app import App
 from kivy.uix.label import Label
