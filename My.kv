@@ -1,4 +1,9 @@
-<MyGrid>:
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
     sequence: sequence
 
     GridLayout:
@@ -13,8 +18,18 @@
 
             TextInput:
                 id: sequence
-                multinline:False
+                multinline: False
 
         Button:
             text:"Submit"
-            on_press: root.btn()
+            on_release:
+                root.btn()
+                app.root.current = "second"
+
+<SecondWindow>
+    name: "second"
+
+    Button:
+        text: "This is second window"
+        on_release:
+            app.root.current = "main"
