@@ -1,0 +1,20 @@
+<MyGrid>:
+    sequence: sequence
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Paste the sequence from the FASTA file.\nInclude the header. "
+
+            TextInput:
+                id: sequence
+                multinline:False
+
+        Button:
+            text:"Submit"
+            on_press: root.btn()

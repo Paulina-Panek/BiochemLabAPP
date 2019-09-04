@@ -1,35 +1,22 @@
-## Code by Paulina Panek
-## For Chemistry 463 Adv Biochem Lab
-## University of Hawaii at Manoa
-## 2019
-############################################
-
 import kivy
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
-class MyApp(App):
+class MyGrid(Widget):
+    sequence = ObjectProperty(None)
+
+    def btn(self):
+        print("sequence: ", self.sequence.text)
+
+class MyApp(App): # <- Main Class
     def build(self):
         return MyGrid()
 
-class MyGrid(GridLayout):
-    def __init__(self, **kwargs):
-        super(MyGrid, self).__init__(**kwargs)
-        self.cols = 1 # columns in main layout
-
-        self.inside = GridLayout()
-        self.inside.cols = 2 #cols in new grid, below new layout
-
-        self.inside.add_widget(Label(text="Enter the DNA sequence:", font_size="20sp"))
-        self.DNA = TextInput(font_size="20sp")
-        self.inside.add_widget(self.DNA)
-
-        self.add_widget(self.inside)
-        self.submit = Button(text="Submit", font_size="25sp")
-        self.add_widget(self.submit)
 
 if __name__ == "__main__":
     MyApp().run()
