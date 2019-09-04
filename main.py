@@ -16,7 +16,7 @@ class MainWindow(Screen):
     sequence = ObjectProperty(None)
 
     def btn(self):
-        print("sequence: ", self.sequence.text)
+        print("sequence: ", self.sequence.text)   #reading in input for sequence
 
 class SecondWindow(Screen):
     pass

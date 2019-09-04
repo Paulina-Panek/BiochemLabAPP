@@ -29,7 +29,19 @@ WindowManager:
 <SecondWindow>
     name: "second"
 
-    Button:
-        text: "This is second window"
-        on_release:
-            app.root.current = "main"
+    GridLayout:
+        cols:1
+
+        size: root.width, root.height
+
+        Button:
+            text: "This is second window, go back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+        Button:
+            text: "Go forward"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
