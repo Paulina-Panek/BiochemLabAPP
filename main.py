@@ -12,11 +12,12 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
 
+
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
 
     def btn(self):
-        print("sequence: ", self.sequence.text)   #reading in input for sequence
+        print("sequence: ", self.sequence.text)   #prints input on terminal(internal check)
 
 class SecondWindow(Screen):
     pass

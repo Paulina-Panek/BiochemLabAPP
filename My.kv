@@ -31,17 +31,20 @@ WindowManager:
 
     GridLayout:
         cols:1
-
         size: root.width, root.height
 
+        Label:
+            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein."
+
+
         Button:
-            text: "This is second window, go back"
+            text: "I made an error, take me back."
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"
 
         Button:
-            text: "Go forward"
+            text: "Let's do this!"
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
