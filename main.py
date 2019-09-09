@@ -3,8 +3,7 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
-import Bio
-
+from Bio.Blast import NCBIWWW
 
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
@@ -13,7 +12,9 @@ class MainWindow(Screen):
         print("sequence: ", self.sequence.text)   #prints input on terminal(internal check)
 
 class SecondWindow(Screen):
-    pass
+    def blastsearch(self):
+        fasta_string = open("sequence.fasta").read()
+        result_handle = NCBIWWW.qblast("blastp", "pdb", fasta_string )
 
 class WindowManager(ScreenManager):
     pass
