@@ -54,9 +54,15 @@ WindowManager:
 <ProteinWindow>:
     name: "protein"
 
+    sequence_identity: sequence_identity
+
     GridLayout:
         cols:1
         size: root.width, root.height
 
         Label:
-            text: "Protein identity goes here"
+        Text: "Your was identified! Name of the species it came from is in []"
+
+        Label:
+            id: sequence_identity
+            text: root.identity()

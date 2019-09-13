@@ -20,10 +20,17 @@ class SecondWindow(Screen):
         fasta_string = open("sequence.fasta").read()
         result_handle = NCBIWWW.qblast("blastp", "nr", fasta_string)  ##using database nr in blastp
 
-        with open("my_blast.xml", "w") as out_handle:   # this code generates xml file with output (my_blast.xml)
-             out_handle.write(result_handle.read())      # useful for testing & might be needed later
+        with open("my_blast.xml", "w") as out_handle:   # generates xml file with output (my_blast.xml)
+             out_handle.write(result_handle.read())
         result_handle.close()
+        print("Exiting blastsearch()")
 
+
+class ProteinWindow(Screen):
+
+    sequence_identity = ObjectProperty(None)
+
+    def identity(self):
         result_handle = open("my_blast.xml")
         blast_record = NCBIXML.read(result_handle)
 
@@ -34,9 +41,8 @@ class SecondWindow(Screen):
                     sequence_identity = alignment.title
                     print(sequence_identity)
                     counter = counter + 1
-
-class ProteinWindow(Screen):
-    pass
+                    print("end of if; counter: ", counter)
+        return sequence_identity
 
 class WindowManager(ScreenManager):
     pass
