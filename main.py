@@ -13,6 +13,8 @@ class MainWindow(Screen):
         print("sequence: ", self.sequence.text)   #prints input on terminal(internal check)
 
 class SecondWindow(Screen):
+    global sequence_identity
+
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()
         print("fasta_string:", fasta_string)
@@ -33,8 +35,9 @@ class SecondWindow(Screen):
                     print(sequence_identity)
                     counter = counter + 1
 
+
 class ProteinWindow(Screen):
-    print("test")
+    pass
 
 class WindowManager(ScreenManager):
     pass
