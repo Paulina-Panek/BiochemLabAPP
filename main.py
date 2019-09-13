@@ -11,20 +11,21 @@ class MainWindow(Screen):
 
     def btn(self):
         print("sequence: ", self.sequence.text)   #prints input on terminal(internal check)
+        with open("sequence.fasta", "w") as out_handle1:    # create a file with the fasta sequence from user input
+            out_handle1.write(self.sequence.text)
 
 class SecondWindow(Screen):
-    global sequence_identity
 
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()
         print("fasta_string:", fasta_string)
-        result_handle = NCBIWWW.qblast("blastp", "nr", fasta_string )  ##using database nr in blastp
+        result_handle = NCBIWWW.qblast("blastp", "nr", fasta_string)  ##using database nr in blastp
 
-        # with open("my_blast.xml", "w") as out_handle:   # this code generates xml file with output (my_blast.xml)
-        #     out_handle.write(result_handle.read())      # useful for testing & might be needed later
-        # result_handle.close()
-        #
-        # result_handle.open()
+        with open("my_blast.xml", "w") as out_handle:   # this code generates xml file with output (my_blast.xml)
+             out_handle.write(result_handle.read())      # useful for testing & might be needed later
+        result_handle.close()
+
+        result_handle = open("my_blast.xml")
         blast_record = NCBIXML.read(result_handle)
 
         counter = 1
@@ -34,7 +35,7 @@ class SecondWindow(Screen):
                     sequence_identity = alignment.title
                     print(sequence_identity)
                     counter = counter + 1
-
+                    print("counter:", counter)
 
 class ProteinWindow(Screen):
     pass
