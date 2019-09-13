@@ -1,6 +1,7 @@
 WindowManager:
     MainWindow:
     SecondWindow:
+    ProteinWindow:
 
 <MainWindow>:
     name: "main"
@@ -26,7 +27,7 @@ WindowManager:
                 root.btn()
                 app.root.current = "second"
 
-<SecondWindow>
+<SecondWindow>:
     name: "second"
 
     GridLayout:
@@ -46,6 +47,16 @@ WindowManager:
         Button:
             text: "Let's do this!"
             on_release:
-                app.root.current = "main"
+                app.root.current = "protein"
                 root.blastsearch()
                 root.manager.transition.direction = "left"
+
+<ProteinWindow>:
+    name: "protein"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "The identity of your protein is:"

@@ -17,6 +17,7 @@ class SecondWindow(Screen):
         fasta_string = open("sequence.fasta").read()
         print("fasta_string:", fasta_string)
         result_handle = NCBIWWW.qblast("blastp", "nr", fasta_string )  ##using database nr in blastp
+
         # with open("my_blast.xml", "w") as out_handle:   # this code generates xml file with output (my_blast.xml)
         #     out_handle.write(result_handle.read())      # useful for testing & might be needed later
         # result_handle.close()
@@ -27,11 +28,13 @@ class SecondWindow(Screen):
         counter = 1
         for alignment in blast_record.alignments:
             for hsp in alignment.hsps:
-                if counter < 2:
-                    print("Alignment #: ", counter)
+                if counter < 2:  #takes only the first result
                     sequence_identity = alignment.title
+                    print(sequence_identity)
                     counter = counter + 1
 
+class ProteinWindow(Screen):
+    print("test")
 
 class WindowManager(ScreenManager):
     pass
