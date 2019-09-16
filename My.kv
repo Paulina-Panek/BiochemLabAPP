@@ -53,16 +53,15 @@ WindowManager:
 
 <ProteinWindow>:
     name: "protein"
-
-    sequence_identity: sequence_identity
+    created: protname
 
     GridLayout:
         cols:1
         size: root.width, root.height
 
         Label:
-        Text: "Your was identified! Name of the species it came from is in []"
+            text: "Your protein was identified! Name of the species it came from is in square brackets [  ]"
 
         Label:
-            id: sequence_identity
-            text: root.identity()
+            id: protname
+            text: "Something went wrong, try again!"

@@ -5,6 +5,7 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from Bio.Blast import NCBIWWW
 from Bio.Blast import NCBIXML
+import os
 
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
@@ -15,6 +16,8 @@ class MainWindow(Screen):
             out_handle1.write(self.sequence.text)
 
 class SecondWindow(Screen):
+
+    global sequence_identity
 
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()
@@ -27,22 +30,28 @@ class SecondWindow(Screen):
 
 
 class ProteinWindow(Screen):
+    protname = ObjectProperty(None)
 
-    sequence_identity = ObjectProperty(None)
+    def on_enter(self, *args):   #what happens as you enter screen #3
+        sequence_identity = ObjectProperty(None)
 
-    def identity(self):
-        result_handle = open("my_blast.xml")
-        blast_record = NCBIXML.read(result_handle)
+        statinfo = os.stat('my_blast.xml')
+        size = statinfo.st_size
 
-        counter = 1
-        for alignment in blast_record.alignments:
-            for hsp in alignment.hsps:
-                if counter < 2:  #takes only the first result
-                    sequence_identity = alignment.title
-                    print(sequence_identity)
-                    counter = counter + 1
-                    print("end of if; counter: ", counter)
-        return sequence_identity
+        if size == 0:     #if no xml file created
+            sequence_identity = "BLAST search failed.\nCheck your FASTA file and try again."
+        else:
+            result_handle = open("my_blast.xml")
+            blast_record = NCBIXML.read(result_handle)
+
+            counter = 1
+            for alignment in blast_record.alignments:
+                for hsp in alignment.hsps:
+                    if counter < 2:  #takes only the first result
+                        sequence_identity = alignment.title
+                        print(sequence_identity)
+                        counter = counter + 1
+        self.created.text = sequence_identity   #updates sequence identity on the app screen
 
 class WindowManager(ScreenManager):
     pass
