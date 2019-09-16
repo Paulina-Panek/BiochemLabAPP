@@ -51,7 +51,7 @@ class ProteinWindow(Screen):
                         sequence_identity = alignment.title
                         print(sequence_identity)
                         counter = counter + 1
-        self.created.text = sequence_identity   #updates sequence identity on the app screen
+        self.protname.text = sequence_identity   #updates sequence identity on the app screen
 
 class WindowManager(ScreenManager):
     pass
