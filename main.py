@@ -7,6 +7,7 @@ from Bio.Blast import NCBIWWW
 from Bio.Blast import NCBIXML
 import os
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
+from Bio import SeqIO
 
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
@@ -31,14 +32,21 @@ class SecondWindow(Screen):
 class ProteinWindow(Screen):
     protname = ObjectProperty(None)
 
+    def header_remover(self, fasta_file):
+        for seq_record in SeqIO.parse(fasta_file, "fasta"):
+            sequence = str(seq_record.seq).upper()
+        return sequence
+
     def on_enter(self, *args):   #what happens as you enter screen #3
         sequence_identity = ObjectProperty(None)
-        aa_number = ObjectProperty(None)
 
-        my_seq = ProteinAnalysis("sequence.fasta")
-        aa_number = my_seq.count_amino_acids()
+        no_header_sequence = self.header_remover("sequence.fasta")
 
-        print(aa_number)
+        analysed_seq = ProteinAnalysis(no_header_sequence)
+        Mw = analysed_seq.molecular_weight()   # Mw g/mol
+        Mw_kDa = Mw/1000                       # Mw kDa
+        print("Molecular Weight: ", Mw_kDa)
+        print(analysed_seq.count_amino_acids())    # Dictionary with count for each amino acid
 
         statinfo = os.stat('my_blast.xml')
         size = statinfo.st_size
