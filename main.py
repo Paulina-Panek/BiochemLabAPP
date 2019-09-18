@@ -6,6 +6,7 @@ from kivy.lang import Builder
 from Bio.Blast import NCBIWWW
 from Bio.Blast import NCBIXML
 import os
+from Bio.SeqUtils.ProtParam import ProteinAnalysis
 
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
@@ -16,8 +17,6 @@ class MainWindow(Screen):
             out_handle1.write(self.sequence.text)
 
 class SecondWindow(Screen):
-
-    global sequence_identity
 
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()
@@ -34,6 +33,12 @@ class ProteinWindow(Screen):
 
     def on_enter(self, *args):   #what happens as you enter screen #3
         sequence_identity = ObjectProperty(None)
+        aa_number = ObjectProperty(None)
+
+        my_seq = ProteinAnalysis("sequence.fasta")
+        aa_number = my_seq.count_amino_acids()
+
+        print(aa_number)
 
         statinfo = os.stat('my_blast.xml')
         size = statinfo.st_size
