@@ -18,6 +18,11 @@ class MainWindow(Screen):
             out_handle1.write(self.sequence.text)
 
 class SecondWindow(Screen):
+    inputfasta = ObjectProperty(None)
+
+    def on_enter(self, *args):
+        entered_seq = open("sequence.fasta").read()
+        self.inputfasta.text = entered_seq
 
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()

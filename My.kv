@@ -29,14 +29,18 @@ WindowManager:
 
 <SecondWindow>:
     name: "second"
+    inputfasta: inputfasta
 
     GridLayout:
         cols:1
         size: root.width, root.height
 
         Label:
-            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein.\nThe search might take a couple of minutes."
+            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein.\nThe search might take a couple of minutes.\n\n Is the following sequence correct?"
 
+        Label:
+            id: inputfasta
+            text: "The sequence you entered should appear here. If you don't see it, start over."
 
         Button:
             text: "I made an error, take me back."
