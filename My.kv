@@ -54,6 +54,7 @@ WindowManager:
 <ProteinWindow>:
     name: "protein"
     protname: protname
+    weight: weight
 
     GridLayout:
         cols:1
@@ -65,3 +66,10 @@ WindowManager:
         Label:
             id: protname
             text: "Something went wrong, try again!"
+
+        Label:
+            text: "Weight of this protein is:"
+
+        Label:
+            id: weight
+            text: "The weight should appear here, something went wrong"

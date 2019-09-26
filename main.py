@@ -31,6 +31,7 @@ class SecondWindow(Screen):
 
 class ProteinWindow(Screen):
     protname = ObjectProperty(None)
+    weight = ObjectProperty(None)
 
     def header_remover(self, fasta_file):
         for seq_record in SeqIO.parse(fasta_file, "fasta"):
@@ -44,9 +45,13 @@ class ProteinWindow(Screen):
 
         analysed_seq = ProteinAnalysis(no_header_sequence)
         Mw = analysed_seq.molecular_weight()   # Mw g/mol
-        Mw_kDa = Mw/1000                       # Mw kDa
-        print("Molecular Weight: ", Mw_kDa)
+        Mw_kDa = round(Mw/1000, 3)                       # Mw kDa
+
         print(analysed_seq.count_amino_acids())    # Dictionary with count for each amino acid
+
+        heaviness = str(Mw_kDa) + " kDa"
+
+        self.weight.text = heaviness    # updates protein weight in kDa on the screen
 
         statinfo = os.stat('my_blast.xml')
         size = statinfo.st_size
