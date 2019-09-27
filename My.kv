@@ -5,6 +5,7 @@ WindowManager:
     ProteinWindow:
     ExpressionWindow:
     WrongWindow:
+    BacterialWindow:
 
 <HomeWindow>:
     name: "home"
@@ -138,11 +139,22 @@ WindowManager:
 
         Button:
             text: "Bacterial cell culture"
+            on_release:
+                app.root.current = "bacterial"
 
         Button:
             text: "Order it on Fisher Scientific"
             on_release:
                 app.root.current = "wrong"
+
+<BacterialWindow>:
+    name: "bacterial"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "You need a circular vector to express your protein in bacteria."
 
 <WrongWindow>:
     name: "wrong"

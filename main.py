@@ -98,6 +98,9 @@ class ExpressionWindow(Screen):
 class WrongWindow(Screen):
     pass
 
+class BacterialWindow(Screen):
+    pass
+
 class WindowManager(ScreenManager):
     pass
 
