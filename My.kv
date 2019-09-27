@@ -1,7 +1,26 @@
 WindowManager:
+    HomeWindow:
     MainWindow:
     SecondWindow:
     ProteinWindow:
+
+<HomeWindow>:
+    name: "home"
+
+    GridLayout:
+        cols: 2
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "What would you like to do?"
+
+            Button:
+                text: "Find out protein identity"
+                on_release:
+                    app.root.current = "main"
 
 <MainWindow>:
     name: "main"
@@ -65,7 +84,13 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Your protein was identified! Name of the species it came from is in square brackets [  ]"
+            text: "Your protein was identified!"
+
+        Label:
+            text: "The four letter PDB code is:"
+
+        Label:
+            text: "Name of the species it came from is in square brackets [  ]"
 
         Label:
             id: protname

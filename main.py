@@ -9,6 +9,11 @@ import os
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 from Bio import SeqIO
 
+
+class HomeWindow(Screen):
+    pass
+
+
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
 
@@ -20,7 +25,7 @@ class MainWindow(Screen):
 class SecondWindow(Screen):
     inputfasta = ObjectProperty(None)
 
-    def on_enter(self, *args):
+    def on_enter(self, *args):    # prints entered sequence, so it can be verified
         entered_seq = open("sequence.fasta").read()
         self.inputfasta.text = entered_seq
 
