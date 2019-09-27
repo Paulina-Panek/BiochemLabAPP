@@ -13,6 +13,9 @@ from Bio import SeqIO
 class HomeWindow(Screen):
     pass
 
+##############################
+#  PROTEIN IDENTITY MODULE  ##
+##############################
 
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
@@ -80,6 +83,20 @@ class ProteinWindow(Screen):
                         print(sequence_identity)
                         counter = counter + 1
         self.protname.text = sequence_identity   #updates sequence identity on the app screen
+
+########################
+# EXPRESSION MODULE    #
+########################
+
+class ExpressionWindow(Screen):
+    pass
+
+
+
+##################################
+
+class WrongWindow(Screen):
+    pass
 
 class WindowManager(ScreenManager):
     pass

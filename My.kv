@@ -3,6 +3,8 @@ WindowManager:
     MainWindow:
     SecondWindow:
     ProteinWindow:
+    ExpressionWindow:
+    WrongWindow:
 
 <HomeWindow>:
     name: "home"
@@ -22,7 +24,7 @@ WindowManager:
         Button:
             text: "Learn about protein expression"
             on_release:
-                app.root.current = "home"
+                app.root.current = "expression"
 
         Button:
             text: "Learn about protein purification"
@@ -112,3 +114,40 @@ WindowManager:
         Label:
             id: weight
             text: "The weight should appear here, something went wrong"
+
+
+<ExpressionWindow>:
+    name: "expression"
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
+
+        Button:
+            text: "Mammalian cell culture"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Order it on Amazon"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Bacterial cell culture"
+
+        Button:
+            text: "Order it on Fisher Scientific"
+            on_release:
+                app.root.current = "wrong"
+
+<WrongWindow>:
+    name: "wrong"
+
+    FloatLayout:
+
+        Label:
+            text: "wroooooong"
