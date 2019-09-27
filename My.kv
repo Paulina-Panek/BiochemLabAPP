@@ -8,27 +8,24 @@ WindowManager:
     name: "home"
 
     GridLayout:
-        cols: 2
+        cols: 1
         size: root.width, root.height
 
-        GridLayout:
-            cols: 2
+        Label:
+            text: "Welcome to Biochem 463L Bandersnatch\nWhat would you like to do?\nYou need to know protein identity for the other two modules. "
 
-            Label:
-                text: "What would you like to do?"
+        Button:
+            text: "Find out protein identity"
+            on_release:
+                app.root.current = "main"
 
-            Button:
-                text: "Find out protein identity"
-                on_release:
-                    app.root.current = "main"
+        Button:
+            text: "Learn about protein expression"
+            on_release:
+                app.root.current = "home"
 
-            Button:
-                text: "Learn about protein expression"
-                on_release:
-                    app.root.current = "home"
-
-            Button:
-                text: "Learn about protein purification"
+        Button:
+            text: "Learn about protein purification"
 
 <MainWindow>:
     name: "main"
