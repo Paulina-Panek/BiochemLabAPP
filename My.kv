@@ -22,6 +22,14 @@ WindowManager:
                 on_release:
                     app.root.current = "main"
 
+            Button:
+                text: "Learn about protein expression"
+                on_release:
+                    app.root.current = "home"
+
+            Button:
+                text: "Learn about protein purification"
+
 <MainWindow>:
     name: "main"
     sequence: sequence
@@ -45,6 +53,11 @@ WindowManager:
             on_release:
                 root.btn()
                 app.root.current = "second"
+
+        Button:
+            text: "Go back to home screen"
+            on_release:
+                app.root.current = "home"
 
 <SecondWindow>:
     name: "second"
