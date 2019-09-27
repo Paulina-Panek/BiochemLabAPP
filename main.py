@@ -101,6 +101,9 @@ class WrongWindow(Screen):
 class BacterialWindow(Screen):
     pass
 
+class PurificationWindow(Screen):
+    pass
+
 class WindowManager(ScreenManager):
     pass
 

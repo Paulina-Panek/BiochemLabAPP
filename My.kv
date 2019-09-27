@@ -6,6 +6,7 @@ WindowManager:
     ExpressionWindow:
     WrongWindow:
     BacterialWindow:
+    PurificationWindow:
 
 <HomeWindow>:
     name: "home"
@@ -29,6 +30,8 @@ WindowManager:
 
         Button:
             text: "Learn about protein purification"
+            on_release:
+                app.root.current = "purification"
 
 <MainWindow>:
     name: "main"
@@ -156,10 +159,45 @@ WindowManager:
         Label:
             text: "You need a circular vector to express your protein in bacteria."
 
+
+<PurificationWindow>:
+    name: "purification"
+
+    GridLayout:
+        cols:2
+
+        GridLayout:
+            cols: 2
+
+            Button:
+                text: "Size-exclusion chromatography"
+
+            Button:
+                text: "Ion-exchange chromatography"
+
+            Button:
+                text: "Hydrophobic interaction chromatography"
+
+            Button:
+                text: "Affinity chromatography"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
 <WrongWindow>:
     name: "wrong"
 
-    FloatLayout:
+    GridLayout:
+        cols: 1
 
         Label:
-            text: "wroooooong"
+            text: "That's not correct."
+
+        Button:
+            text: "Try again!"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
