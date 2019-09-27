@@ -71,7 +71,7 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein.\nThe search might take a couple of minutes.\n\n Is the following sequence correct?"
+            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein. \n Is the following sequence correct? \n\n BLAST search takes a couple of minutes."
 
         Label:
             id: inputfasta
@@ -150,6 +150,11 @@ WindowManager:
             on_release:
                 app.root.current = "wrong"
 
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
 <BacterialWindow>:
     name: "bacterial"
 
@@ -168,6 +173,9 @@ WindowManager:
 
         GridLayout:
             cols: 2
+
+            Label:
+                text: "Following methods are available:"
 
             Button:
                 text: "Size-exclusion chromatography"
