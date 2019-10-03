@@ -90,6 +90,9 @@ class ProteinWindow(Screen):
                         counter = counter + 1
         self.protname.text = sequence_identity   #updates sequence identity on the app screen
 
+class PostAnalysisWindow(Screen):
+    pass
+
 ########################
 # EXPRESSION MODULE    ###########################################
 ########################
@@ -119,7 +122,7 @@ class IonExchangeWindow(Screen):
         YourProt = ProteinAnalysis(fasta_string)
         pI = YourProt.isoelectric_point()
         pI_round = round(pI, 3)
-        self.isoelectric.text = "pI = " + str(pI_round)
+        self.isoelectric.text = "Your protein has pI = " + str(pI_round)
 
 ##################################
 

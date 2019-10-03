@@ -8,6 +8,7 @@ WindowManager:
     BacterialWindow:
     PurificationWindow:
     IonExchangeWindow:
+    PostAnalysisWindow:
 
 <HomeWindow>:
     name: "home"
@@ -17,22 +18,13 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Welcome to Biochem 463L Bandersnatch\nWhat would you like to do?\nYou need to know protein identity for the other two modules. "
+            text: "Welcome to Biochem 463L Bandersnatch\n Let's start with analysis of your protein. "
 
         Button:
             text: "Find out protein identity"
             on_release:
                 app.root.current = "main"
 
-        Button:
-            text: "Learn about protein expression"
-            on_release:
-                app.root.current = "expression"
-
-        Button:
-            text: "Learn about protein purification"
-            on_release:
-                app.root.current = "purification"
 
 <MainWindow>:
     name: "main"
@@ -118,10 +110,34 @@ WindowManager:
             text: "The weight should appear here, something went wrong"
 
         Button:
-            text: "Go back to Home"
+            text: "Continue"
             on_release:
-                app.root.current = "home"
+                app.root.current = "postanalysis"
 
+<PostAnalysisWindow>:
+    name: "postanalysis"
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: "Welcome to Biochem 463L Bandersnatch\n Let's start with analysis of your protein. "
+
+        Button:
+            text: "Change the analysed protein"
+            on_release:
+                app.root.current = "main"
+
+        Button:
+            text: "Learn about protein expression"
+            on_release:
+                app.root.current = "expression"
+
+        Button:
+            text: "Learn about protein purification"
+            on_release:
+                app.root.current = "purification"
 
 <ExpressionWindow>:
     name: "expression"
@@ -156,7 +172,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "home"
+                app.root.current = "postanalysis"
 
 <BacterialWindow>:
     name: "bacterial"
@@ -166,6 +182,10 @@ WindowManager:
 
         Label:
             text: "You need a circular vector to express your protein in bacteria."
+
+        Button:
+            on_release:
+                app.root.current = "postanalysis"
 
 
 <PurificationWindow>:
@@ -197,7 +217,7 @@ WindowManager:
             Button:
                 text: "Go back to Home"
                 on_release:
-                    app.root.current = "home"
+                    app.root.current = "postanalysis"
                     root.manager.transition.direction = "right"
 
 <IonExchangeWindow>:
@@ -213,6 +233,11 @@ WindowManager:
             id: isoelectric
             text: "You pI should be displayed here."
 
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
+
 <WrongWindow>:
     name: "wrong"
 
@@ -225,5 +250,5 @@ WindowManager:
         Button:
             text: "Try again!"
             on_release:
-                app.root.current = "home"
+                app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
