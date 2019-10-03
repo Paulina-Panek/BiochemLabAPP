@@ -28,9 +28,21 @@ class MainWindow(Screen):
 class SecondWindow(Screen):
     inputfasta = ObjectProperty(None)
 
-    def on_enter(self, *args):    # prints entered sequence, so it can be verified
+    def header_remover(self, fasta_file):
+        for seq_record in SeqIO.parse(fasta_file, "fasta"):
+            sequence = str(seq_record.seq).upper()
+        return sequence
+
+    def on_enter(self, *args):    # prints entered sequence in app, so it can be verified & creates file with no header
         entered_seq = open("sequence.fasta").read()
         self.inputfasta.text = entered_seq
+
+        # Create no header file
+        no_header_sequence = self.header_remover("sequence.fasta")
+        print(no_header_sequence)
+
+        file1 = open("no_header_sequence.txt", "w")   # create a file with sequence no header
+        file1.write(no_header_sequence)
 
     def blastsearch(self):  ## takes fasta file, runs BLAST search over internet
         fasta_string = open("sequence.fasta").read()
@@ -41,29 +53,23 @@ class SecondWindow(Screen):
         result_handle.close()
         print("Exiting blastsearch()")
 
-
 class ProteinWindow(Screen):
     protname = ObjectProperty(None)
     weight = ObjectProperty(None)
 
-    def header_remover(self, fasta_file):
-        for seq_record in SeqIO.parse(fasta_file, "fasta"):
-            sequence = str(seq_record.seq).upper()
-        return sequence
-
     def on_enter(self, *args):   #what happens as you enter screen #3
         sequence_identity = ObjectProperty(None)
 
-        no_header_sequence = self.header_remover("sequence.fasta")
-
-        analysed_seq = ProteinAnalysis(no_header_sequence)
+        # reads the no_header_sequence.txt file to calculate Mw in kDa
+        noHeader = open("no_header_sequence.txt").read()
+        print("noHeader: ", noHeader)
+        analysed_seq = ProteinAnalysis(noHeader)
         Mw = analysed_seq.molecular_weight()   # Mw g/mol
         Mw_kDa = round(Mw/1000, 3)                       # Mw kDa
 
         print(analysed_seq.count_amino_acids())    # Dictionary with count for each amino acid
 
         heaviness = str(Mw_kDa) + " kDa"
-
         self.weight.text = heaviness    # updates protein weight in kDa on the screen
 
         statinfo = os.stat('my_blast.xml')
@@ -85,28 +91,38 @@ class ProteinWindow(Screen):
         self.protname.text = sequence_identity   #updates sequence identity on the app screen
 
 ########################
-# EXPRESSION MODULE    #
+# EXPRESSION MODULE    ###########################################
 ########################
 
 class ExpressionWindow(Screen):
     pass
 
+class BacterialWindow(Screen):
+    pass
+
+
 #########################
-#  PURIFICATION MODULE  #
+#  PURIFICATION MODULE  ##########################################
 #########################
 
-class IonExchangeWindow(Screen):
+class PurificationWindow(Screen):
     pass
+
+class IonExchangeWindow(Screen):
+
+    def on_enter(self, *args):
+        pI = ObjectProperty(None)
+
+        fasta_string = open("no_header_sequence.txt").read()
+
+        YourProt = ProteinAnalysis(fasta_string)
+        pI = YourProt.isoelectric_point()
+        print(pI)
+
 
 ##################################
 
 class WrongWindow(Screen):
-    pass
-
-class BacterialWindow(Screen):
-    pass
-
-class PurificationWindow(Screen):
     pass
 
 class WindowManager(ScreenManager):

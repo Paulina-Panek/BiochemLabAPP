@@ -104,9 +104,6 @@ WindowManager:
             text: "Your protein was identified!"
 
         Label:
-            text: "The four letter PDB code is:"
-
-        Label:
             text: "Name of the species it came from is in square brackets [  ]"
 
         Label:
@@ -119,6 +116,11 @@ WindowManager:
         Label:
             id: weight
             text: "The weight should appear here, something went wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
 
 
 <ExpressionWindow>:
@@ -200,6 +202,16 @@ WindowManager:
 
 <IonExchangeWindow>:
     name: "ionexchange"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Ion exchange chromatography is <explanation>."
+
+        Button:
+            text: "Find out pI of your protein"
+
+
 
 <WrongWindow>:
     name: "wrong"
