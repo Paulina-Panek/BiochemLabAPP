@@ -202,16 +202,16 @@ WindowManager:
 
 <IonExchangeWindow>:
     name: "ionexchange"
+    isoelectric: isoelectric
 
     GridLayout:
         cols: 1
         Label:
             text: "Ion exchange chromatography is <explanation>."
 
-        Button:
-            text: "Find out pI of your protein"
-
-
+        Label:
+            id: isoelectric
+            text: "You pI should be displayed here."
 
 <WrongWindow>:
     name: "wrong"

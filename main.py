@@ -109,6 +109,7 @@ class PurificationWindow(Screen):
     pass
 
 class IonExchangeWindow(Screen):
+    isoelectric = ObjectProperty(None)
 
     def on_enter(self, *args):
         pI = ObjectProperty(None)
@@ -117,8 +118,8 @@ class IonExchangeWindow(Screen):
 
         YourProt = ProteinAnalysis(fasta_string)
         pI = YourProt.isoelectric_point()
-        print(pI)
-
+        pI_round = round(pI, 3)
+        self.isoelectric.text = "pI = " + str(pI_round)
 
 ##################################
 
