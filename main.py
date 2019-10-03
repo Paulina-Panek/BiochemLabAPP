@@ -91,7 +91,12 @@ class ProteinWindow(Screen):
 class ExpressionWindow(Screen):
     pass
 
+#########################
+#  PURIFICATION MODULE  #
+#########################
 
+class IonExchangeWindow(Screen):
+    pass
 
 ##################################
 

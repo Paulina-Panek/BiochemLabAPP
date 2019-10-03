@@ -7,6 +7,7 @@ WindowManager:
     WrongWindow:
     BacterialWindow:
     PurificationWindow:
+    IonExchangeWindow:
 
 <HomeWindow>:
     name: "home"
@@ -182,6 +183,8 @@ WindowManager:
 
             Button:
                 text: "Ion-exchange chromatography"
+                on_release:
+                    app.root.current = "ionexchange"
 
             Button:
                 text: "Hydrophobic interaction chromatography"
@@ -194,6 +197,9 @@ WindowManager:
                 on_release:
                     app.root.current = "home"
                     root.manager.transition.direction = "right"
+
+<IonExchangeWindow>:
+    name: "ionexchange"
 
 <WrongWindow>:
     name: "wrong"
