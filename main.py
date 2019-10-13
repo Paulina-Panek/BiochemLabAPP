@@ -108,7 +108,7 @@ class BacterialWindow(Screen):
         show_popup()
 
 def show_popup():
-    show = Label(text="and now what?")
+    show = Image(source='pET-3a.jpg')
 
     popupWindow = Popup(title= "pET3A", content = show, size_hint = (None, None), size=(400,400))
     popupWindow.open()
