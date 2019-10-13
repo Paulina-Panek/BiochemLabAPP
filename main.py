@@ -8,7 +8,10 @@ from Bio.Blast import NCBIXML
 import os
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 from Bio import SeqIO
-
+from kivy.uix.image import Image, AsyncImage
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
 
 class HomeWindow(Screen):
     pass
@@ -101,8 +104,14 @@ class ExpressionWindow(Screen):
     pass
 
 class BacterialWindow(Screen):
-    pass
+    def showpet(self):
+        show_popup()
 
+def show_popup():
+    show = Label(text="and now what?")
+
+    popupWindow = Popup(title= "pET3A", content = show, size_hint = (None, None), size=(400,400))
+    popupWindow.open()
 
 #########################
 #  PURIFICATION MODULE  ##########################################

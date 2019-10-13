@@ -23,7 +23,7 @@ WindowManager:
         Button:
             text: "Find out protein identity"
             on_release:
-                app.root.current = "main"
+                app.root.current = "postanalysis"
 
 
 <MainWindow>:
@@ -181,7 +181,13 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "You need a circular vector to express your protein in bacteria."
+            text: "You need a circular vector to express your protein in bacteria.\n"
+
+
+        Button:
+            text: "Show pET-3A vector"
+            on_release:
+                root.showpet()
 
         Button:
             text: "Go back to Home"
