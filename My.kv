@@ -10,6 +10,8 @@ WindowManager:
     IonExchangeWindow:
     PostAnalysisWindow:
     Expression3Window:
+    Expression4Window:
+    BamhiWindow:
 
 <HomeWindow>:
     name: "home"
@@ -199,6 +201,7 @@ WindowManager:
             on_release:
                 app.root.current = "postanalysis"
 
+
 <Expression3Window>:
     name: "expression3"
 
@@ -210,15 +213,71 @@ WindowManager:
 
         Button:
             text: "Heat shock"
+            on_release:
+                app.root.current = "wrong"
 
         Button:
             text: "Restriction enzymes"
+            on_release:
+                app.root.current = "expression4"
 
         Button:
             text: "Synthesize the vector from the bases in a correct sequence"
+            on_release:
+                app.root.current = "wrong"
 
         Button:
             text: "Mix the vectors and the DNA for 24h in acidic solution"
+            on_release:
+                app.root.current = "wrong"
+
+<Expression4Window>:
+
+    name: "expression4"
+
+    GridLayout:
+        cols: 2
+
+        Label:
+            text: "Which restriction enzyme would you use with this vector?"
+
+        Button:
+            text: "Show me the sequence of pET-3A"
+
+        Button:
+            text: "NdeI"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "BamHI"
+            on_release:
+                app.root.current = "bamhi"
+
+        Button:
+            text: "HindIII"
+            on_release:
+                app.root.current = "wrong"
+
+<BamhiWindow>:
+    name: "bamhi"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct! You are done with this module!"
+
+        Button:
+            text: "Continue to Purification Module"
+            on_release:
+                app.root.current = "purification"
+
+        Button:
+            text: "Go back Home"
+            on_release:
+                app.root.current = "postanalysis"
+                root.manager.transition.direction = "right"
 
 <PurificationWindow>:
     name: "purification"

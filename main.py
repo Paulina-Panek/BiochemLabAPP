@@ -116,6 +116,12 @@ def show_popup():
     popupWindow = Popup(title= "pET3A Vector", content = show, size_hint = (None, None), size=(400,400))
     popupWindow.open()
 
+class Expression4Window(Screen):
+    pass
+
+class BamhiWindow(Screen):
+    pass
+
 #########################
 #  PURIFICATION MODULE  ##########################################
 #########################
