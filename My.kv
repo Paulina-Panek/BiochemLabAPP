@@ -12,6 +12,9 @@ WindowManager:
     Expression3Window:
     Expression4Window:
     BamhiWindow:
+    SECWindow:
+    AffinityWindow:
+    HydrophobicWindow:
 
 <HomeWindow>:
     name: "home"
@@ -293,6 +296,8 @@ WindowManager:
 
             Button:
                 text: "Size-exclusion chromatography"
+                on_release:
+                    app.root.current = "sec"
 
             Button:
                 text: "Ion-exchange chromatography"
@@ -301,9 +306,13 @@ WindowManager:
 
             Button:
                 text: "Hydrophobic interaction chromatography"
+                on_release:
+                    app.root.current = "hydrophobic"
 
             Button:
                 text: "Affinity chromatography"
+                on_release:
+                    app.root.current = "affinity"
 
             Button:
                 text: "Go back to Home"
@@ -328,6 +337,47 @@ WindowManager:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
+
+<SECWindow>:
+    name: "sec"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Size exclusion chromatography is <explanation>."
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
+                root.manager.transition.direction = "right"
+
+<AffinityWindow>:
+    name: "affinity"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Affinity chromatography is <explanation>."
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
+                root.manager.transition.direction = "right"
+
+
+<HydrophobicWindow>:
+    name: "hydrophobic"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Ion exchange chromatography is <explanation>."
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
+                root.manager.transition.direction = "right"
 
 <WrongWindow>:
     name: "wrong"

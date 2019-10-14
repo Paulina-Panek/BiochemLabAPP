@@ -142,6 +142,15 @@ class IonExchangeWindow(Screen):
         pI_round = round(pI, 3)
         self.isoelectric.text = "Your protein has pI = " + str(pI_round)
 
+class SECWindow(Screen):
+    pass
+
+class HydrophobicWindow(Screen):
+    pass
+
+class AffinityWindow(Screen):
+    pass
+
 ##################################
 
 class WrongWindow(Screen):
