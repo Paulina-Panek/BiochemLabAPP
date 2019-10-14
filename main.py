@@ -107,10 +107,13 @@ class BacterialWindow(Screen):
     def showpet(self):
         show_popup()
 
+class Expression3Window(Screen):
+    pass
+
 def show_popup():
     show = Image(source='pET-3a.jpg')
 
-    popupWindow = Popup(title= "pET3A", content = show, size_hint = (None, None), size=(400,400))
+    popupWindow = Popup(title= "pET3A Vector", content = show, size_hint = (None, None), size=(400,400))
     popupWindow.open()
 
 #########################

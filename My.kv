@@ -9,6 +9,7 @@ WindowManager:
     PurificationWindow:
     IonExchangeWindow:
     PostAnalysisWindow:
+    Expression3Window:
 
 <HomeWindow>:
     name: "home"
@@ -181,8 +182,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "You need a circular vector to express your protein in bacteria.\n"
-
+            text: "You need a circular vector to express your protein in bacteria. \nTypically, pET-3A vector is used."
 
         Button:
             text: "Show pET-3A vector"
@@ -190,10 +190,35 @@ WindowManager:
                 root.showpet()
 
         Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "expression3"
+
+        Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
 
+<Expression3Window>:
+    name: "expression3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you incorporate a desired gene into the vector?"
+
+        Button:
+            text: "Heat shock"
+
+        Button:
+            text: "Restriction enzymes"
+
+        Button:
+            text: "Synthesize the vector from the bases in a correct sequence"
+
+        Button:
+            text: "Mix the vectors and the DNA for 24h in acidic solution"
 
 <PurificationWindow>:
     name: "purification"
