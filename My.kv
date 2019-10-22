@@ -246,6 +246,8 @@ WindowManager:
 
         Button:
             text: "Show me the sequence of pET-3A"
+            on_release:
+                root.showpetseq()
 
         Button:
             text: "NdeI"
@@ -261,6 +263,13 @@ WindowManager:
             text: "HindIII"
             on_release:
                 app.root.current = "wrong"
+
+<P>:
+    Label:
+        id: pet3aseq
+        text: "this should not show"
+        text_size: root.width, None
+        size: self.texture_size
 
 <BamhiWindow>:
     name: "bamhi"

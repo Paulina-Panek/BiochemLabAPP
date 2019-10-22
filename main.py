@@ -116,8 +116,20 @@ def show_popup():
     popupWindow = Popup(title= "pET3A Vector", content = show, size_hint = (None, None), size=(400,400))
     popupWindow.open()
 
-class Expression4Window(Screen):
+class P():
     pass
+
+class Expression4Window(Screen):
+
+    def showpetseq(self):
+        show_popup2()
+
+def show_popup2():
+
+    petseqlinear = Image(source = 'linear_map.PNG')
+
+    popupWindow2 = Popup(title="pET3A Sequence", content = petseqlinear, size_hint = (1, 1))
+    popupWindow2.open()
 
 class BamhiWindow(Screen):
     pass
