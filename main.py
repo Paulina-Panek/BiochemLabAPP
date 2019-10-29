@@ -163,9 +163,15 @@ class HydrophobicWindow(Screen):
 class AffinityWindow(Screen):
     pass
 
+class AffinityQuestionWindow(Screen):
+    pass
+
 ##################################
 
 class WrongWindow(Screen):
+    pass
+
+class FinalWindow(Screen):
     pass
 
 class WindowManager(ScreenManager):

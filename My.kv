@@ -15,6 +15,8 @@ WindowManager:
     SECWindow:
     AffinityWindow:
     HydrophobicWindow:
+    AffinityQuestionWindow:
+    FinalWindow:
 
 <HomeWindow>:
     name: "home"
@@ -260,7 +262,12 @@ WindowManager:
                 app.root.current = "bamhi"
 
         Button:
-            text: "HindIII"
+            text: "EcoRI"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "NcoI"
             on_release:
                 app.root.current = "wrong"
 
@@ -368,11 +375,44 @@ WindowManager:
         cols: 1
         Label:
             text: "Affinity chromatography is <explanation>."
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "AffinityQuestion"
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
+
+<AffinityQuestionWindow>:
+    name: "AffinityQuestion"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Is affinity chromatography applicable to all proteins?"
+
+        Button:
+            text: "Yes, there are no limitations."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "No, it has to be of a specific size."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Yes, but the proteins need to be derivatized after extraction."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "No, the his-tag needs to be added at the expression step."
+            on_release:
+                app.root.current = "final"
 
 
 <HydrophobicWindow>:
@@ -402,3 +442,17 @@ WindowManager:
             on_release:
                 app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
+
+<FinalWindow>:
+    name: "final"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Thank you! That's all we had for you."
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
