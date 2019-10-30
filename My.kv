@@ -454,6 +454,26 @@ WindowManager:
         Label:
             text: "How do you remove the his-tags after chromatography?"
 
+        Button:
+            text: "You don't, they don't change much in the protein."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You use thrombin cleavage kit."
+            on_release:
+                app.root.current = "final"
+
+        Button:
+            text: "You use mercaptoethanol."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You use HindIII enzyme."
+            on_release:
+                app.root.current = "wrong"
+
 <HydrophobicWindow>:
     name: "hydrophobic"
 
@@ -487,6 +507,9 @@ WindowManager:
 
     GridLayout:
         cols: 1
+
+        Label:
+            text: "Correct!"
 
         Label:
             text: "Thank you! That's all we had for you."
