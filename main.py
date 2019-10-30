@@ -166,6 +166,12 @@ class AffinityWindow(Screen):
 class AffinityQuestionWindow(Screen):
     pass
 
+class AffinityQbWindow(Screen):
+    pass
+
+class AffinityQcWindow(Screen):
+    pass
+
 ##################################
 
 class WrongWindow(Screen):

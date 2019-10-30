@@ -17,6 +17,8 @@ WindowManager:
     HydrophobicWindow:
     AffinityQuestionWindow:
     FinalWindow:
+    AffinityQbWindow:
+    AffinityQcWindow:
 
 <HomeWindow>:
     name: "home"
@@ -410,10 +412,47 @@ WindowManager:
                 app.root.current = "wrong"
 
         Button:
-            text: "No, the his-tag needs to be added at the expression step."
+            text: "No, the his-tag needs to be added during the expression step."
             on_release:
-                app.root.current = "final"
+                app.root.current = "AffinityQb"
 
+<AffinityQbWindow>:
+    name: "AffinityQb"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "How do you add his-tags to a protein?"
+
+        Button:
+            text: "You mix it with histidine in pH = 10 buffer"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You can only use this method with proteins naturally containing histidine."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You choose a circular vector that has his-tag sequence."
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            text: "You have to use mammalian expression system."
+            on_release:
+                app.root.current = "wrong"
+
+<AffinityQcWindow>:
+    name: "AffinityQc"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you remove the his-tags after chromatography?"
 
 <HydrophobicWindow>:
     name: "hydrophobic"
