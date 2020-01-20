@@ -15,6 +15,7 @@ WindowManager:
     StickyAmpicilinWindow:
     LastExpressionWindow:
     SECWindow:
+    SEC2Window
     BackPurificationWindow:
     AffinityWindow:
     HydrophobicWindow:
@@ -435,13 +436,43 @@ WindowManager:
         Button:
             text: "Larger molecules are eluted faster, because they don't get trapped in the resin pores."
             on_release:
-                app.root.current = "backPurification"
+                app.root.current = "sec2"
 
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
+
+<SEC2Window>:
+    name: "sec2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What do you think is the main downside of SEC?"
+
+        Button:
+            text: "E.coli might produce a protein that has the same size as the target protein"
+            on_release:
+                app.root.current = "backPurification"
+
+        Button:
+            text: "The protein might be cleaved by the resin"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "This technique only works in a narrow pH range"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Sometimes proteins bind irreversibly with the resin"
+            on_release:
+                app.root.current = "wrong"
+
 
 <BackPurificationWindow>:
     name: "backPurification"

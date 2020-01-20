@@ -178,6 +178,9 @@ def show_popup6():
     popupWindow6 = Popup(title="Size exclusion chromatography", content=SEC, size_hint=(1, 1))
     popupWindow6.open()
 
+class SEC2Window(Screen):
+    pass
+
 class BackPurificationWindow(Screen):
     pass
 
