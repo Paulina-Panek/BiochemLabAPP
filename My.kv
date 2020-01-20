@@ -15,6 +15,7 @@ WindowManager:
     StickyAmpicilinWindow:
     LastExpressionWindow:
     SECWindow:
+    BackPurificationWindow:
     AffinityWindow:
     HydrophobicWindow:
     AffinityQuestionWindow:
@@ -402,7 +403,7 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Ion exchange chromatography is <explanation>."
+            text: "Ion-exchange chromatography is <explanation>."
 
         Label:
             id: isoelectric
@@ -419,13 +420,49 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Size exclusion chromatography is <explanation>."
+            text: "In size- exclusion chromatography, molecules are separated based on their size\nas they pass through a resin packed column.\n\nChoose the correct statement below:"
+
+        Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showSEC()
+
+        Button:
+            text: "Larger molecules are eluted faster, because they are heavier."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Larger molecules are eluted faster, because they don't get trapped in the resin pores."
+            on_release:
+                app.root.current = "backPurification"
 
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
+
+<BackPurificationWindow>:
+    name: "backPurification"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct! Proceed with the next technique."
+
+        Button:
+            text: "Go back to list of purification techniques"
+            on_release:
+                app.root.current = "purification"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "postanalysis"
+                root.manager.transition.direction = "right"
+
 
 <AffinityWindow>:
     name: "affinity"

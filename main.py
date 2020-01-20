@@ -169,6 +169,16 @@ class LastExpressionWindow(Screen):
     pass
 
 class SECWindow(Screen):
+    def showSEC(self):
+        show_popup6()
+
+def show_popup6():
+    SEC = Image(source='SEC.jpg')
+
+    popupWindow6 = Popup(title="Size exclusion chromatography", content=SEC, size_hint=(1, 1))
+    popupWindow6.open()
+
+class BackPurificationWindow(Screen):
     pass
 
 class HydrophobicWindow(Screen):
