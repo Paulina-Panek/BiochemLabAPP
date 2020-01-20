@@ -258,7 +258,15 @@ class WrongWindow(Screen):
     pass
 
 class FinalWindow(Screen):
-    pass
+    def showallpurification(self):
+        show_popup10()
+
+
+def show_popup10():
+    allpur= Image(source='allPurification.jpg')
+
+    popupWindow10 = Popup(title="Comparison of different chromatographies", content=allpur, size_hint=(1, 1))
+    popupWindow10.open()
 
 class WindowManager(ScreenManager):
     pass

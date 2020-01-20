@@ -734,7 +734,7 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Sample molecules containing hydrophobic and hydrophilic regions\nare applied to an HIC column in a high-salt buffer. The salt in\nthe buffer reduces the solvation of sample solutes. As solvation decreases, hydrophobic regions\nthat become exposed are adsorbed by the media. The more hydrophobic the molecule,/nthe less salt is needed to promote binding."
+            text: "Sample molecules containing hydrophobic and hydrophilic regions\nare applied to an HIC column in a high-salt buffer. The salt in the buffer\nreduces the solvation of sample solutes. As solvation decreases,\nhydrophobic regions that become exposed are adsorbed by the media.\nThe more hydrophobic the molecule, the less salt is needed\nto promote binding."
 
         Button:
             text: "Show me how HIC works!"
@@ -773,6 +773,11 @@ WindowManager:
 
         Label:
             text: "Thank you! That's all we had for you."
+
+        Button:
+            text: "Show summary of all purification techniques"
+            on_release:
+                root.showallpurification()
 
         Button:
             text: "Go back to Home"
