@@ -145,6 +145,9 @@ def show_popup3():
 class StickyAmpicilinWindow(Screen):
     pass
 
+class LastExpressionWindow(Screen):
+    pass
+
 #########################
 #  PURIFICATION MODULE  ##########################################
 #########################
@@ -153,6 +156,17 @@ class PurificationWindow(Screen):
     pass
 
 class IonExchangeWindow(Screen):
+
+    def showiex(self):
+        show_popup7()
+
+def show_popup7():
+    IEX = Image(source='IEX.png')
+
+    popupWindow7 = Popup(title="Ion-exchange chromatography", content=IEX, size_hint=(1, 1))
+    popupWindow7.open()
+
+class iex2Window(Screen):
     isoelectric = ObjectProperty(None)
 
     def on_enter(self, *args):
@@ -165,8 +179,15 @@ class IonExchangeWindow(Screen):
         pI_round = round(pI, 3)
         self.isoelectric.text = "Your protein has pI = " + str(pI_round)
 
-class LastExpressionWindow(Screen):
-    pass
+    def showiexrule(self):
+        show_popup8()
+
+def show_popup8():
+    IEXrule = Image(source='IEXrule.jpg')
+
+    popupWindow8 = Popup(title="Buffer selection", content=IEXrule, size_hint=(1, 1))
+    popupWindow8.open()
+
 
 class SECWindow(Screen):
     def showSEC(self):

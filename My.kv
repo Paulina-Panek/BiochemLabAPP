@@ -8,6 +8,7 @@ WindowManager:
     BacterialWindow:
     PurificationWindow:
     IonExchangeWindow:
+    iex2Window:
     PostAnalysisWindow:
     Expression3Window:
     Expression4Window:
@@ -399,21 +400,46 @@ WindowManager:
 
 <IonExchangeWindow>:
     name: "ionexchange"
-    isoelectric: isoelectric
 
     GridLayout:
         cols: 1
         Label:
-            text: "Ion-exchange chromatography is <explanation>."
+            text: "In ion-exchange chromatography, charged molecules in the sample\nare separated by the electrostatic forces of attraction when passed\nthrough the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the\nions present in the solution and those present in the ion exchange resin."
 
-        Label:
-            id: isoelectric
-            text: "You pI should be displayed here."
+        Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showiex()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "iex2"
 
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
+
+
+<iex2Window>:
+    name: "iex2"
+    isoelectric: isoelectric
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "IEX column may use a positive or negative resin. For the protein to bind,\nbuffer with proper pH must be selected."
+
+        Button:
+            text: "Show me the rules of buffer selection."
+            on_release:
+                root.showiexrule()
+
+        Label:
+            id: isoelectric
+            text: "You pI should be displayed here."
 
 <SECWindow>:
     name: "sec"
