@@ -175,7 +175,15 @@ class HydrophobicWindow(Screen):
     pass
 
 class AffinityWindow(Screen):
-    pass
+    def showaffinity(self):
+        show_popup4()
+
+
+def show_popup4():
+    scheme = Image(source='affinity.jpg')
+
+    popupWindow4 = Popup(title="Affinity Chromatography", content=scheme, size_hint=(1, 1))
+    popupWindow4.open()
 
 class AffinityQuestionWindow(Screen):
     pass

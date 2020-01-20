@@ -434,6 +434,11 @@ WindowManager:
             text: "Affinity chromatography is <explanation>."
 
         Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showaffinity()
+
+        Button:
             text: "Continue to next question"
             on_release:
                 app.root.current = "AffinityQuestion"
