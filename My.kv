@@ -21,6 +21,8 @@ WindowManager:
     BackPurificationWindow:
     AffinityWindow:
     HydrophobicWindow:
+    hic2Window:
+    hic3Window:
     AffinityQuestionWindow:
     FinalWindow:
     AffinityQbWindow:
@@ -742,10 +744,63 @@ WindowManager:
                 root.showhic()
 
         Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "hic2"
+
+        Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "postanalysis"
                 root.manager.transition.direction = "right"
+
+<hic2Window>:
+    name: "hic2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Amino acids have different levels of hydrophobicity."
+
+        Button:
+            text: "Show me how amino acids are classified."
+            on_release:
+                root.showaa()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "hic3"
+
+<hic3Window>:
+    name: "hic3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What possible issues with this separation technique do you see?"
+
+        Button:
+            text: "Our protein does not have hydrophobic amino acids"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Our protein does not have hydrophilic amino acids"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "We need to use a special vector\n- to introduce hydrophobic amino acids to our protein"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "It is not specific enough\n- many proteins in E.coli have similar hydrophobicity"
+            on_release:
+                app.root.current = "backPurification"
 
 <WrongWindow>:
     name: "wrong"

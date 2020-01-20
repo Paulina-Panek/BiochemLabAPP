@@ -218,10 +218,23 @@ def show_popup9():
     popupWindow9 = Popup(title="Hydrophobic Interaction Chromatography", content=schemehic, size_hint=(1, 1))
     popupWindow9.open()
 
+class hic2Window(Screen):
+    def showaa(self):
+        show_popupa()
+
+
+def show_popupa():
+    aa = Image(source='aa.png')
+
+    popupWindow11 = Popup(title="Amino Acid Classification", content=aa, size_hint=(1, 1))
+    popupWindow11.open()
+
+class hic3Window(Screen):
+    pass
+
 class AffinityWindow(Screen):
     def showaffinity(self):
         show_popup4()
-
 
 def show_popup4():
     scheme = Image(source='affinity.jpg')
