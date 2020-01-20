@@ -142,6 +142,9 @@ def show_popup3():
     popupWindow3 = Popup(title="Example", content=ends, size_hint=(1, 1))
     popupWindow3.open()
 
+class StickyAmpicilinWindow(Screen):
+    pass
+
 #########################
 #  PURIFICATION MODULE  ##########################################
 #########################

@@ -12,6 +12,7 @@ WindowManager:
     Expression3Window:
     Expression4Window:
     BamhiWindow:
+    StickyAmpicilinWindow:
     LastExpressionWindow:
     SECWindow:
     AffinityWindow:
@@ -296,9 +297,43 @@ WindowManager:
                 root.showends()
         Button:
             text: "Blunt ends are more desirable"
+            on_release:
+                app.root.current = "wrong"
 
         Button:
             text: "Sticky ends are more desirable"
+            on_release:
+                app.root.current = "stickyampicilin"
+
+
+<StickyAmpicilinWindow>:
+    name: "stickyampicilin"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you determine if bacteria picked up the vector?"
+
+        Button:
+            text: "All bacteria always pick up the vector"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Various stains are used to verify that"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The leftover vector concentration is quantified"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Vector contains antibiotic resistance genes, so only those bacteria survive"
+            on_release:
+                app.root.current = "lastexpression"
 
 <LastExpressionWindow>:
     name: "lastexpression"
