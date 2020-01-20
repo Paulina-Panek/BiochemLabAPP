@@ -208,7 +208,15 @@ class BackPurificationWindow(Screen):
     pass
 
 class HydrophobicWindow(Screen):
-    pass
+    def showhic(self):
+        show_popup9()
+
+
+def show_popup9():
+    schemehic = Image(source='HIC.png')
+
+    popupWindow9 = Popup(title="Hydrophobic Interaction Chromatography", content=schemehic, size_hint=(1, 1))
+    popupWindow9.open()
 
 class AffinityWindow(Screen):
     def showaffinity(self):
