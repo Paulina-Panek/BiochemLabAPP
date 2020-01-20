@@ -132,7 +132,15 @@ def show_popup2():
     popupWindow2.open()
 
 class BamhiWindow(Screen):
-    pass
+    def showends(self):
+        show_popup3()
+
+
+def show_popup3():
+    ends = Image(source='blunt_sticky.jpg')
+
+    popupWindow3 = Popup(title="Example", content=ends, size_hint=(1, 1))
+    popupWindow3.open()
 
 #########################
 #  PURIFICATION MODULE  ##########################################
