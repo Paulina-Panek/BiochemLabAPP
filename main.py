@@ -194,6 +194,9 @@ class AffinityQbWindow(Screen):
 class AffinityQcWindow(Screen):
     pass
 
+class AffinityQdWindow(Screen):
+    pass
+
 ##################################
 
 class WrongWindow(Screen):

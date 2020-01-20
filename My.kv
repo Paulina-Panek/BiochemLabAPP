@@ -21,6 +21,7 @@ WindowManager:
     FinalWindow:
     AffinityQbWindow:
     AffinityQcWindow:
+    AffinityQdWindow:
 
 <HomeWindow>:
     name: "home"
@@ -431,7 +432,7 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Affinity chromatography is <explanation>."
+            text: "Affinity chromatography utilizes reversible affinity interaction\nbetween target proteins and the stationary phase."
 
         Button:
             text: "Show me how it works!"
@@ -522,7 +523,7 @@ WindowManager:
         Button:
             text: "You use thrombin cleavage kit."
             on_release:
-                app.root.current = "final"
+                app.root.current = "AffinityQd"
 
         Button:
             text: "You use mercaptoethanol."
@@ -531,6 +532,35 @@ WindowManager:
 
         Button:
             text: "You use HindIII enzyme."
+            on_release:
+                app.root.current = "wrong"
+
+<AffinityQdWindow>:
+    name: "AffinityQd"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What column would you use in affinity chromatography of a protein with His-tag?"
+
+        Button:
+            text: "C18 column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Silica hel column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Nickel column"
+            on_release:
+                app.root.current = "final"
+
+        Button:
+            text: "Desalting column"
             on_release:
                 app.root.current = "wrong"
 
