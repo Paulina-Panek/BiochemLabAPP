@@ -9,6 +9,7 @@ WindowManager:
     PurificationWindow:
     IonExchangeWindow:
     iex2Window:
+    iex3Window:
     PostAnalysisWindow:
     Expression3Window:
     Expression4Window:
@@ -440,6 +441,40 @@ WindowManager:
         Label:
             id: isoelectric
             text: "You pI should be displayed here."
+
+        Button:
+            text: "Continue to next question.\nYou will need information from this window to answer."
+            on_release:
+                app.root.current = "iex3"
+
+<iex3Window>:
+    name: "iex3"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "If the resin has a negative charge,\nwhat is a good pH of the buffer used for IEX of your protein?"
+
+        Button:
+            text: "7.5"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "6.3"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "5.0"
+            on_release:
+                app.root.current = "backPurification"
+
+        Button:
+            text: "4.0"
+            on_release:
+                app.root.current = "wrong"
+
 
 <SECWindow>:
     name: "sec"
