@@ -197,6 +197,17 @@ class AffinityQcWindow(Screen):
 class AffinityQdWindow(Screen):
     pass
 
+class AffinityQeWindow(Screen):
+    def showimidazole(self):
+        show_popup5()
+
+def show_popup5():
+    imidazole = Image(source='imidazole.png')
+
+    popupWindow5 = Popup(title="Imidazole structure", content=imidazole, size_hint=(1, 1))
+    popupWindow5.open()
+
+
 ##################################
 
 class WrongWindow(Screen):

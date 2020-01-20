@@ -22,6 +22,7 @@ WindowManager:
     AffinityQbWindow:
     AffinityQcWindow:
     AffinityQdWindow:
+    AffinityQeWindow:
 
 <HomeWindow>:
     name: "home"
@@ -369,22 +370,22 @@ WindowManager:
                 text: "Following methods are available:"
 
             Button:
-                text: "Size-exclusion chromatography"
+                text: "1. Size-exclusion chromatography\n   (SEC)"
                 on_release:
                     app.root.current = "sec"
 
             Button:
-                text: "Ion-exchange chromatography"
+                text: "2. Ion-exchange chromatography\n   (IEX)"
                 on_release:
                     app.root.current = "ionexchange"
 
             Button:
-                text: "Hydrophobic interaction chromatography"
+                text: "3. Hydrophobic interaction chromatography\n   (HIC)"
                 on_release:
                     app.root.current = "hydrophobic"
 
             Button:
-                text: "Affinity chromatography"
+                text: "4. Affinity chromatography\n   (AC)"
                 on_release:
                     app.root.current = "affinity"
 
@@ -557,10 +558,44 @@ WindowManager:
         Button:
             text: "Nickel column"
             on_release:
-                app.root.current = "final"
+                app.root.current = "AffinityQe"
 
         Button:
             text: "Desalting column"
+            on_release:
+                app.root.current = "wrong"
+
+<AffinityQeWindow>:
+    name: "AffinityQe"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "To elute the recombinant protein imidazole is used.\nHow is it later separated from the protein"
+
+        Button:
+            text: "Show imidazole structure"
+            on_release:
+                root.showimidazole()
+
+        Button:
+            text: "Size exclusion chromatography"
+            on_release:
+                app.root.current = "final"
+
+        Button:
+            text: "Second run on nickel column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Extraction with water"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "It evaporates"
             on_release:
                 app.root.current = "wrong"
 
