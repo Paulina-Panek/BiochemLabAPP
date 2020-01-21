@@ -188,6 +188,9 @@ def show_popup8():
     popupWindow8 = Popup(title="Buffer selection", content=IEXrule, size_hint=(1, 1))
     popupWindow8.open()
 
+class iex2bWindow(Screen):
+    pass
+
 class iex3Window(Screen):
     pass
 

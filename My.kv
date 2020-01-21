@@ -9,6 +9,7 @@ WindowManager:
     PurificationWindow:
     IonExchangeWindow:
     iex2Window:
+    iex2bWindow:
     iex3Window:
     PostAnalysisWindow:
     Expression3Window:
@@ -447,7 +448,35 @@ WindowManager:
         Button:
             text: "Continue to next question.\nYou will need information from this window to answer."
             on_release:
+                app.root.current = "iex2b"
+
+<iex2bWindow>:
+    name: "iex2b"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "In cation exchange chromatography:"
+
+        Button:
+            text: "The molecule of interest and resin are both positive."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The molecule of interest is positive and the resin in negative."
+            on_release:
                 app.root.current = "iex3"
+
+        Button:
+            text: "The molecule of interest is negative and the resin is positive."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The molecule of interest and resin are both negative."
+            on_release:
+                app.root.current = "wrong"
 
 <iex3Window>:
     name: "iex3"
