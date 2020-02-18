@@ -180,9 +180,10 @@ class iex2Window(Screen):
             pI_round = round(pI, 3)
             self.isoelectric.text = "Your protein has pI = " + str(pI_round)
 
+            fasta_string.close()
+
         except FileNotFoundError:
             self.isoelectric.text = "pI of your protein will be displayed here\nonce you analyze a sequence"
-
 
     def showiexrule(self):
         show_popup8()
