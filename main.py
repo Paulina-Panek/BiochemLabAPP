@@ -24,9 +24,9 @@ class MainWindow(Screen):
     sequence = ObjectProperty(None)
 
     def btn(self):
-        print("sequence: ", self.sequence.text)   #prints input on terminal(internal check)
         with open("sequence.fasta", "w") as out_handle1:    # create a file with the fasta sequence from user input
             out_handle1.write(self.sequence.text)
+
 
 class SecondWindow(Screen):
     inputfasta = ObjectProperty(None)
@@ -42,7 +42,6 @@ class SecondWindow(Screen):
 
         # Create no header file
         no_header_sequence = self.header_remover("sequence.fasta")
-        print(no_header_sequence)
 
         file1 = open("no_header_sequence.txt", "w")   # create a file with sequence no header
         file1.write(no_header_sequence)

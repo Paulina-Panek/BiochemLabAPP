@@ -69,7 +69,7 @@ WindowManager:
             cols:2
 
             Label:
-                text: "Paste the sequence from the FASTA file.\nInclude the header. "
+                text: "Paste the sequence from the FASTA file.\nInclude the header.\n\nUse Ctrl+C to paste the sequence.\n\nYou can enter any amino acid sequence."
 
             TextInput:
                 id: sequence
@@ -95,24 +95,36 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein. \n Is the following sequence correct? \n\n BLAST search takes a couple of minutes."
+            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein."
+
+        Image:
+            source: 'BLAST1.PNG'
+            size: self.texture_size
+
+        Label:
+            text: "Is the following sequence correct?"
 
         Label:
             id: inputfasta
             text: "The sequence you entered should appear here. If you don't see it, start over."
+
+        Image:
+            source: 'BLAST2.PNG'
+            size: self.texture_size
+
+        Button:
+            text: "Let's do this!"
+
+            on_release:
+                app.root.current = "protein"
+                root.blastsearch()
+                root.manager.transition.direction = "left"
 
         Button:
             text: "I made an error, take me back."
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"
-
-        Button:
-            text: "Let's do this!"
-            on_release:
-                app.root.current = "protein"
-                root.blastsearch()
-                root.manager.transition.direction = "left"
 
 <ProteinWindow>:
     name: "protein"
@@ -212,7 +224,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "You need a circular vector to express your protein in bacteria. \nIn this experiment, typically pET-3A vector is used."
+            text: "You need a circular vector to express your protein in bacteria.\nFor example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in an uncloned pET3A vector?"
 
         Button:
             text: "Show pET-3A vector"
@@ -220,14 +232,24 @@ WindowManager:
                 root.showpet()
 
         Button:
-            text: "Continue to next question"
+            text: "3"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "4.6"
             on_release:
                 app.root.current = "expression3"
 
         Button:
-            text: "Go back to Home"
+            text: "10"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "wrong"
+
+        Button:
+            text: "30"
+            on_release:
+                app.root.current = "wrong"
 
 
 <Expression3Window>:
