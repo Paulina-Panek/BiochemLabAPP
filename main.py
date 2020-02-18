@@ -111,7 +111,7 @@ class Expression3Window(Screen):
 def show_popup():
     show = Image(source='pET-3a.jpg')
 
-    popupWindow = Popup(title= "pET3A Vector", content = show, size_hint = (None, None), size=(400,400))
+    popupWindow = Popup(title= "pET3A Vector", content = show, size_hint = (0.8, 0.8))
     popupWindow.open()
 
 class P():
@@ -126,7 +126,7 @@ def show_popup2():
 
     petseqlinear = Image(source = 'linear_map.PNG')
 
-    popupWindow2 = Popup(title="pET3A Sequence", content = petseqlinear, size_hint = (1, 1))
+    popupWindow2 = Popup(title="pET3A Sequence", content = petseqlinear, size_hint = (0.8, 0.8))
     popupWindow2.open()
 
 class BamhiWindow(Screen):
@@ -137,7 +137,7 @@ class BamhiWindow(Screen):
 def show_popup3():
     ends = Image(source='blunt_sticky.jpg')
 
-    popupWindow3 = Popup(title="Example", content=ends, size_hint=(1, 1))
+    popupWindow3 = Popup(title="Example", content=ends, size_hint=(0.8, 0.8))
     popupWindow3.open()
 
 class StickyAmpicilinWindow(Screen):
@@ -164,7 +164,7 @@ class IonExchangeWindow(Screen):
 def show_popup7():
     IEX = Image(source='IEX.png')
 
-    popupWindow7 = Popup(title="Ion-exchange chromatography", content=IEX, size_hint=(1, 1))
+    popupWindow7 = Popup(title="Ion-exchange chromatography", content=IEX, size_hint=(0.8, 0.8))
     popupWindow7.open()
 
 class iex2Window(Screen):
@@ -181,8 +181,6 @@ class iex2Window(Screen):
             pI_round = round(pI, 3)
             self.isoelectric.text = "Your protein has pI = " + str(pI_round)
 
-            fasta_string.close()
-
         except FileNotFoundError:
             self.isoelectric.text = "pI of your protein will be displayed here\nonce you analyze a sequence"
 
@@ -192,7 +190,7 @@ class iex2Window(Screen):
 def show_popup8():
     IEXrule = Image(source='IEXrule.jpg')
 
-    popupWindow8 = Popup(title="Buffer selection", content=IEXrule, size_hint=(1, 1))
+    popupWindow8 = Popup(title="Buffer selection", content=IEXrule, size_hint=(0.8, 0.8))
     popupWindow8.open()
 
 class iex2bWindow(Screen):
@@ -208,7 +206,7 @@ class SECWindow(Screen):
 def show_popup6():
     SEC = Image(source='SEC.jpg')
 
-    popupWindow6 = Popup(title="Size exclusion chromatography", content=SEC, size_hint=(1, 1))
+    popupWindow6 = Popup(title="Size exclusion chromatography", content=SEC, size_hint=(0.8, 0.8))
     popupWindow6.open()
 
 class SEC2Window(Screen):
@@ -225,7 +223,7 @@ class HydrophobicWindow(Screen):
 def show_popup9():
     schemehic = Image(source='HIC.png')
 
-    popupWindow9 = Popup(title="Hydrophobic Interaction Chromatography", content=schemehic, size_hint=(1, 1))
+    popupWindow9 = Popup(title="Hydrophobic Interaction Chromatography", content=schemehic, size_hint=(0.8, 0.8))
     popupWindow9.open()
 
 class hic2Window(Screen):
@@ -236,7 +234,7 @@ class hic2Window(Screen):
 def show_popupa():
     aa = Image(source='aa.png')
 
-    popupWindow11 = Popup(title="Amino Acid Classification", content=aa, size_hint=(1, 1))
+    popupWindow11 = Popup(title="Amino Acid Classification", content=aa, size_hint=(0.8, 0.8))
     popupWindow11.open()
 
 class hic3Window(Screen):
@@ -249,7 +247,7 @@ class AffinityWindow(Screen):
 def show_popup4():
     scheme = Image(source='affinity.jpg')
 
-    popupWindow4 = Popup(title="Affinity Chromatography", content=scheme, size_hint=(1, 1))
+    popupWindow4 = Popup(title="Affinity Chromatography", content=scheme, size_hint=(0.8, 0.8))
     popupWindow4.open()
 
 class AffinityQuestionWindow(Screen):
@@ -271,7 +269,7 @@ class AffinityQeWindow(Screen):
 def show_popup5():
     imidazole = Image(source='imidazole.png')
 
-    popupWindow5 = Popup(title="Imidazole structure", content=imidazole, size_hint=(1, 1))
+    popupWindow5 = Popup(title="Imidazole structure", content=imidazole, size_hint=(0.8, 0.8))
     popupWindow5.open()
 
 
@@ -288,7 +286,7 @@ class FinalWindow(Screen):
 def show_popup10():
     allpur= Image(source='allPurification.jpg')
 
-    popupWindow10 = Popup(title="Comparison of different chromatographies", content=allpur, size_hint=(1, 1))
+    popupWindow10 = Popup(title="Comparison of different chromatographies", content=allpur, size_hint=(0.8, 0.8))
     popupWindow10.open()
 
 class WindowManager(ScreenManager):
