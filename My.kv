@@ -17,6 +17,7 @@ WindowManager:
     BamhiWindow:
     StickyAmpicilinWindow:
     LastExpressionWindow:
+    LacWindow:
     SECWindow:
     SEC2Window
     BackPurificationWindow:
@@ -374,7 +375,36 @@ WindowManager:
         Button:
             text: "Vector contains antibiotic resistance genes, so only those bacteria survive."
             on_release:
+                app.root.current = "lac"
+
+<LacWindow>:
+    name: "lac"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Finally, how do you control when the desired protein is expressed?"
+
+        Button:
+            text: "By changing the incubation temperature of the bacteria."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "By addition of lysozyme, which induces the lac operon."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "By addition of Isopropyl thiogalactopyranoside (IPTG), which induces the lac operon."
+            on_release:
                 app.root.current = "lastexpression"
+
+        Button:
+            text: "By treatment with cyanogen bromide, which inhibits other proteins."
+            on_release:
+                app.root.current = "wrong"
 
 <LastExpressionWindow>:
     name: "lastexpression"
@@ -870,13 +900,12 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "That's not correct."
+            text: "That's not the answer we were looking for."
 
         Button:
             text: "Try again!"
             on_release:
                 app.root.current = "postanalysis"
-                root.manager.transition.direction = "right"
 
 <FinalWindow>:
     name: "final"

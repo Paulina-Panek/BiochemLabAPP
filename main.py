@@ -27,7 +27,6 @@ class MainWindow(Screen):
         with open("sequence.fasta", "w") as out_handle1:    # create a file with the fasta sequence from user input
             out_handle1.write(self.sequence.text)
 
-
 class SecondWindow(Screen):
     inputfasta = ObjectProperty(None)
 
@@ -142,6 +141,9 @@ def show_popup3():
     popupWindow3.open()
 
 class StickyAmpicilinWindow(Screen):
+    pass
+
+class LacWindow(Screen):
     pass
 
 class LastExpressionWindow(Screen):
