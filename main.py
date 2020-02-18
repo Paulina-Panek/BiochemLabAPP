@@ -100,9 +100,6 @@ class ProteinWindow(Screen):
                         counter = counter + 1
         self.protname.text = sequence_identity   #updates sequence identity on the app screen
 
-class PostAnalysisWindow(Screen):
-    pass
-
 ########################
 # EXPRESSION MODULE    ###########################################
 ########################

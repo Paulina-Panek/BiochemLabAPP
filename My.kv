@@ -11,7 +11,6 @@ WindowManager:
     iex2Window:
     iex2bWindow:
     iex3Window:
-    PostAnalysisWindow:
     Expression3Window:
     Expression4Window:
     BamhiWindow:
@@ -160,32 +159,8 @@ WindowManager:
         Button:
             text: "Continue"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
 
-<PostAnalysisWindow>:
-    name: "postanalysis"
-
-    GridLayout:
-        cols: 1
-        size: root.width, root.height
-
-        Label:
-            text: "Welcome to Biochemistry 463L App\n Let's start with analysis of your protein. "
-
-        Button:
-            text: "Change the analysed protein"
-            on_release:
-                app.root.current = "main"
-
-        Button:
-            text: "Learn about protein expression"
-            on_release:
-                app.root.current = "expression"
-
-        Button:
-            text: "Learn about protein purification"
-            on_release:
-                app.root.current = "purification"
 
 <ExpressionWindow>:
     name: "expression"
@@ -220,7 +195,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
 
 <BacterialWindow>:
     name: "bacterial"
@@ -427,7 +402,7 @@ WindowManager:
         Button:
             text: "Go back Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
                 root.manager.transition.direction = "right"
 
 <PurificationWindow>:
@@ -465,7 +440,7 @@ WindowManager:
             Button:
                 text: "Go back to Home"
                 on_release:
-                    app.root.current = "postanalysis"
+                    app.root.current = "home"
                     root.manager.transition.direction = "right"
 
 <IonExchangeWindow>:
@@ -489,7 +464,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
 
 
 <iex2Window>:
@@ -599,7 +574,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
                 root.manager.transition.direction = "right"
 
 <SEC2Window>:
@@ -649,7 +624,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
                 root.manager.transition.direction = "right"
 
 
@@ -673,7 +648,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
                 root.manager.transition.direction = "right"
 
 <AffinityQuestionWindow>:
@@ -846,7 +821,7 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
                 root.manager.transition.direction = "right"
 
 <hic2Window>:
@@ -909,7 +884,7 @@ WindowManager:
         Button:
             text: "Try again!"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
 
 <FinalWindow>:
     name: "final"
@@ -931,4 +906,4 @@ WindowManager:
         Button:
             text: "Go back to Home"
             on_release:
-                app.root.current = "postanalysis"
+                app.root.current = "home"
