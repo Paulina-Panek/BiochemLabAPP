@@ -172,12 +172,17 @@ class iex2Window(Screen):
     def on_enter(self, *args):
         pI = ObjectProperty(None)
 
-        fasta_string = open("no_header_sequence.txt").read()
+        try:
+            fasta_string = open("no_header_sequence.txt").read()
 
-        YourProt = ProteinAnalysis(fasta_string)
-        pI = YourProt.isoelectric_point()
-        pI_round = round(pI, 3)
-        self.isoelectric.text = "Your protein has pI = " + str(pI_round)
+            YourProt = ProteinAnalysis(fasta_string)
+            pI = YourProt.isoelectric_point()
+            pI_round = round(pI, 3)
+            self.isoelectric.text = "Your protein has pI = " + str(pI_round)
+
+        except FileNotFoundError:
+            self.isoelectric.text = "pI of your protein will be displayed here\nonce you analyze a sequence"
+
 
     def showiexrule(self):
         show_popup8()
