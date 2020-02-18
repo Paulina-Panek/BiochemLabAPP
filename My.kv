@@ -57,6 +57,10 @@ WindowManager:
             on_release:
                 app.root.current = "purification"
 
+        Button:
+            text: "~*~ Reset ~*~\n[Deletes previously entered protein sequence and all generated data.\nRecommended before changing the analyzed protein.]"
+            on_release:
+                root.remove_files()
 
 <MainWindow>:
     name: "main"
@@ -655,7 +659,7 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Affinity chromatography utilizes reversible affinity interaction\nbetween target proteins and the stationary phase."
+            text: "Affinity chromatography utilizes reversible affinity interaction\nbetween target proteins and the stationary phase.\n\nFor example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. "
 
         Button:
             text: "Show me how it works!"
@@ -794,7 +798,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "To elute the recombinant protein imidazole is used.\nHow is it later separated from the protein?"
+            text: "If imidazole is used to elute the target analyte,\nhow can it be later separated from the protein?"
 
         Button:
             text: "Show imidazole structure"

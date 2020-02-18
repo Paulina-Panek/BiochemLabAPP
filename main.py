@@ -12,9 +12,18 @@ from kivy.uix.image import Image, AsyncImage
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
+import os
 
 class HomeWindow(Screen):
-    pass
+    def remove_files(self):
+        try:
+            os.remove('sequence.fasta')
+            os.remove('no_header_sequence.txt')
+            os.remove('my_blast.xml')
+            print("generated files were deleted")
+
+        except FileNotFoundError:
+            print("no files were found")
 
 ##############################
 #  PROTEIN IDENTITY MODULE  ##
