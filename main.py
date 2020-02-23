@@ -5,7 +5,6 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from Bio.Blast import NCBIWWW
 from Bio.Blast import NCBIXML
-import os
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 from Bio import SeqIO
 from kivy.uix.image import Image, AsyncImage
@@ -13,6 +12,11 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 import os
+
+# Paulina Panek for University of Hawaii at Manoa
+# 2/22/2020 Honolulu
+# Version for OS X
+
 
 class HomeWindow(Screen):
     def remove_files(self):

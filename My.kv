@@ -61,6 +61,9 @@ WindowManager:
             on_release:
                 root.remove_files()
 
+        Label:
+            text: "Note to Mac users:\n If you encounter issues displaying images, go into full screen mode."
+
 <MainWindow>:
     name: "main"
     sequence: sequence
@@ -73,7 +76,7 @@ WindowManager:
             cols:2
 
             Label:
-                text: "Paste the sequence from the FASTA file.\nInclude the header.\n\nUse Ctrl+C to paste the sequence.\n\nYou can enter any amino acid sequence."
+                text: "Paste the sequence from the FASTA file.\nInclude the header.\n\nUse Command+C to paste the sequence.\n\nYou can enter any amino acid sequence."
 
             TextInput:
                 id: sequence
