@@ -110,6 +110,9 @@ class ProteinWindow(Screen):
 class BlastWindow(Screen):
     pass
 
+class ToolsWindow(Screen)
+    pass
+
 ########################
 # EXPRESSION MODULE    ###########################################
 ########################

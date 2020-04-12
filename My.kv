@@ -3,6 +3,7 @@ WindowManager:
     ChoiceWindow:
     PreprogrammedWindow:
     BlastWindow:
+    ToolsWindow:
     MainWindow:
     SecondWindow:
     ProteinWindow:
@@ -45,7 +46,7 @@ WindowManager:
             text: "Welcome to Biochemistry 463L App\nLet's start with analysis of your protein. "
 
         Button:
-            text: "Learn about your protein"
+            text: "Learn about your protein and bioinformatic tools"
             on_release:
                 app.root.current = "choice"
 
@@ -128,6 +129,10 @@ WindowManager:
         Label:
             text: "BLAST is a tool used for aligning genetic and protein sequences among different organisms.\nThis allows users to determine the species origin of proteins/genes as well as determine\nthe homologs of the protein/gene of choice.\n\nThere are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
 
+        Button:
+            text: "Learn about other bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
         Button:
             text: "Go back to Home"
             on_release:
