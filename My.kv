@@ -4,6 +4,13 @@ WindowManager:
     PreprogrammedWindow:
     BlastWindow:
     ToolsWindow:
+    UniprotWindow:
+    PfamWindow:
+    FrustWindow:
+    PymolWindow:
+    WaltzWindow:
+    CamsolWindow:
+    LogprotWindow:
     MainWindow:
     SecondWindow:
     ProteinWindow:
@@ -111,7 +118,7 @@ WindowManager:
             text: "Weight of this protein is:\n\n 11.931 kDa"
 
         Button:
-            text: "Learn more about BLAST"
+            text: "Learn more about how we got this result from BLAST"
             on_release:
                 app.root.current = "blast"
 
@@ -128,7 +135,8 @@ WindowManager:
         size: root.width, root.height
         Label:
             text: "BLAST is a tool used for aligning genetic and protein sequences among different organisms.\nThis allows users to determine the species origin of proteins/genes as well as determine\nthe homologs of the protein/gene of choice.\n\nThere are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
-
+        Label:
+            text: "Link to BLAST: https://blast.ncbi.nlm.nih.gov/Blast.cgi"
         Button:
             text: "Learn about other bioinformatic tools"
             on_release:
@@ -137,6 +145,141 @@ WindowManager:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
+
+<ToolsWindow>:
+    name: "tools"
+
+    GridLayout:
+        cols:2
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Following tools are available:"
+
+            Button:
+                text: "1. UniProt"
+                on_release:
+                    app.root.current = "uniprot"
+
+            Button:
+                text: "2. Pfam"
+                on_release:
+                    app.root.current = "pfam"
+
+            Button:
+                text: "3. Frustratometer"
+                on_release:
+                    app.root.current = "frust"
+
+            Button:
+                text: "4. PyMOL"
+                on_release:
+                    app.root.current = "pymol"
+
+            Button:
+                text: "5. WALTZ"
+                on_release:
+                    app.root.current = "waltz"
+
+
+            Button:
+                text: "6. CamSOL"
+                on_release:
+                    app.root.current = "camsol"
+
+            Button:
+                text: "7. Sequence logprot"
+                on_release:
+                    app.root.current = "logprot"
+
+            Button:
+                text: "8. BLAST"
+                on_release:
+                    app.root.current = "blast"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+<UniprotWindow>:
+    name: "uniprot"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "UniProt is a data base of proteins that organizes proteomes of organisms, as well as\nsequence clusters of proteins. "
+        Label:
+            text: "Link to Uniprot: https://www.uniprot.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<PfamWindow>:
+    name: "pfam"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Homologous proteins across different organisms are organized in Pfam. "
+        Label:
+            text: "Link to Pfam: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<FrustWindow>:
+    name: "frust"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Energetically favored and disfavored interactions between amino acid side chains\ncan be quantitatively assessed based on their proximity in space solved by\nexperimental data (NMR, CryoEM, X-ray crystallography).\n\nThe frustratometer can predict how point mutations in a protein can increase\nor decrease frustration of the protein.\n\nProtein Frustratometer 2 is a tool to localize energetic frustration in protein\nmolecules, now with electrostatics. "
+
+        Label:
+            text: "Link to Frustratometer: http://frustratometer.qb.fcen.uba.ar/ "
+
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<PymolWindow>:
+    name: "pymol"
+
+<WaltzWindow>:
+    name: "waltz"
+
+<CamsolWindow>:
+    name: "camsol"
+
+<LogprotWindow>:
+    name: "logprot"
+
 
 <MainWindow>:
     name: "main"

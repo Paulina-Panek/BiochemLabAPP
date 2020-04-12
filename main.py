@@ -110,8 +110,30 @@ class ProteinWindow(Screen):
 class BlastWindow(Screen):
     pass
 
-class ToolsWindow(Screen)
+class ToolsWindow(Screen):
     pass
+
+class UniprotWindow(Screen):
+    pass
+
+class PfamWindow(Screen):
+    pass
+
+class FrustWindow(Screen):
+    pass
+
+class PymolWindow(Screen):
+    pass
+
+class WaltzWindow(Screen):
+    pass
+
+class CamsolWindow(Screen):
+    pass
+
+class LogprotWindow(Screen):
+    pass
+
 
 ########################
 # EXPRESSION MODULE    ###########################################
