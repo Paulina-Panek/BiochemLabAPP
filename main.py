@@ -151,6 +151,13 @@ class BacterialWindow(Screen):
     def showpet(self):
         show_popup()
 
+    def revvec(self):
+        show_revvec1()
+
+def show_revvec1():
+    popupWindow22 = Popup(title="Vector Review", content = Label(text="Vectors are circular pieces of DNA that is used to recombinantly express\nlarge amounts of a protein of choice. There are many different types of\nvectors, however, they share many common features.\n\nDefinitions:\n\nCloning cassette: section of vector that genes of choice are cloned\ninto using restriction enzymes.\n\nTranscription switch: typically, lac operon which can be signaled to allow\ntranscription and translation of the target gene using a molecule added\nto the growth.\n\nAntibacterial resistance: depending on the vector and antibacterial resistance,\nbacteria with this vector can be selectively grown using antibiotics.", size_hint = (0.8, 0.8)))
+    popupWindow22.open()
+
 class Expression3Window(Screen):
     pass
 

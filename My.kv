@@ -504,15 +504,20 @@ WindowManager:
     name: "bacterial"
 
     GridLayout:
-        cols: 1
+        cols: 2
 
         Label:
-            text: "You need a circular vector to express your protein in bacteria.\nFor example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in an uncloned pET3A vector?"
+            text: "You need a circular vector to express your protein\nin bacteria. For example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in\nan uncloned pET3A vector?"
 
         Button:
             text: "Show pET-3A vector"
             on_release:
                 root.showpet()
+
+        Button:
+            text: "Review vectors"
+            on_release:
+                root.revvec()
 
         Button:
             text: "3"
