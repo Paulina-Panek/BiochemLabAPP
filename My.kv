@@ -464,11 +464,16 @@ WindowManager:
     name: "expression"
 
     GridLayout:
-        cols: 1
+        cols: 2
         size: root.width, root.height
 
         Label:
             text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
+
+        Button:
+            text: "Review protein expression"
+            on_release:
+                root.showrevexp()
 
         Button:
             text: "Mammalian cell culture"

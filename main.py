@@ -140,7 +140,12 @@ class LogprotWindow(Screen):
 ########################
 
 class ExpressionWindow(Screen):
-    pass
+    def showrevexp(self):
+        showrevexp1()
+
+def showrevexp1():
+    popupWindow33 = Popup(title="Expression Review", content = Label(text="There are many different ways to recombinantly express protein;\nusing bacteria, yeast, or even human cells. For the purpose of\nthis application we will focus on bacterial recombinant expression. "), size_hint =(0.8,0.8))
+    popupWindow33.open()
 
 class BacterialWindow(Screen):
     def showpet(self):
