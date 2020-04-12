@@ -1,5 +1,7 @@
 WindowManager:
     HomeWindow:
+    ChoiceWindow:
+    PreprogrammedWindow:
     MainWindow:
     SecondWindow:
     ProteinWindow:
@@ -42,9 +44,9 @@ WindowManager:
             text: "Welcome to Biochemistry 463L App\nLet's start with analysis of your protein. "
 
         Button:
-            text: "Find out protein identity\n(start here)"
+            text: "Learn about your protein"
             on_release:
-                app.root.current = "main"
+                app.root.current = "choice"
 
         Button:
             text: "Learn about protein expression"
@@ -60,6 +62,45 @@ WindowManager:
             text: "~*~ Reset ~*~\n[Deletes previously entered protein sequence and all generated data.\nRecommended before changing the analyzed protein.]"
             on_release:
                 root.remove_files()
+<ChoiceWindow>:
+    name: "choice"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:1
+
+            Label:
+                text: "You can choose to learn about pre-programmed protein S6 (fast)\n\n                                             OR\n\ndo a live search of any protein sequence (very slow)."
+
+            Button:
+                text: "Show S6 data"
+                on_release:
+                    app.root.current = "preprogrammed"
+            Button:
+                text: "Live search\n(requires internet connection)"
+                on_release:
+                    app.root.current = "preprogrammed"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+
+<PreprogrammedWindow>:
+    name: "preproggramed"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+
 
 <MainWindow>:
     name: "main"
@@ -86,7 +127,7 @@ WindowManager:
                 app.root.current = "second"
 
         Button:
-            text: "Go back to home screen"
+            text: "Go back to Home"
             on_release:
                 app.root.current = "home"
 

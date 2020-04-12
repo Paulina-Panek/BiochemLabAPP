@@ -29,6 +29,12 @@ class HomeWindow(Screen):
 #  PROTEIN IDENTITY MODULE  ##
 ##############################
 
+class ChoiceWindow(Screen):
+    pass
+
+class PreprogrammedWindow(Screen):
+    pass
+
 class MainWindow(Screen):
     sequence = ObjectProperty(None)
 
