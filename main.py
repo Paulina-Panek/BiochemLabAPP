@@ -101,10 +101,11 @@ class ProteinWindow(Screen):
             for alignment in blast_record.alignments:
                 for hsp in alignment.hsps:
                     if counter < 2:  #takes only the first result
+                        print("alignment.title", alignment.title)
                         sequence_identity = alignment.title
-                        print(sequence_identity)
+                        reduced_title = sequence_identity[10:70]
                         counter = counter + 1
-        self.protname.text = sequence_identity   #updates sequence identity on the app screen
+        self.protname.text = reduced_title   #updates sequence identity on the app screen
 
 ########################
 # EXPRESSION MODULE    ###########################################

@@ -82,7 +82,7 @@ WindowManager:
             Button:
                 text: "Live search\n(requires internet connection)"
                 on_release:
-                    app.root.current = "preprogrammed"
+                    app.root.current = "main"
 
             Button:
                 text: "Go back to Home"
@@ -96,10 +96,26 @@ WindowManager:
         cols:1
         size: root.width, root.height
 
-        GridLayout:
-            cols:2
+        Label:
+            text: "This window is preprogrammed for protein S6"
 
-            Label:
+        Label:
+            text: "Name of the species it came from is in square brackets [  ]"
+
+        Label:
+            text: "[Thermus thermophilus]"
+
+        Label:
+            text: "Weight of this protein is:"
+
+        Label:
+            id: weight
+            text: "The weight should appear here, something went wrong"
+
+        Button:
+            text: "Continue"
+            on_release:
+                app.root.current = "home"
 
 
 <MainWindow>:
