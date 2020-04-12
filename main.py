@@ -107,6 +107,9 @@ class ProteinWindow(Screen):
                         counter = counter + 1
         self.protname.text = reduced_title   #updates sequence identity on the app screen
 
+class BlastWindow(Screen):
+    pass
+
 ########################
 # EXPRESSION MODULE    ###########################################
 ########################

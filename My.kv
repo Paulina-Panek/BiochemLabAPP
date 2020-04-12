@@ -2,6 +2,7 @@ WindowManager:
     HomeWindow:
     ChoiceWindow:
     PreprogrammedWindow:
+    BlastWindow:
     MainWindow:
     SecondWindow:
     ProteinWindow:
@@ -90,33 +91,36 @@ WindowManager:
                     app.root.current = "home"
 
 <PreprogrammedWindow>:
-    name: "preproggramed"
+    name: "preprogrammed"
 
     GridLayout:
         cols:1
         size: root.width, root.height
 
         Label:
-            text: "This window is preprogrammed for protein S6"
+            text: "This window is preprogrammed for protein S6\n- it does not update"
 
         Label:
-            text: "Name of the species it came from is in square brackets [  ]"
+            text: "Name of the species the protein came from is in square brackets [  ]"
 
         Label:
-            text: "[Thermus thermophilus]"
+            text: "30S ribosomal protein S6 [Thermus thermophilus]"
 
         Label:
-            text: "Weight of this protein is:"
-
-        Label:
-            id: weight
-            text: "The weight should appear here, something went wrong"
+            text: "Weight of this protein is:\n\n 11.931 kDa"
 
         Button:
-            text: "Continue"
+            text: "Learn more about BLAST"
+            on_release:
+                app.root.current = "blast"
+
+        Button:
+            text: "Go back to Home"
             on_release:
                 app.root.current = "home"
 
+<BlastWindow>:
+    name: "blast"
 
 <MainWindow>:
     name: "main"
@@ -214,7 +218,12 @@ WindowManager:
             text: "The weight should appear here, something went wrong"
 
         Button:
-            text: "Continue"
+            text: "Learn more about BLAST"
+            on_release:
+                app.root.current = "blast"
+
+        Button:
+            text: "Go back to Home"
             on_release:
                 app.root.current = "home"
 
