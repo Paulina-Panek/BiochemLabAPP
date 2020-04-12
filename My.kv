@@ -122,6 +122,17 @@ WindowManager:
 <BlastWindow>:
     name: "blast"
 
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        Label:
+            text: "BLAST is a tool used for aligning genetic and protein sequences among different organisms.\nThis allows users to determine the species origin of proteins/genes as well as determine\nthe homologs of the protein/gene of choice.\n\nThere are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
 <MainWindow>:
     name: "main"
     sequence: sequence
