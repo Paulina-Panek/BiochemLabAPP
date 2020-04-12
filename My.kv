@@ -271,14 +271,85 @@ WindowManager:
 <PymolWindow>:
     name: "pymol"
 
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "PyMOL is one of the most widely used macromolecular visualization tools. It is an open source\nmolecular graphics tool used to visualize 3D structure of proteins, nucleic acids, small molecules\nelectron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on\nexperimental data of NMR, X-Ray crystallography, or Cryo-EM. PyMOL is written in Python and can be\nextended to Python plugins easily."
+
+        Label:
+            text: "Apart from the visualization of structures, PyMOL can be used as an enhanced analysis tool to study\nprotein-protein interactions, aligning protein structures, protein-ligand docking, real-time energy\nminimizing structures and secondary structure prediction, generating Ramachandran plots, electrostatic\nmap calculations, predictions of protein function etc."
+        Label:
+            text: "Link to PyMOL: https://pymol.org/2/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
 <WaltzWindow>:
     name: "waltz"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Homologous proteins across different organisms are organized in Pfam. "
+        Label:
+            text: "Link to Pfam: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
 
 <CamsolWindow>:
     name: "camsol"
 
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Homologous proteins across different organisms are organized in Pfam. "
+        Label:
+            text: "Link to Pfam: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
 <LogprotWindow>:
     name: "logprot"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Homologous proteins across different organisms are organized in Pfam. "
+        Label:
+            text: "Link to Pfam: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
 
 
 <MainWindow>:
