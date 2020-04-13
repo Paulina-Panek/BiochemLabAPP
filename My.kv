@@ -549,10 +549,10 @@ WindowManager:
     name: "expression3"
 
     GridLayout:
-        cols: 1
+        cols: 2
 
         Label:
-            text: "How do you incorporate a desired gene into the vector?"
+            text: "How do you incorporate a desired gene\ninto the vector?"
 
         Button:
             text: "Heat shock"
@@ -565,7 +565,7 @@ WindowManager:
                 app.root.current = "expression4"
 
         Button:
-            text: "Synthesize the vector from the bases in a correct sequence."
+            text: "Synthesize the vector from the bases\nin a correct sequence."
             on_release:
                 app.root.current = "wrong"
 
@@ -580,7 +580,6 @@ WindowManager:
                 root.manager.transition.direction = "right"
 
 <Expression4Window>:
-
     name: "expression4"
 
     GridLayout:
@@ -693,28 +692,32 @@ WindowManager:
     name: "lac"
 
     GridLayout:
-        cols: 1
+        cols: 2
 
         Label:
-            text: "Finally, how do you control when the desired protein is expressed?"
+            text: "Finally, how do you control when\nthe desired protein is expressed?"
 
+        Button:
+            text: "Review bacterial expression"
+            on_release:
+                root.bacexp()
         Button:
             text: "By changing the incubation temperature of the bacteria."
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "By addition of lysozyme, which induces the lac operon."
+            text: "By addition of lysozyme,\nwhich induces the lac operon."
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "By addition of Isopropyl thiogalactopyranoside (IPTG), which induces the lac operon."
+            text: "By addition of Isopropyl thiogalactopyranoside (IPTG),\nwhich induces the lac operon."
             on_release:
                 app.root.current = "lastexpression"
 
         Button:
-            text: "By treatment with cyanogen bromide, which inhibits other proteins."
+            text: "By treatment with cyanogen bromide,\nwhich inhibits other proteins."
             on_release:
                 app.root.current = "wrong"
         Button:
