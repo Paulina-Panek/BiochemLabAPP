@@ -351,11 +351,11 @@ def show_popup10():
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("my.kv")
+kv = Builder.load_file("AlohaBiochem.kv")
 
-class MyApp(App): # <- Main Class
+class AlohaBiochemApp(App): # <- Main Class
     def build(self):
         return kv
 
 if __name__ == "__main__":
-    MyApp().run()
+    AlohaBiochemApp().run()
