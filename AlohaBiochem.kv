@@ -1,0 +1,1325 @@
+WindowManager:
+    HomeWindow:
+    AboutWindow:
+    ChoiceWindow:
+    PreprogrammedWindow:
+    BlastWindow:
+    ToolsWindow:
+    UniprotWindow:
+    PfamWindow:
+    FrustWindow:
+    PymolWindow:
+    WaltzWindow:
+    CamsolWindow:
+    LogprotWindow:
+    MainWindow:
+    SecondWindow:
+    ProteinWindow:
+    ExpressionWindow:
+    WrongWindow:
+    BacterialWindow:
+    PurificationWindow:
+    IonExchangeWindow:
+    iex2Window:
+    iex2bWindow:
+    iex3Window:
+    Expression3Window:
+    Expression4Window:
+    BamhiWindow:
+    StickyAmpicilinWindow:
+    LastExpressionWindow:
+    LacWindow:
+    SECWindow:
+    SEC2Window
+    BackPurificationWindow:
+    AffinityWindow:
+    HydrophobicWindow:
+    hic2Window:
+    hic3Window:
+    AffinityQuestionWindow:
+    FinalWindow:
+    AffinityQbWindow:
+    AffinityQcWindow:
+    AffinityQdWindow:
+    AffinityQeWindow:
+
+<HomeWindow>:
+    name: "home"
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: "Welcome to Biochemistry 463L App\nLet's start with analysis of your protein. "
+
+        Button:
+            text: "Learn about your protein and bioinformatic tools"
+            on_release:
+                app.root.current = "choice"
+
+        Button:
+            text: "Learn about protein expression"
+            on_release:
+                app.root.current = "expression"
+
+        Button:
+            text: "Learn about protein purification"
+            on_release:
+                app.root.current = "purification"
+
+        Button:
+            text: "About Aloha Biochem"
+            on_release:
+                app.root.current = "about"
+        Button:
+            text: "~*~ Reset ~*~\n[Deletes previously entered protein sequence and all generated data.\nRecommended before changing the analyzed protein.]"
+            on_release:
+                root.remove_files()
+
+<AboutWindow>:
+    name: "about"
+
+<ChoiceWindow>:
+    name: "choice"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:1
+
+            Label:
+                text: "You can choose to learn about pre-programmed protein S6 (fast)\n\n                                             OR\n\ndo a live search of any protein sequence (very slow)."
+
+            Button:
+                text: "Show S6 data"
+                on_release:
+                    app.root.current = "preprogrammed"
+            Button:
+                text: "Live search\n(requires internet connection)"
+                on_release:
+                    app.root.current = "main"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+
+<PreprogrammedWindow>:
+    name: "preprogrammed"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "This window is preprogrammed for protein S6\n- it does not update"
+
+        Label:
+            text: "Name of the species the protein came from is in square brackets [  ]"
+
+        Label:
+            text: "30S ribosomal protein S6 [Thermus thermophilus]"
+
+        Label:
+            text: "Weight of this protein is:\n\n 11.931 kDa"
+
+        Button:
+            text: "Learn more about how we got this result from BLAST"
+            on_release:
+                app.root.current = "blast"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<BlastWindow>:
+    name: "blast"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        Label:
+            text: "BLAST is a tool used for aligning genetic and protein sequences among different organisms.\nThis allows users to determine the species origin of proteins/genes as well as determine\nthe homologs of the protein/gene of choice."
+        Label:
+            text: "There are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
+        Label:
+            text: "Link to BLAST: https://blast.ncbi.nlm.nih.gov/Blast.cgi"
+        Button:
+            text: "Learn about other bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<ToolsWindow>:
+    name: "tools"
+
+    GridLayout:
+        cols:2
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Following tools are available:"
+
+            Button:
+                text: "1. UniProt"
+                on_release:
+                    app.root.current = "uniprot"
+
+            Button:
+                text: "2. Pfam"
+                on_release:
+                    app.root.current = "pfam"
+
+            Button:
+                text: "3. Frustratometer"
+                on_release:
+                    app.root.current = "frust"
+
+            Button:
+                text: "4. PyMOL"
+                on_release:
+                    app.root.current = "pymol"
+
+            Button:
+                text: "5. WALTZ"
+                on_release:
+                    app.root.current = "waltz"
+
+
+            Button:
+                text: "6. CamSol"
+                on_release:
+                    app.root.current = "camsol"
+
+            Button:
+                text: "7. WebLogo Plot"
+                on_release:
+                    app.root.current = "logprot"
+
+            Button:
+                text: "8. BLAST"
+                on_release:
+                    app.root.current = "blast"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+<UniprotWindow>:
+    name: "uniprot"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "UniProt is a data base of proteins that organizes proteomes of organisms, as well as\nsequence clusters of proteins. "
+        Label:
+            text: "Link to Uniprot: https://www.uniprot.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<PfamWindow>:
+    name: "pfam"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Homologous proteins across different organisms are organized in Pfam. "
+        Label:
+            text: "Link to Pfam: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<FrustWindow>:
+    name: "frust"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Energetically favored and disfavored interactions between amino acid side chains\ncan be quantitatively assessed based on their proximity in space solved by\nexperimental data (NMR, CryoEM, X-ray crystallography).\n\nThe frustratometer can predict how point mutations in a protein can increase\nor decrease frustration of the protein.\n\nProtein Frustratometer 2 is a tool to localize energetic frustration in protein\nmolecules, now with electrostatics. "
+
+        Label:
+            text: "Link to Frustratometer: http://frustratometer.qb.fcen.uba.ar/ "
+
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<PymolWindow>:
+    name: "pymol"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "PyMOL is one of the most widely used macromolecular visualization tools. It is an open source\nmolecular graphics tool used to visualize 3D structure of proteins, nucleic acids, small molecules\nelectron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on\nexperimental data of NMR, X-Ray crystallography, or Cryo-EM. PyMOL is written in Python and can be\nextended to Python plugins easily."
+
+        Label:
+            text: "Apart from the visualization of structures, PyMOL can be used as an enhanced analysis tool to study\nprotein-protein interactions, aligning protein structures, protein-ligand docking, real-time energy\nminimizing structures and secondary structure prediction, generating Ramachandran plots, electrostatic\nmap calculations, predictions of protein function etc."
+        Label:
+            text: "Link to PyMOL: https://pymol.org/2/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<WaltzWindow>:
+    name: "waltz"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Some neurodegenerative diseases are caused by amyloid fiber formation\nof proteins, Amyotrophic Lateral Sclerosis (ALS), Parkinson's, and Alzheimer's\ndiseases. Some amino acids have a higher propensity for amyloid formation.\nWALTZ predicts regions of protein sequences prone to amyloid formation. "
+        Label:
+            text: "Link to WALTZ: https://omictools.com/waltz-tool"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<CamsolWindow>:
+    name: "camsol"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "A method for the rational design of protein variants with enhanced solubility.\nCamSol works by performing a rapid computational screening of tens of thousand\nof mutations to identify those with the greatest impact on the solubility of\nthe target protein while maintaining its native state and biological activity."
+        Label:
+            text: "Link to CamSol: https://omictools.com/camsol-tool"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<LogprotWindow>:
+    name: "logprot"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "A graphical way to quickly determine conserved amino acid residues\nin protein sequences within a family of proteins. "
+        Label:
+            text: "Link to WebLogo Plot: https://pfam.xfam.org/"
+        Button:
+            text: "Go back to list of bioinformatic tools"
+            on_release:
+                app.root.current = "tools"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+
+<MainWindow>:
+    name: "main"
+    sequence: sequence
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Paste the sequence from the FASTA file.\nInclude the header.\n\nUse Ctrl+C to paste the sequence.\n\nYou can enter any amino acid sequence."
+
+            TextInput:
+                id: sequence
+                multinline: False
+
+        Button:
+            text:"Submit"
+            on_release:
+                root.btn()
+                app.root.current = "second"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<SecondWindow>:
+    name: "second"
+    inputfasta: inputfasta
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein."
+
+        Image:
+            source: 'BLAST1.PNG'
+            size: self.texture_size
+
+        Label:
+            text: "Is the following sequence correct?"
+
+        Label:
+            id: inputfasta
+            text: "The sequence you entered should appear here. If you don't see it, start over."
+
+        Image:
+            source: 'BLAST2.PNG'
+            size: self.texture_size
+
+        Button:
+            text: "Let's do this!"
+
+            on_release:
+                app.root.current = "protein"
+                root.blastsearch()
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "I made an error, take me back."
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<ProteinWindow>:
+    name: "protein"
+    protname: protname
+    weight: weight
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Your protein was identified!"
+
+        Label:
+            text: "Name of the species it came from is in square brackets [  ]"
+
+        Label:
+            id: protname
+            text: "Something went wrong, try again!"
+
+        Label:
+            text: "Weight of this protein is:"
+
+        Label:
+            id: weight
+            text: "The weight should appear here, something went wrong"
+
+        Button:
+            text: "Learn more about BLAST"
+            on_release:
+                app.root.current = "blast"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+
+<ExpressionWindow>:
+    name: "expression"
+
+    GridLayout:
+        cols: 2
+        size: root.width, root.height
+
+        Label:
+            text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
+
+        Button:
+            text: "Review protein expression"
+            on_release:
+                root.showrevexp()
+            background_color: (0.17, 1.19, 0.51, 1)
+
+        Button:
+            text: "Mammalian cell culture"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Order it on Amazon"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Bacterial cell culture"
+            on_release:
+                app.root.current = "bacterial"
+
+        Button:
+            text: "Order it on Fisher Scientific"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+<BacterialWindow>:
+    name: "bacterial"
+
+    GridLayout:
+        cols: 2
+
+        Label:
+            text: "You need a circular vector to express your protein\nin bacteria. For example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in\nan uncloned pET3A vector?"
+
+        Button:
+            text: "Show pET-3A vector"
+            on_release:
+                root.showpet()
+            background_color: (1.36, 2.04, 2.38, 1)
+
+        Button:
+            text: "Review vectors"
+            on_release:
+                root.revvec()
+            background_color: (0.68, 1.70, 1.53, 1)
+
+        Button:
+            text: "3"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "4.6"
+            on_release:
+                app.root.current = "expression3"
+
+        Button:
+            text: "10"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "30"
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Expression3Window>:
+    name: "expression3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you incorporate a desired gene\ninto the vector?"
+
+        Button:
+            text: "Heat shock"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Restriction enzymes"
+            on_release:
+                app.root.current = "expression4"
+
+        Button:
+            text: "Synthesize the vector from the bases\nin a correct sequence."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Mix the vectors and the DNA for 24h in acidic solution."
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<Expression4Window>:
+    name: "expression4"
+
+    GridLayout:
+        cols: 2
+
+        Label:
+            text: "Which restriction enzyme would you use with this vector?"
+
+        Button:
+            text: "Show me the sequence of pET-3A"
+            on_release:
+                root.showpetseq()
+
+        Button:
+            text: "NdeI"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "BamHI"
+            on_release:
+                app.root.current = "bamhi"
+
+        Button:
+            text: "EcoRI"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "NcoI"
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<P>:
+    Label:
+        id: pet3aseq
+        text: "this should not show"
+        text_size: root.width, None
+        size: self.texture_size
+
+<BamhiWindow>:
+    name: "bamhi"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Restriction enzymes produce either sticky or blunt ends.\nWhich ones do you think are desired for vector incorporation?"
+
+        Button:
+            text: "Show sticky and blunt ends example"
+            on_release:
+                root.showends()
+        Button:
+            text: "Blunt ends are more desirable."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Sticky ends are more desirable."
+            on_release:
+                app.root.current = "stickyampicilin"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+
+<StickyAmpicilinWindow>:
+    name: "stickyampicilin"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you determine if bacteria picked up the vector?"
+
+        Button:
+            text: "All bacteria always pick up the vector."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Various stains are used to verify that."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The leftover vector concentration is quantified."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Vector contains antibiotic resistance genes, so only those bacteria survive."
+            on_release:
+                app.root.current = "lac"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<LacWindow>:
+    name: "lac"
+
+    GridLayout:
+        cols: 2
+
+        Label:
+            text: "Finally, how do you control when\nthe desired protein is expressed?"
+
+        Button:
+            text: "Review bacterial expression"
+            on_release:
+                root.bacexp()
+        Button:
+            text: "By changing the incubation temperature of the bacteria."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "By addition of lysozyme,\nwhich induces the lac operon."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "By addition of Isopropyl thiogalactopyranoside (IPTG),\nwhich induces the lac operon."
+            on_release:
+                app.root.current = "lastexpression"
+
+        Button:
+            text: "By treatment with cyanogen bromide,\nwhich inhibits other proteins."
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<LastExpressionWindow>:
+    name: "lastexpression"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct! You are done with the expression module!"
+
+        Label:
+            text: "To release bacterial recombinantly expressed proteins from the cells\nto purify in vitro, there are three main methods of lysing cells. Sonication,\narguably the most widely used due to its ease of use, uses sonic waves at\nhigh frequencies to lyse cells.\n"
+
+        Label:
+            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes\nof the protein of choice. These characteristics include solubility, temperature of denaturant,\nisoelectric point (pI). Before column chromatography, some proteins are purified using\nsolubility or temperature as the varied method. Some proteins are soluble at high salt\nconcentrations and other proteins are not, and therefore adding Ammonium sulfate\nto a homogenate of protein can separate out the target protein."
+        Label:
+            text: "After these steps, column chromatography can be used."
+        Button:
+            text: "Continue to Purification Module"
+            on_release:
+                app.root.current = "purification"
+
+        Button:
+            text: "Go back Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<PurificationWindow>:
+    name: "purification"
+
+    GridLayout:
+        cols:2
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Following methods are available:"
+
+            Button:
+                text: "1. Size-exclusion chromatography\n   (SEC)"
+                on_release:
+                    app.root.current = "sec"
+
+            Button:
+                text: "2. Ion-exchange chromatography\n   (IEX)"
+                on_release:
+                    app.root.current = "ionexchange"
+
+            Button:
+                text: "3. Hydrophobic interaction chromatography\n   (HIC)"
+                on_release:
+                    app.root.current = "hydrophobic"
+
+            Button:
+                text: "4. Affinity chromatography\n   (AC)"
+                on_release:
+                    app.root.current = "affinity"
+
+            Button:
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+<IonExchangeWindow>:
+    name: "ionexchange"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "In ion-exchange chromatography, charged molecules in the sample\nare separated by the electrostatic forces of attraction when passed\nthrough the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the\nions present in the solution and those present in the ion exchange resin."
+
+        Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showiex()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "iex2"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+
+
+<iex2Window>:
+    name: "iex2"
+    isoelectric: isoelectric
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "IEX column may use a positive or negative resin. For the protein to bind,\nbuffer with proper pH must be selected."
+
+        Button:
+            text: "Show me the rules of buffer selection."
+            on_release:
+                root.showiexrule()
+
+        Label:
+            id: isoelectric
+            text: "You pI should be displayed here."
+
+        Button:
+            text: "Continue to next question.\nYou will need information from this window to answer."
+            on_release:
+                app.root.current = "iex2b"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<iex2bWindow>:
+    name: "iex2b"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "In cation exchange chromatography:"
+
+        Button:
+            text: "The molecule of interest and resin are both positive."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The molecule of interest is positive and the resin in negative."
+            on_release:
+                app.root.current = "iex3"
+
+        Button:
+            text: "The molecule of interest is negative and the resin is positive."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The molecule of interest and resin are both negative."
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<iex3Window>:
+    name: "iex3"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "If the resin has a negative charge and pI = 6.3,\nwhat is a good pH for the buffer used IEX?"
+
+        Button:
+            text: "7.5"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "6.3"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "5.0"
+            on_release:
+                app.root.current = "backPurification"
+
+        Button:
+            text: "4.0"
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+
+<SECWindow>:
+    name: "sec"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "In size- exclusion chromatography, molecules are separated based on their size\nas they pass through a resin packed column.\n\nChoose the correct statement below:"
+
+        Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showSEC()
+
+        Button:
+            text: "Larger molecules are eluted faster, because they are heavier."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Larger molecules are eluted faster, because they don't get trapped in the resin pores."
+            on_release:
+                app.root.current = "sec2"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<SEC2Window>:
+    name: "sec2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What do you think is the main downside of SEC?"
+
+        Button:
+            text: "E.coli might produce a protein that has the same size as the target protein."
+            on_release:
+                app.root.current = "backPurification"
+
+        Button:
+            text: "The protein might be cleaved by the resin."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "This technique only works in a narrow pH range."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Sometimes proteins bind irreversibly with the resin."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<BackPurificationWindow>:
+    name: "backPurification"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct! Proceed with the next technique."
+
+        Button:
+            text: "Go back to list of purification techniques"
+            on_release:
+                app.root.current = "purification"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+
+<AffinityWindow>:
+    name: "affinity"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Affinity chromatography utilizes reversible affinity interaction\nbetween target proteins and the stationary phase.\n\nFor example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. "
+
+        Button:
+            text: "Show me how it works!"
+            on_release:
+                root.showaffinity()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "AffinityQuestion"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<AffinityQuestionWindow>:
+    name: "AffinityQuestion"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Is affinity chromatography applicable to all proteins?"
+
+        Button:
+            text: "Yes, there are no limitations."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "No, it has to be of a specific size."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Yes, but the proteins need to be derivatized after extraction."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "No, the his-tag needs to be added during the expression step."
+            on_release:
+                app.root.current = "AffinityQb"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<AffinityQbWindow>:
+    name: "AffinityQb"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "How do you add his-tags to a protein?"
+
+        Button:
+            text: "You mix it with histidine in pH = 10 buffer"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You can only use this method with proteins naturally containing histidine."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You choose a circular vector that has his-tag sequence."
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            text: "You have to use mammalian expression system."
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<AffinityQcWindow>:
+    name: "AffinityQc"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How do you remove the his-tags after chromatography?"
+
+        Button:
+            text: "You don't, they don't change much in the protein."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You use thrombin cleavage kit."
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            text: "You use mercaptoethanol."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "You use HindIII enzyme."
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<AffinityQdWindow>:
+    name: "AffinityQd"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What column would you use in affinity chromatography of a protein with His-tag?"
+
+        Button:
+            text: "C18 column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Silica hel column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Nickel column"
+            on_release:
+                app.root.current = "AffinityQe"
+
+        Button:
+            text: "Desalting column"
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<AffinityQeWindow>:
+    name: "AffinityQe"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "If imidazole is used to elute the target analyte,\nhow can it be later separated from the protein?"
+
+        Button:
+            text: "Show imidazole structure"
+            on_release:
+                root.showimidazole()
+
+        Button:
+            text: "Size exclusion chromatography"
+            on_release:
+                app.root.current = "final"
+
+        Button:
+            text: "Second run on nickel column"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Extraction with water"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "It evaporates"
+            on_release:
+                app.root.current = "wrong"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<HydrophobicWindow>:
+    name: "hydrophobic"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Sample molecules containing hydrophobic and hydrophilic regions\nare applied to an HIC column in a high-salt buffer. The salt in the buffer\nreduces the solvation of sample solutes. As solvation decreases,\nhydrophobic regions that become exposed are adsorbed by the media.\nThe more hydrophobic the molecule, the less salt is needed\nto promote binding."
+
+        Button:
+            text: "Show me how HIC works!"
+            on_release:
+                root.showhic()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "hic2"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<hic2Window>:
+    name: "hic2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Amino acids have different levels of hydrophobicity."
+
+        Button:
+            text: "Show me how amino acids are classified."
+            on_release:
+                root.showaa()
+
+        Button:
+            text: "Continue to next question"
+            on_release:
+                app.root.current = "hic3"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<hic3Window>:
+    name: "hic3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What possible issues with this separation technique do you see?"
+
+        Button:
+            text: "Our protein does not have hydrophobic amino acids."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Our protein does not have hydrophilic amino acids."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "We need to use a special vector\n- to introduce hydrophobic amino acids to our protein."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "It is not specific enough\n- many proteins in E.coli have similar hydrophobicity."
+            on_release:
+                app.root.current = "backPurification"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+<WrongWindow>:
+    name: "wrong"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not the answer we were looking for."
+
+        Button:
+            text: "Try again!"
+            on_release:
+                app.root.current = "home"
+
+<FinalWindow>:
+    name: "final"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct!"
+
+        Label:
+            text: "Thank you! That's all we had for you."
+
+        Button:
+            text: "Show summary of all purification techniques"
+            on_release:
+                root.showallpurification()
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
