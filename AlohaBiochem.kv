@@ -80,6 +80,20 @@ WindowManager:
 <AboutWindow>:
     name: "about"
 
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        Label:
+            text: "Aloha Biochem was developed for University of Hawaii"
+
+        Label:
+            text: "Corresponding Author: Dr. Ellinor Haglund ellinorh@hawaii.edu\n\n Code written by Paulina Panek\n\n Content developed by Jennifer Simien, Paulina Panek, and Ellinor Haglund"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
 <ChoiceWindow>:
     name: "choice"
 
