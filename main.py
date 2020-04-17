@@ -25,6 +25,10 @@ class HomeWindow(Screen):
         except FileNotFoundError:
             print("no files were found")
 
+
+class AboutWindow(Screen):
+    pass
+
 ##############################
 #  PROTEIN IDENTITY MODULE  ##
 ##############################
