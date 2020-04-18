@@ -541,14 +541,24 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Some neurodegenerative diseases are caused by amyloid fiber formation\nof proteins, Amyotrophic Lateral Sclerosis (ALS), Parkinson's, and Alzheimer's\ndiseases. Some amino acids have a higher propensity for amyloid formation.\nWALTZ predicts regions of protein sequences prone to amyloid formation. "
-        Label:
-            text: "Link to WALTZ: https://omictools.com/waltz-tool"
+            text: "Some neurodegenerative diseases are caused by amyloid fiber formation of proteins, for example, Amyotrophic Lateral Sclerosis (ALS), Parkinson's, and Alzheimer's diseases.\n\nAmino acids have different propensities for amyloid formation. [ref=waltz][u]WALTZ[/u][/ref] predicts regions of the protein sequences prone to amyloid formation."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://omictools.com/waltz-tool")
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -563,16 +573,25 @@ WindowManager:
 
         Label:
             text: "A method for the rational design of protein variants with enhanced solubility.\nCamSol works by performing a rapid computational screening of tens of thousand\nof mutations to identify those with the greatest impact on the solubility of\nthe target protein while maintaining its native state and biological activity."
-
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://omictools.com/waltz-tool")
         Label:
             text: "Link to CamSol: https://omictools.com/camsol-tool"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -586,17 +605,29 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "A graphical way to quickly determine conserved amino acid residues\nin protein sequences within a family of proteins. "
+            text: "[u][ref=weblogo]WebLogo Plot[/ref][/u] is a graphical way to quickly determine conserved amino acid residues in protein sequences within a family of proteins. "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://weblogo.berkeley.edu/logo.cgi")
 
-        Label:
-            text: "Link to WebLogo Plot: https://pfam.xfam.org/"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "tools"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
