@@ -324,6 +324,7 @@ WindowManager:
             valign: "center"
 
         Button:
+            size_hint_y: 0.7
             text: "Learn about other bioinformatic tools"
             text_size: root.width, None
             size: self.texture_size
@@ -333,6 +334,7 @@ WindowManager:
                 app.root.current = "tools"
 
         Button:
+            size_hint_y: 0.7
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -348,6 +350,7 @@ WindowManager:
             cols: 1
 
             Label:
+                size_hint_y: 0.3
                 text: "Following tools are available:"
 
             GridLayout:
@@ -393,6 +396,7 @@ WindowManager:
                         app.root.current = "blast"
 
             Button:
+                size_hint_y: 0.25
                 text: "Go back to Home"
                 on_release:
                     app.root.current = "home"
@@ -518,17 +522,21 @@ WindowManager:
 
         Label:
             text: "A method for the rational design of protein variants with enhanced solubility.\nCamSol works by performing a rapid computational screening of tens of thousand\nof mutations to identify those with the greatest impact on the solubility of\nthe target protein while maintaining its native state and biological activity."
+
         Label:
             text: "Link to CamSol: https://omictools.com/camsol-tool"
+
         Button:
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <LogprotWindow>:
     name: "logprot"
 
@@ -538,12 +546,15 @@ WindowManager:
 
         Label:
             text: "A graphical way to quickly determine conserved amino acid residues\nin protein sequences within a family of proteins. "
+
         Label:
             text: "Link to WebLogo Plot: https://pfam.xfam.org/"
+
         Button:
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -563,6 +574,10 @@ WindowManager:
 
             Label:
                 text: "Paste the sequence from the FASTA file.\nInclude the header.\n\nUse Ctrl+C to paste the sequence.\n\nYou can enter any amino acid sequence."
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
 
             TextInput:
                 id: sequence
@@ -590,6 +605,10 @@ WindowManager:
 
         Label:
             text: "We will use Basic Local Alignment Search Tool (BLAST) to find out the identity of this protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Image:
             source: 'BLAST1.PNG'
@@ -597,10 +616,18 @@ WindowManager:
 
         Label:
             text: "Is the following sequence correct?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Label:
             id: inputfasta
             text: "The sequence you entered should appear here. If you don't see it, start over."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Image:
             source: 'BLAST2.PNG'
@@ -634,6 +661,10 @@ WindowManager:
 
         Label:
             text: "Name of the species it came from is in square brackets [  ]"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Label:
             id: protname
@@ -641,16 +672,25 @@ WindowManager:
 
         Label:
             text: "Weight of this protein is:"
-
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
         Label:
             id: weight
             text: "The weight should appear here, something went wrong"
-
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
         Button:
             text: "Learn more about BLAST"
             on_release:
                 app.root.current = "blast"
-
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
         Button:
             text: "Go back to Home"
             on_release:
@@ -661,20 +701,25 @@ WindowManager:
     name: "expression"
 
     GridLayout:
-        cols:1
+        cols: 1
 
-        GridLayout:
-            cols: 2
+        Label:
+            text: "To study a protein, you need to have a sample.\nHow would you produce your protein?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
-
-            Label:
-                text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
-
-            Button:
-                text: "Review protein expression"
-                on_release:
-                    root.showrevexp()
-                background_color: (0.68, 1.70, 1.53, 1)
+        Button:
+            size_hint_x: 0.5
+            text: "Review protein expression"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.showrevexp()
+            background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "Mammalian cell culture"
@@ -709,7 +754,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "You need a circular vector to express your protein in bacteria. For example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in an uncloned pET3A vector?"
+            text: "You need a circular vector to express your protein in bacteria.\nFor example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in an uncloned pET3A vector?"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -719,16 +764,17 @@ WindowManager:
             cols: 2
 
             Button:
+                text: "Review vectors"
+                on_release:
+                    root.revvec()
+                background_color: (0.68, 1.70, 1.53, 1)
+
+            Button:
                 text: "Show pET-3A vector"
                 on_release:
                     root.showpet()
                 background_color: (1.36, 2.04, 2.38, 1)
 
-            Button:
-                text: "Review vectors"
-                on_release:
-                    root.revvec()
-                background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "3"
@@ -764,7 +810,11 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "How do you incorporate a desired gene\ninto the vector?"
+            text: "How do you incorporate a desired gene into the vector?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Heat shock"
@@ -777,14 +827,23 @@ WindowManager:
                 app.root.current = "expression4"
 
         Button:
-            text: "Synthesize the vector from the bases\nin a correct sequence."
+            text: "Synthesize the vector from the bases in a correct sequence."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Mix the vectors and the DNA for 24h in acidic solution."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -798,16 +857,22 @@ WindowManager:
     GridLayout:
         cols: 1
 
-        GridLayout:
-            cols: 2
-            Label:
-                text: "Which restriction enzyme would you use with this vector?"
+        Label:
+            text: "Which restriction enzyme would work with this vector?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
-            Button:
-                text: "Show me the sequence of pET-3A"
-                on_release:
-                    root.showpetseq()
-                background_color: (1.36, 2.04, 2.38, 1)
+        Button:
+            text: "Show the sequence of pET-3A"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.showpetseq()
+            background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
             text: "NdeI"
@@ -849,7 +914,11 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Restriction enzymes produce either sticky or blunt ends.\nWhich ones do you think are desired for vector incorporation?"
+            text: "Restriction enzymes produce either sticky or blunt ends.\nWhich ones are more desirable for vector incorporation?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show sticky and blunt ends example"
@@ -882,26 +951,47 @@ WindowManager:
 
         Label:
             text: "How do you determine if bacteria picked up the vector?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "All bacteria always pick up the vector."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Various stains are used to verify that."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "The leftover vector concentration is quantified."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Vector contains antibiotic resistance genes, so only those bacteria survive."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "lac"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -915,37 +1005,59 @@ WindowManager:
     GridLayout:
         cols: 1
 
-        GridLayout:
-            cols: 2
+        Label:
+            text: "How do you control when the desired protein is expressed?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
-            Label:
-                text: "Finally, how do you control when\nthe desired protein is expressed?"
-
-            Button:
-                text: "Review bacterial expression"
-                on_release:
-                    root.bacexp()
-                background_color: (0.68, 1.70, 1.53, 1)
+        Button:
+            text: "Review bacterial expression"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.bacexp()
+            background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "By changing the incubation temperature of the bacteria."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "By addition of lysozyme,\nwhich induces the lac operon."
+            text: "By addition of lysozyme, which induces the lac operon."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "By addition of Isopropyl thiogalactopyranoside (IPTG),\nwhich induces the lac operon."
+            text: "By addition of Isopropyl thiogalactopyranoside (IPTG), which induces the lac operon."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "lastexpression"
 
         Button:
-            text: "By treatment with cyanogen bromide,\nwhich inhibits other proteins."
+            text: "By treatment with cyanogen bromide, which inhibits other proteins."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -960,22 +1072,28 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Correct! You are done with the expression module!"
+            text: "Correct! You are done with the expression module!\n\nTo release bacterial recombinantly expressed proteins from the cells to purify in vitro, there are three main methods of lysing cells. Sonication, arguably the most widely used due to its ease of use, uses sonic waves at\nhigh frequencies to lyse cells."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Label:
-            text: "To release bacterial recombinantly expressed proteins from the cells\nto purify in vitro, there are three main methods of lysing cells. Sonication,\narguably the most widely used due to its ease of use, uses sonic waves at\nhigh frequencies to lyse cells.\n"
+            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes of the protein of choice. These characteristics include solubility, temperature of denaturant, isoelectric point (pI). Before column chromatography, some proteins are purified using solubility or temperature as the varied method. Some proteins are soluble at high salt concentrations and other proteins are not, and therefore adding ammonium sulfate to a homogenate of protein can separate out the target protein.\n\nAfter these steps, column chromatography can be used"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
-        Label:
-            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes\nof the protein of choice. These characteristics include solubility, temperature of denaturant,\nisoelectric point (pI). Before column chromatography, some proteins are purified using\nsolubility or temperature as the varied method. Some proteins are soluble at high salt\nconcentrations and other proteins are not, and therefore adding Ammonium sulfate\nto a homogenate of protein can separate out the target protein."
-        Label:
-            text: "After these steps, column chromatography can be used."
         Button:
+            size_hint_y: 0.4
             text: "Continue to Purification Module"
             on_release:
                 app.root.current = "purification"
 
         Button:
             text: "Go back Home"
+            size_hint_y: 0.4
             on_release:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
