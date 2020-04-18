@@ -302,7 +302,7 @@ WindowManager:
         cols:1
         size: root.width, root.height
         Label:
-            text: "[u][ref=abcd]BLAST[/ref][/u] the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice."
+            text: "[u][ref=abcd]BLAST[/ref][/u] is the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice."
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -484,6 +484,7 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <WaltzWindow>:
     name: "waltz"
 
@@ -504,6 +505,7 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <CamsolWindow>:
     name: "camsol"
 
@@ -574,6 +576,7 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <SecondWindow>:
     name: "second"
     inputfasta: inputfasta
@@ -655,17 +658,20 @@ WindowManager:
     name: "expression"
 
     GridLayout:
-        cols: 2
-        size: root.width, root.height
+        cols:1
 
-        Label:
-            text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
+        GridLayout:
+            cols: 2
 
-        Button:
-            text: "Review protein expression"
-            on_release:
-                root.showrevexp()
-            background_color: (0.17, 1.19, 0.51, 1)
+
+            Label:
+                text: "To study a protein, you need to have a sample.\nHow would you like to produce your protein?"
+
+            Button:
+                text: "Review protein expression"
+                on_release:
+                    root.showrevexp()
+                background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "Mammalian cell culture"
@@ -692,26 +698,34 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <BacterialWindow>:
     name: "bacterial"
 
     GridLayout:
-        cols: 2
+        cols: 1
 
         Label:
-            text: "You need a circular vector to express your protein\nin bacteria. For example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in\nan uncloned pET3A vector?"
+            text: "You need a circular vector to express your protein in bacteria. For example, pET-3A vector can be used.\n\nHow many kilobases (kb) are in an uncloned pET3A vector?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
-        Button:
-            text: "Show pET-3A vector"
-            on_release:
-                root.showpet()
-            background_color: (1.36, 2.04, 2.38, 1)
+        GridLayout:
+            cols: 2
 
-        Button:
-            text: "Review vectors"
-            on_release:
-                root.revvec()
-            background_color: (0.68, 1.70, 1.53, 1)
+            Button:
+                text: "Show pET-3A vector"
+                on_release:
+                    root.showpet()
+                background_color: (1.36, 2.04, 2.38, 1)
+
+            Button:
+                text: "Review vectors"
+                on_release:
+                    root.revvec()
+                background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "3"
@@ -774,19 +788,23 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <Expression4Window>:
     name: "expression4"
 
     GridLayout:
-        cols: 2
+        cols: 1
 
-        Label:
-            text: "Which restriction enzyme would you use with this vector?"
+        GridLayout:
+            cols: 2
+            Label:
+                text: "Which restriction enzyme would you use with this vector?"
 
-        Button:
-            text: "Show me the sequence of pET-3A"
-            on_release:
-                root.showpetseq()
+            Button:
+                text: "Show me the sequence of pET-3A"
+                on_release:
+                    root.showpetseq()
+                background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
             text: "NdeI"
@@ -807,6 +825,7 @@ WindowManager:
             text: "NcoI"
             on_release:
                 app.root.current = "wrong"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -833,6 +852,8 @@ WindowManager:
             text: "Show sticky and blunt ends example"
             on_release:
                 root.showends()
+            background_color: (1.36, 2.04, 2.38, 1)
+
         Button:
             text: "Blunt ends are more desirable."
             on_release:
@@ -842,6 +863,7 @@ WindowManager:
             text: "Sticky ends are more desirable."
             on_release:
                 app.root.current = "stickyampicilin"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -896,6 +918,8 @@ WindowManager:
             text: "Review bacterial expression"
             on_release:
                 root.bacexp()
+            background_color: (0.68, 1.70, 1.53, 1)
+
         Button:
             text: "By changing the incubation temperature of the bacteria."
             on_release:
