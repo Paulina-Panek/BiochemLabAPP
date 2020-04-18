@@ -1152,28 +1152,20 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Correct! You are done with the expression module!\n\nTo release bacterial recombinantly expressed proteins from the cells to purify in vitro, there are three main methods of lysing cells. Sonication, arguably the most widely used due to its ease of use, uses sonic waves at\nhigh frequencies to lyse cells."
+            text: "Correct! You are done with the expression module!\n\nTo release bacterial recombinantly expressed proteins from the cells to purify in vitro, there are two main methods of lysing cells. Sonication, widely utilized due to its ease of use, employs sonic waves at high frequencies to lyse cells. Homogenizers use high pressure to lyse cells at a cold temperature by pushing cells through small membranes.\n\nBoth of these methods have their benefits and disadvantages and is typically chosen based on how well the protein can withstand heat produced by a sonicator, and the price tag of homogenizers.\n\nThere are other less used methods such as freeze-thaw cycles, or chemical lysate reagents.\n\nMore information is available [ref=123][u]here[/ref][/u]."
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/traditional-methods-cell-lysis.html")
 
-        Label:
-            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes of the protein of choice. These characteristics include solubility, temperature of denaturant, isoelectric point (pI). Before column chromatography, some proteins are purified using solubility or temperature as the varied method. Some proteins are soluble at high salt concentrations and other proteins are not, and therefore adding ammonium sulfate to a homogenate of protein can separate out the target protein.\n\nAfter these steps, column chromatography can be used"
-            text_size: root.width, None
-            size: self.texture_size
-            halign: "center"
-            valign: "center"
-
-        Button:
-            size_hint_y: 0.4
-            text: "Continue to Purification Module"
-            on_release:
-                app.root.current = "purification"
 
         Button:
             text: "Go back Home"
-            size_hint_y: 0.4
+            size_hint_y: 0.3
             on_release:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
@@ -1186,14 +1178,15 @@ WindowManager:
         cols:1
 
         Label:
-            text: "Following methods are available:"
+            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes of the protein of choice (solubility, temperature of denaturantion, isoelectric point (pI)).\n\nBefore column chromatography, some proteins are purified using solubility or temperature as the varied method. Some proteins are soluble at high salt concentrations and other proteins are not, and therefore adding ammonium sulfate to a homogenate of protein can separate out the target protein.\n\nAfter these initial steps, the following types of chromatography can be employed:"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
 
         Button:
-            text: "[color=#0B383C][b] Size-exclusion chromatography\n(SEC)[/color][/b]"
+            size_hint_y: 0.3
+            text: "[color=#0B383C][b] Size-exclusion chromatography (SEC)[/color][/b]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -1204,7 +1197,8 @@ WindowManager:
             background_color: (1.68, 2.16, 2.20, 1)
 
         Button:
-            text: "[color=#0B383C][b]Ion-exchange chromatography\n(IEX)[/color][/b]"
+            size_hint_y: 0.3
+            text: "[color=#0B383C][b]Ion-exchange chromatography (IEX)[/color][/b]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -1215,7 +1209,8 @@ WindowManager:
             background_color: (1.41, 2.03, 2.28, 1)
 
         Button:
-            text: "[color=#0B383C][b]Hydrophobic interaction chromatography\n(HIC)[/b][/color]"
+            size_hint_y: 0.3
+            text: "[color=#0B383C][b]Hydrophobic interaction chromatography (HIC)[/b][/color]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -1226,7 +1221,8 @@ WindowManager:
             background_color:(1.23, 1.88, 2.31, 1)
 
         Button:
-            text: "[color=#0B383C][b]Affinity chromatography\n(AC)[/b][/color]"
+            size_hint_y: 0.3
+            text: "[color=#0B383C][b]Affinity chromatography (AC)[/b][/color]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -1237,6 +1233,7 @@ WindowManager:
             background_color:  (1.36, 1.65, 2.21, 1)
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
