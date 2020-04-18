@@ -119,7 +119,8 @@ class ProteinWindow(Screen):
         self.protname.text = reduced_title   #updates sequence identity on the app screen
 
 class BlastWindow(Screen):
-    pass
+    def OpenLink(address):
+        webbrowser.open("https://blast.ncbi.nlm.nih.gov/Blast.cgi")
 
 class ToolsWindow(Screen):
     pass

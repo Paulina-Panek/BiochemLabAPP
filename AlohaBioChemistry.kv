@@ -214,19 +214,36 @@ WindowManager:
             cols:1
 
             Label:
-                text: "You can choose to learn about pre-programmed protein S6 (fast)\n\n                                             OR\n\ndo a live search of any protein sequence (very slow)."
+                text: "You can choose to learn about Ribosomal Protein Subunit 6 (S6) [fast]\n\nOR\n\ndo a live search of any protein sequence [slow]."
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
 
             Button:
-                text: "Show S6 data"
+                text: "Show data for S6"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
                 on_release:
                     app.root.current = "preprogrammed"
+
             Button:
                 text: "Live search\n(requires internet connection)"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
                 on_release:
                     app.root.current = "main"
 
             Button:
                 text: "Go back to Home"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
                 on_release:
                     app.root.current = "home"
                 background_color: (0.51, 0.34, 1.36, 1)
@@ -239,24 +256,41 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "This window is preprogrammed for protein S6\n- it does not update"
-
-        Label:
-            text: "Name of the species the protein came from is in square brackets [  ]"
+            text: "This window is preprogrammed for protein S6\n- it does not update.\n\nName of the species the protein came from is in square brackets [  ]."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Label:
             text: "30S ribosomal protein S6 [Thermus thermophilus]"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Label:
             text: "Weight of this protein is:\n\n 11.931 kDa"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Learn more about how we got this result from BLAST"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "blast"
 
         Button:
             text: "Go back to Home"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
@@ -268,15 +302,32 @@ WindowManager:
         cols:1
         size: root.width, root.height
         Label:
-            text: "BLAST is a tool used for aligning genetic and protein sequences among different organisms.\nThis allows users to determine the species origin of proteins/genes as well as determine\nthe homologs of the protein/gene of choice."
+            text: "[u][ref=abcd]BLAST[/ref][/u] the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://blast.ncbi.nlm.nih.gov/Blast.cgi")
+
         Label:
             text: "There are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
-        Label:
-            text: "Link to BLAST: https://blast.ncbi.nlm.nih.gov/Blast.cgi"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
         Button:
             text: "Learn about other bioinformatic tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "tools"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -290,51 +341,53 @@ WindowManager:
         cols:2
 
         GridLayout:
-            cols: 2
+            cols: 1
 
             Label:
                 text: "Following tools are available:"
 
-            Button:
-                text: "1. UniProt"
-                on_release:
-                    app.root.current = "uniprot"
+            GridLayout:
+                cols: 2
 
-            Button:
-                text: "2. Pfam"
-                on_release:
-                    app.root.current = "pfam"
+                Button:
+                    text: "1. UniProt"
+                    on_release:
+                        app.root.current = "uniprot"
 
-            Button:
-                text: "3. Frustratometer"
-                on_release:
-                    app.root.current = "frust"
+                Button:
+                    text: "2. Pfam"
+                    on_release:
+                        app.root.current = "pfam"
 
-            Button:
-                text: "4. PyMOL"
-                on_release:
-                    app.root.current = "pymol"
+                Button:
+                    text: "3. Frustratometer"
+                    on_release:
+                        app.root.current = "frust"
 
-            Button:
-                text: "5. WALTZ"
-                on_release:
-                    app.root.current = "waltz"
+                Button:
+                    text: "4. PyMOL"
+                    on_release:
+                        app.root.current = "pymol"
 
+                Button:
+                    text: "5. WALTZ"
+                    on_release:
+                        app.root.current = "waltz"
 
-            Button:
-                text: "6. CamSol"
-                on_release:
-                    app.root.current = "camsol"
+                Button:
+                    text: "6. CamSol"
+                    on_release:
+                        app.root.current = "camsol"
 
-            Button:
-                text: "7. WebLogo Plot"
-                on_release:
-                    app.root.current = "logprot"
+                Button:
+                    text: "7. WebLogo Plot"
+                    on_release:
+                        app.root.current = "logprot"
 
-            Button:
-                text: "8. BLAST"
-                on_release:
-                    app.root.current = "blast"
+                Button:
+                    text: "8. BLAST"
+                    on_release:
+                        app.root.current = "blast"
 
             Button:
                 text: "Go back to Home"
