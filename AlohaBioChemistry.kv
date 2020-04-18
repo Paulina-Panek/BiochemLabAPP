@@ -162,12 +162,15 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "It is recommended you follow the sections in order, but it is not necessary.\n\nClicking outside of a popup window or pressing esc will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through live BLAST search.\n\nIt is recommended when switching the query amino acid sequence."
+            text: "It is recommended you follow the modules in order, but it is not necessary.\n\nClicking outside of a popup window or pressing [i]esc[/i] will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through a live BLAST search. It is recommended when switching the query amino acid sequence.\n\nIf you run into problems displaying images within the app, switch to a full-screen mode."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             markup: True
+
+        Label:
+            text:""
 
         Button:
             text: "Go back to Home"
@@ -203,6 +206,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <ChoiceWindow>:
     name: "choice"
 
@@ -346,44 +350,47 @@ WindowManager:
             Label:
                 text: "Following tools are available:"
 
-            Button:
-                text: "1. UniProt"
-                on_release:
-                    app.root.current = "uniprot"
+            GridLayout:
+                cols: 2
 
-            Button:
-                text: "2. Pfam"
-                on_release:
-                    app.root.current = "pfam"
+                Button:
+                    text: "1. UniProt"
+                    on_release:
+                        app.root.current = "uniprot"
 
-            Button:
-                text: "3. Frustratometer"
-                on_release:
-                    app.root.current = "frust"
+                Button:
+                    text: "2. Pfam"
+                    on_release:
+                        app.root.current = "pfam"
 
-            Button:
-                text: "4. PyMOL"
-                on_release:
-                    app.root.current = "pymol"
-            Button:
-                text: "5. WALTZ"
-                on_release:
-                    app.root.current = "waltz"
+                Button:
+                    text: "3. Frustratometer"
+                    on_release:
+                        app.root.current = "frust"
 
-            Button:
-                text: "6. CamSol"
-                on_release:
-                    app.root.current = "camsol"
+                Button:
+                    text: "4. PyMOL"
+                    on_release:
+                        app.root.current = "pymol"
+                Button:
+                    text: "5. WALTZ"
+                    on_release:
+                        app.root.current = "waltz"
 
-            Button:
-                text: "7. WebLogo Plot"
-                on_release:
-                    app.root.current = "logprot"
+                Button:
+                    text: "6. CamSol"
+                    on_release:
+                        app.root.current = "camsol"
 
-            Button:
-                text: "8. BLAST"
-                on_release:
-                    app.root.current = "blast"
+                Button:
+                    text: "7. WebLogo Plot"
+                    on_release:
+                        app.root.current = "logprot"
+
+                Button:
+                    text: "8. BLAST"
+                    on_release:
+                        app.root.current = "blast"
 
             Button:
                 text: "Go back to Home"
@@ -901,20 +908,24 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <LacWindow>:
     name: "lac"
 
     GridLayout:
-        cols: 2
+        cols: 1
 
-        Label:
-            text: "Finally, how do you control when\nthe desired protein is expressed?"
+        GridLayout:
+            cols: 2
 
-        Button:
-            text: "Review bacterial expression"
-            on_release:
-                root.bacexp()
-            background_color: (0.68, 1.70, 1.53, 1)
+            Label:
+                text: "Finally, how do you control when\nthe desired protein is expressed?"
+
+            Button:
+                text: "Review bacterial expression"
+                on_release:
+                    root.bacexp()
+                background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
             text: "By changing the incubation temperature of the bacteria."
@@ -978,24 +989,44 @@ WindowManager:
 
         Label:
             text: "Following methods are available:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
-            text: "1. Size-exclusion chromatography\n   (SEC)"
+            text: "1. Size-exclusion chromatography (SEC)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "sec"
 
         Button:
-            text: "2. Ion-exchange chromatography\n   (IEX)"
+            text: "2. Ion-exchange chromatography (IEX)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "ionexchange"
 
         Button:
-            text: "3. Hydrophobic interaction chromatography\n   (HIC)"
+            text: "3. Hydrophobic interaction chromatography (HIC)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "hydrophobic"
 
         Button:
-            text: "4. Affinity chromatography\n   (AC)"
+            text: "4. Affinity chromatography (AC)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "affinity"
 
@@ -1012,8 +1043,11 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "In ion-exchange chromatography, charged molecules in the sample\nare separated by the electrostatic forces of attraction when passed\nthrough the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the\nions present in the solution and those present in the ion exchange resin."
-
+            text: "In ion-exchange chromatography, charged molecules in the sample are separated by the electrostatic forces of attraction when passed through the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the ions present in the solution and those present in the ion exchange resin."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
         Button:
             text: "Show me how it works!"
             on_release:
@@ -1039,7 +1073,11 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "IEX column may use a positive or negative resin. For the protein to bind,\nbuffer with proper pH must be selected."
+            text: "IEX column may use a positive or negative resin. For the protein to bind, buffer with proper pH must be selected."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show me the rules of buffer selection."
@@ -1051,7 +1089,11 @@ WindowManager:
             text: "You pI should be displayed here."
 
         Button:
-            text: "Continue to next question.\nYou will need information from this window to answer."
+            text: "Continue to next question. You will need information from this window to answer."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "iex2b"
         Button:
@@ -1060,6 +1102,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <iex2bWindow>:
     name: "iex2b"
 
@@ -1067,19 +1110,36 @@ WindowManager:
         cols: 1
         Label:
             text: "In cation exchange chromatography:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "The molecule of interest and resin are both positive."
+
             on_release:
                 app.root.current = "wrong"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "The molecule of interest is positive and the resin in negative."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "iex3"
 
         Button:
             text: "The molecule of interest is negative and the resin is positive."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
@@ -1093,13 +1153,18 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <iex3Window>:
     name: "iex3"
 
     GridLayout:
         cols: 1
         Label:
-            text: "If the resin has a negative charge and pI = 6.3,\nwhat is a good pH for the buffer used IEX?"
+            text: "If the resin has a negative charge and pI = 6.3, what is a good pH for the buffer used IEX?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "7.5"
@@ -1120,6 +1185,7 @@ WindowManager:
             text: "4.0"
             on_release:
                 app.root.current = "wrong"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -1133,20 +1199,33 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "In size- exclusion chromatography, molecules are separated based on their size\nas they pass through a resin packed column.\n\nChoose the correct statement below:"
+            text: "In size- exclusion chromatography, molecules are separated based on their size as they pass through a resin packed column.\n\nChoose the correct statement below:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show me how it works!"
             on_release:
                 root.showSEC()
             background_color: (1.36, 2.04, 2.38, 1)
+
         Button:
             text: "Larger molecules are eluted faster, because they are heavier."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Larger molecules are eluted faster, because they don't get trapped in the resin pores."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "sec2"
 
@@ -1156,6 +1235,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <SEC2Window>:
     name: "sec2"
 
@@ -1164,19 +1244,35 @@ WindowManager:
 
         Label:
             text: "What do you think is the main downside of SEC?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "E.coli might produce a protein that has the same size as the target protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "backPurification"
 
         Button:
             text: "The protein might be cleaved by the resin."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "This technique only works in a narrow pH range."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
@@ -1184,6 +1280,10 @@ WindowManager:
             text: "Sometimes proteins bind irreversibly with the resin."
             on_release:
                 app.root.current = "wrong"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Go back to Home"
@@ -1191,6 +1291,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <BackPurificationWindow>:
     name: "backPurification"
 
@@ -1218,23 +1319,42 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Affinity chromatography utilizes reversible affinity interaction\nbetween target proteins and the stationary phase.\n\nFor example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. "
+            text: "Affinity chromatography utilizes reversible affinity interaction between target proteins and the stationary phase.\n\nFor example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show me how it works!"
             on_release:
                 root.showaffinity()
             background_color: (1.36, 2.04, 2.38, 1)
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
         Button:
             text: "Continue to next question"
             on_release:
                 app.root.current = "AffinityQuestion"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
 <AffinityQuestionWindow>:
     name: "AffinityQuestion"
 
@@ -1242,32 +1362,54 @@ WindowManager:
         cols: 1
         Label:
             text: "Is affinity chromatography applicable to all proteins?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Yes, there are no limitations."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "No, it has to be of a specific size."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Yes, but the proteins need to be derivatized after extraction."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "No, the his-tag needs to be added during the expression step."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "AffinityQb"
+
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <AffinityQbWindow>:
     name: "AffinityQb"
 
@@ -1279,21 +1421,37 @@ WindowManager:
 
         Button:
             text: "You mix it with histidine in pH = 10 buffer"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "You can only use this method with proteins naturally containing histidine."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "You choose a circular vector that has his-tag sequence."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "AffinityQc"
 
         Button:
             text: "You have to use mammalian expression system."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
         Button:
@@ -1302,6 +1460,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <AffinityQcWindow>:
     name: "AffinityQc"
 
@@ -1310,9 +1469,17 @@ WindowManager:
 
         Label:
             text: "How do you remove the his-tags after chromatography?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "You don't, they don't change much in the protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
@@ -1336,6 +1503,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <AffinityQdWindow>:
     name: "AffinityQd"
 
@@ -1344,6 +1512,10 @@ WindowManager:
 
         Label:
             text: "What column would you use in affinity chromatography of a protein with His-tag?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "C18 column"
@@ -1370,6 +1542,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <AffinityQeWindow>:
     name: "AffinityQe"
 
@@ -1377,15 +1550,20 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "If imidazole is used to elute the target analyte,\nhow can it be later separated from the protein?"
+            text: "If imidazole is used to elute the target analyte, how can it be later separated from the protein?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show imidazole structure"
             on_release:
                 root.showimidazole()
             background_color: (1.36, 2.04, 2.38, 1)
+
         Button:
-            text: "Size exclusion chromatography"
+            text: "Size-exclusion chromatography"
             on_release:
                 app.root.current = "final"
 
@@ -1409,6 +1587,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <HydrophobicWindow>:
     name: "hydrophobic"
 
@@ -1416,6 +1595,10 @@ WindowManager:
         cols: 1
         Label:
             text: "Sample molecules containing hydrophobic and hydrophilic regions\nare applied to an HIC column in a high-salt buffer. The salt in the buffer\nreduces the solvation of sample solutes. As solvation decreases,\nhydrophobic regions that become exposed are adsorbed by the media.\nThe more hydrophobic the molecule, the less salt is needed\nto promote binding."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show me how HIC works!"
@@ -1441,22 +1624,29 @@ WindowManager:
 
         Label:
             text: "Amino acids have different levels of hydrophobicity."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Show me how amino acids are classified."
             on_release:
                 root.showaa()
             background_color: (1.36, 2.04, 2.38, 1)
+
         Button:
             text: "Continue to next question"
             on_release:
                 app.root.current = "hic3"
+
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <hic3Window>:
     name: "hic3"
 
@@ -1465,26 +1655,47 @@ WindowManager:
 
         Label:
             text: "What possible issues with this separation technique do you see?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
             text: "Our protein does not have hydrophobic amino acids."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
             text: "Our protein does not have hydrophilic amino acids."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "We need to use a special vector\n- to introduce hydrophobic amino acids to our protein."
+            text: "We need to use a special vector - to introduce hydrophobic amino acids to our protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "wrong"
 
         Button:
-            text: "It is not specific enough\n- many proteins in E.coli have similar hydrophobicity."
+            text: "It is not specific enough - many proteins in E.coli have similar hydrophobicity."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "backPurification"
+
         Button:
             text: "Go back to Home"
             on_release:
