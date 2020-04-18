@@ -1,5 +1,6 @@
 WindowManager:
     HomeWindow:
+    Exp01Window:
     InstructionWindow:
     AboutWindow:
     ChoiceWindow:
@@ -77,7 +78,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "expression"
+                app.root.current = "exp01"
             background_color: (1.94, 2.27, 2.10, 1)
 
         Button:
@@ -392,7 +393,7 @@ WindowManager:
                     background_color: (1.55, 2.10, 2.25, 1)
 
                 Button:
-                    text:  "[color=#0B383C][b]Camsol[/color][/b]"
+                    text:  "[color=#0B383C][b]CamSol[/color][/b]"
                     markup: True
                     on_release:
                         app.root.current = "camsol"
@@ -776,6 +777,79 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+<Exp01Window>:
+    name: "exp01"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Choose where you'd like to start:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "[color=#0B383C][b]Review protein expression[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.showrevexp()
+            background_color: (2.21, 2.36, 1.91, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Review bacterial expression[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+            background_color: (2.08, 2.31, 2.02, 1)
+        Button:
+            text: "[color=#0B383C][b]Review vectors[/color][/b]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+            background_color: (1.94, 2.27, 2.10, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Review cell lysis[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bacterial"
+            background_color: (1.81, 2.21, 2.16, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Quiz[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+            background_color: (1.68, 2.16, 2.20, 1)
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 
 <ExpressionWindow>:
     name: "expression"

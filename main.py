@@ -155,6 +155,9 @@ class ExpressionWindow(Screen):
     def showrevexp(self):
         showrevexp1()
 
+class Exp01Window(Screen):
+    pass
+
 def showrevexp1():
     popupWindow33 = Popup(title="Expression Review", content = Label(text="There are many different ways to recombinantly express protein;\nusing bacteria, yeast, or even human cells. For the purpose of\nthis application we will focus on bacterial recombinant expression.\n\nFor E. coli, there are many different strains with different specialties,\nsuch as highly competent (having higher affinity for inserting\nDNA into their systems) and high protein expression. The usage\nof different strains is dependent on the protein of choice."), size_hint =(0.8,0.8))
     popupWindow33.open()
