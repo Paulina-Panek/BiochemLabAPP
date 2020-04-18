@@ -346,48 +346,44 @@ WindowManager:
             Label:
                 text: "Following tools are available:"
 
-            GridLayout:
-                cols: 2
+            Button:
+                text: "1. UniProt"
+                on_release:
+                    app.root.current = "uniprot"
 
-                Button:
-                    text: "1. UniProt"
-                    on_release:
-                        app.root.current = "uniprot"
+            Button:
+                text: "2. Pfam"
+                on_release:
+                    app.root.current = "pfam"
 
-                Button:
-                    text: "2. Pfam"
-                    on_release:
-                        app.root.current = "pfam"
+            Button:
+                text: "3. Frustratometer"
+                on_release:
+                    app.root.current = "frust"
 
-                Button:
-                    text: "3. Frustratometer"
-                    on_release:
-                        app.root.current = "frust"
+            Button:
+                text: "4. PyMOL"
+                on_release:
+                    app.root.current = "pymol"
+            Button:
+                text: "5. WALTZ"
+                on_release:
+                    app.root.current = "waltz"
 
-                Button:
-                    text: "4. PyMOL"
-                    on_release:
-                        app.root.current = "pymol"
+            Button:
+                text: "6. CamSol"
+                on_release:
+                    app.root.current = "camsol"
 
-                Button:
-                    text: "5. WALTZ"
-                    on_release:
-                        app.root.current = "waltz"
+            Button:
+                text: "7. WebLogo Plot"
+                on_release:
+                    app.root.current = "logprot"
 
-                Button:
-                    text: "6. CamSol"
-                    on_release:
-                        app.root.current = "camsol"
-
-                Button:
-                    text: "7. WebLogo Plot"
-                    on_release:
-                        app.root.current = "logprot"
-
-                Button:
-                    text: "8. BLAST"
-                    on_release:
-                        app.root.current = "blast"
+            Button:
+                text: "8. BLAST"
+                on_release:
+                    app.root.current = "blast"
 
             Button:
                 text: "Go back to Home"
@@ -973,44 +969,43 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <PurificationWindow>:
     name: "purification"
 
     GridLayout:
-        cols:2
+        cols:1
 
-        GridLayout:
-            cols: 2
+        Label:
+            text: "Following methods are available:"
 
-            Label:
-                text: "Following methods are available:"
+        Button:
+            text: "1. Size-exclusion chromatography\n   (SEC)"
+            on_release:
+                app.root.current = "sec"
 
-            Button:
-                text: "1. Size-exclusion chromatography\n   (SEC)"
-                on_release:
-                    app.root.current = "sec"
+        Button:
+            text: "2. Ion-exchange chromatography\n   (IEX)"
+            on_release:
+                app.root.current = "ionexchange"
 
-            Button:
-                text: "2. Ion-exchange chromatography\n   (IEX)"
-                on_release:
-                    app.root.current = "ionexchange"
+        Button:
+            text: "3. Hydrophobic interaction chromatography\n   (HIC)"
+            on_release:
+                app.root.current = "hydrophobic"
 
-            Button:
-                text: "3. Hydrophobic interaction chromatography\n   (HIC)"
-                on_release:
-                    app.root.current = "hydrophobic"
+        Button:
+            text: "4. Affinity chromatography\n   (AC)"
+            on_release:
+                app.root.current = "affinity"
 
-            Button:
-                text: "4. Affinity chromatography\n   (AC)"
-                on_release:
-                    app.root.current = "affinity"
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
 
-            Button:
-                text: "Go back to Home"
-                on_release:
-                    app.root.current = "home"
-                    root.manager.transition.direction = "right"
-                background_color: (0.51, 0.34, 1.36, 1)
 <IonExchangeWindow>:
     name: "ionexchange"
 
@@ -1023,6 +1018,7 @@ WindowManager:
             text: "Show me how it works!"
             on_release:
                 root.showiex()
+            background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
             text: "Continue to next question"
@@ -1049,7 +1045,7 @@ WindowManager:
             text: "Show me the rules of buffer selection."
             on_release:
                 root.showiexrule()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Label:
             id: isoelectric
             text: "You pI should be displayed here."
@@ -1143,7 +1139,7 @@ WindowManager:
             text: "Show me how it works!"
             on_release:
                 root.showSEC()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Larger molecules are eluted faster, because they are heavier."
             on_release:
@@ -1228,7 +1224,7 @@ WindowManager:
             text: "Show me how it works!"
             on_release:
                 root.showaffinity()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Continue to next question"
             on_release:
@@ -1387,7 +1383,7 @@ WindowManager:
             text: "Show imidazole structure"
             on_release:
                 root.showimidazole()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Size exclusion chromatography"
             on_release:
@@ -1425,7 +1421,7 @@ WindowManager:
             text: "Show me how HIC works!"
             on_release:
                 root.showhic()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Continue to next question"
             on_release:
@@ -1450,7 +1446,7 @@ WindowManager:
             text: "Show me how amino acids are classified."
             on_release:
                 root.showaa()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Continue to next question"
             on_release:
@@ -1525,7 +1521,7 @@ WindowManager:
             text: "Show summary of all purification techniques"
             on_release:
                 root.showallpurification()
-
+            background_color: (1.36, 2.04, 2.38, 1)
         Button:
             text: "Go back to Home"
             on_release:
