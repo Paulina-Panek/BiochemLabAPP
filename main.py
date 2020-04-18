@@ -151,6 +151,15 @@ class LogprotWindow(Screen):
 # EXPRESSION MODULE    ###########################################
 ########################
 
+class RevbeWindow(Screen):
+    pass
+
+class RevvecWindow(Screen):
+    pass
+
+class RevclWindow(Screen):
+    pass
+
 class ExpressionWindow(Screen):
     def showrevexp(self):
         showrevexp1()
@@ -158,20 +167,12 @@ class ExpressionWindow(Screen):
 class Exp01Window(Screen):
     pass
 
-def showrevexp1():
-    popupWindow33 = Popup(title="Expression Review", content = Label(text="There are many different ways to recombinantly express protein;\nusing bacteria, yeast, or even human cells. For the purpose of\nthis application we will focus on bacterial recombinant expression.\n\nFor E. coli, there are many different strains with different specialties,\nsuch as highly competent (having higher affinity for inserting\nDNA into their systems) and high protein expression. The usage\nof different strains is dependent on the protein of choice."), size_hint =(0.8,0.8))
-    popupWindow33.open()
-
 class BacterialWindow(Screen):
     def showpet(self):
         show_popup()
 
     def revvec(self):
         show_revvec1()
-
-def show_revvec1():
-    popupWindow22 = Popup(title="Vector Review", content = Label(text="Vectors are circular pieces of DNA that is used to recombinantly express\nlarge amounts of a protein of choice. There are many different types of\nvectors, however, they share many common features.\n\nDefinitions:\n\nCloning cassette: section of vector that genes of choice are cloned\ninto using restriction enzymes.\n\nTranscription switch: typically, lac operon which can be signaled to allow\ntranscription and translation of the target gene using a molecule added\nto the growth.\n\nAntibacterial resistance: depending on the vector and antibacterial resistance,\nbacteria with this vector can be selectively grown using antibiotics."), size_hint = (0.8, 0.8))
-    popupWindow22.open()
 
 class Expression3Window(Screen):
     pass

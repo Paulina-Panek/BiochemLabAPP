@@ -17,6 +17,9 @@ WindowManager:
     MainWindow:
     SecondWindow:
     ProteinWindow:
+    RevbeWindow:
+    RevvecWindow:
+    RevclWindow:
     ExpressionWindow:
     WrongWindow:
     BacterialWindow:
@@ -798,18 +801,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                root.showrevexp()
-            background_color: (2.21, 2.36, 1.91, 1)
-
-        Button:
-            text: "[color=#0B383C][b]Review bacterial expression[/b][/color]"
-            markup: True
-            text_size: root.width, None
-            size: self.texture_size
-            halign: "center"
-            valign: "center"
-            on_release:
-                app.root.current = "wrong"
+                app.root.current = "revbe"
             background_color: (2.08, 2.31, 2.02, 1)
         Button:
             text: "[color=#0B383C][b]Review vectors[/color][/b]"
@@ -819,7 +811,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "revvec"
             background_color: (1.94, 2.27, 2.10, 1)
 
         Button:
@@ -830,7 +822,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "bacterial"
+                app.root.current = "revcl"
             background_color: (1.81, 2.21, 2.16, 1)
 
         Button:
@@ -841,7 +833,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "expression"
             background_color: (1.68, 2.16, 2.20, 1)
 
         Button:
@@ -850,6 +842,75 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<RevbeWindow>:
+    name: "revbe"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "There are many different ways to recombinantly express protein; using bacteria, yeast, or even human cells. For the purpose of this application we will focus on bacterial recombinant expression.\n\nFor E. coli, there are many different strains with different specialties, such as highly competent (having higher affinity for inserting DNA into their systems) and high protein expression. The usage of different strains is dependent on the protein of choice. A widely used E. coli strain is BL21(E3), and vectors are introduced to bacteria by transformation of the cells or heat shock.\n\nTransformed cells are then grown to a certain Optical Density (OD) which is measured by Ultraviolet-visible spectroscopy. OD is the absorbance taken of cell growth at a wavelength of 600, which is correlated to the amount of cells within the growth. Protein expression is induced with the addition of IPTG at OD of 0.5 - 0.8. Cells are collected from growth by centrifugation and can be stored for purification in -80C freezers.\n\nMore information is available [ref=pe][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-protein-expression-systems.html")
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<RevvecWindow>:
+    name: "revvec"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Vectors are circular pieces of DNA that is used to recombinantly express large amounts of a protein of choice. There are many different types of vectors, however, they share many common features.\n\n[b]Cloning cassette:[/b] section of vector that genes of choice are cloned into using restriction enzymes.\n\n[b]Transcription switch:[/b] typically, lac operon which can be signaled to allow transcription and translation of the target gene using a molecule added to the growth.\n\n[b]Antibacterial resistance:[/b] depending on the vector and antibacterial resistance, bacteria with this vector can be selectively grown using antibiotics.\n\nYou can read about available vectors [ref=vec][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.emdmillipore.com/US/en/life-science-research/genomic-analysis/dna-preparation-cloning/pet-expression-vectors/qFSb.qB.mLQAAAFA6.VkiQ0G,nav")
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<RevclWindow>:
+    name: "revcl"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "To release bacterial recombinantly expressed proteins from the cells to purify [i]in vitro[/i], there are two main methods of lysing cells.\n\n[b]Sonication[/b], widely utilized due to its ease of use, employs sonic waves at high frequencies to lyse cells.\n\n[b]Homogenizers[/b] use high pressure to lyse cells at a cold temperature by pushing cells through small membranes.\n\nBoth of these methods have their benefits and disadvantages and is typically chosen based on how well the protein can withstand heat produced by a sonicator, and the price tag of homogenizers.\n\nThere are other less used methods such as freeze-thaw cycles, or chemical lysate reagents.\n\nMore information is available [ref=123][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/traditional-methods-cell-lysis.html")
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 <ExpressionWindow>:
     name: "expression"
@@ -872,7 +933,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                root.showrevexp()
+                app.root.current = "revbe"
             background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
@@ -920,7 +981,7 @@ WindowManager:
             Button:
                 text: "Review vectors"
                 on_release:
-                    root.revvec()
+                    app.root.current = "revvec"
                 background_color: (0.68, 1.70, 1.53, 1)
 
             Button:
@@ -1226,15 +1287,12 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Correct! You are done with the expression module!\n\nTo release bacterial recombinantly expressed proteins from the cells to purify in vitro, there are two main methods of lysing cells. Sonication, widely utilized due to its ease of use, employs sonic waves at high frequencies to lyse cells. Homogenizers use high pressure to lyse cells at a cold temperature by pushing cells through small membranes.\n\nBoth of these methods have their benefits and disadvantages and is typically chosen based on how well the protein can withstand heat produced by a sonicator, and the price tag of homogenizers.\n\nThere are other less used methods such as freeze-thaw cycles, or chemical lysate reagents.\n\nMore information is available [ref=123][u]here[/ref][/u]."
+            text: "Correct! You are done with the expression module!"
             markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
-            on_ref_press:
-                import webbrowser
-                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/traditional-methods-cell-lysis.html")
 
 
         Button:
