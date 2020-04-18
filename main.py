@@ -13,6 +13,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 import os
+import webbrowser
 
 class HomeWindow(Screen):
     def remove_files(self):
@@ -25,9 +26,13 @@ class HomeWindow(Screen):
         except FileNotFoundError:
             print("no files were found")
 
+class InstructionWindow(Screen):
+    pass
 
 class AboutWindow(Screen):
-    pass
+
+    def OpenLink(address):
+        webbrowser.open("https://manoa.hawaii.edu/")
 
 ##############################
 #  PROTEIN IDENTITY MODULE  ##
@@ -355,11 +360,11 @@ def show_popup10():
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("AlohaBiochem.kv")
+kv = Builder.load_file("AlohaBioChemistry.kv")
 
-class AlohaBiochemApp(App): # <- Main Class
+class AlohaBioChemistryApp(App): # <- Main Class
     def build(self):
         return kv
 
 if __name__ == "__main__":
-    AlohaBiochemApp().run()
+    AlohaBioChemistryApp().run()
