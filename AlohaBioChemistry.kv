@@ -459,14 +459,24 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Homologous proteins across different organisms are organized in Pfam. "
-        Label:
-            text: "Link to Pfam: https://pfam.xfam.org/"
+            text: "Homologous proteins across different organisms are organized in [u][ref=pfam]Pfam[/u][/ref]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://pfam.xfam.org/")
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -572,7 +582,7 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "A method for the rational design of protein variants with enhanced solubility.\nCamSol works by performing a rapid computational screening of tens of thousand\nof mutations to identify those with the greatest impact on the solubility of\nthe target protein while maintaining its native state and biological activity."
+            text: "[u][ref=camsol]CamSol[/u][/ref] works by performing a rapid computational screening of tens of thousand\nof mutations to identify those with the greatest impact on the solubility of\nthe target protein while maintaining its native state and biological activity. It is a method for the rational design of protein variants with enhanced solubility."
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -580,9 +590,7 @@ WindowManager:
             valign: "center"
             on_ref_press:
                 import webbrowser
-                webbrowser.open("https://omictools.com/waltz-tool")
-        Label:
-            text: "Link to CamSol: https://omictools.com/camsol-tool"
+                webbrowser.open("https://omictools.com/camsol-tool")
 
         Button:
             size_hint_y: 0.3
