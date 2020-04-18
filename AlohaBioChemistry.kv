@@ -53,22 +53,31 @@ WindowManager:
 
         Label:
             text: "Welcome to Aloha BioChemistry App"
-
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
-            text: "Module 1: Bioinformatic Tools"
+            text: "[color=#0B383C][b]Module 1: [/b]Bioinformatic Tools[/color]"
+            markup: True
             on_release:
                 app.root.current = "choice"
+            background_color: (2.21, 2.36, 1.91, 1)
 
         Button:
-            text: "Module 2: Protein Expression"
+            text: "[color=#0B383C][b]Module 2: [/b]Protein Expression[/color]"
+            markup: True
             on_release:
                 app.root.current = "expression"
+            background_color: (1.94, 2.27, 2.10, 1)
 
         Button:
-            text: "Module 3: Protein Purification"
+            text: "[color=#0B383C][b]Module 3: [/b]Protein Purification[/color]"
+            markup: True
             on_release:
                 app.root.current = "purification"
+            background_color: (1.68, 2.16, 2.20, 1)
 
         GridLayout:
             cols: 2
@@ -82,6 +91,21 @@ WindowManager:
                 text: "Reset"
                 on_release:
                     root.remove_files()
+
+            Button:
+                text: "Links to tools"
+                on_release:
+                    app.root.current = "linkstools"
+
+            Button:
+                text: "Links to videos"
+                on_release:
+                    app.root.current = "linksvideo"
+
+            Button:
+                text: "References"
+                on_release:
+                    app.root.current = "refs"
 
             Button:
                 text: "About Aloha BioChemistry"
@@ -110,6 +134,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <AboutWindow>:
     name: "about"
 
@@ -135,6 +160,8 @@ WindowManager:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
 <ChoiceWindow>:
     name: "choice"
 
