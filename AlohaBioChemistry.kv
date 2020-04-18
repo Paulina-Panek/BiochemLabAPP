@@ -61,6 +61,10 @@ WindowManager:
         Button:
             text: "[color=#0B383C][b]Module 1: [/b]Bioinformatic Tools[/color]"
             markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "choice"
             background_color: (2.21, 2.36, 1.91, 1)
@@ -68,6 +72,10 @@ WindowManager:
         Button:
             text: "[color=#0B383C][b]Module 2: [/b]Protein Expression[/color]"
             markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "expression"
             background_color: (1.94, 2.27, 2.10, 1)
@@ -75,6 +83,10 @@ WindowManager:
         Button:
             text: "[color=#0B383C][b]Module 3: [/b]Protein Purification[/color]"
             markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "purification"
             background_color: (1.68, 2.16, 2.20, 1)
@@ -84,31 +96,61 @@ WindowManager:
 
             Button:
                 text: "Quick instructions"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     app.root.current = "instruction"
 
             Button:
                 text: "Reset"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     root.remove_files()
 
             Button:
                 text: "Links to tools"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     app.root.current = "linkstools"
 
             Button:
                 text: "Links to videos"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     app.root.current = "linksvideo"
 
             Button:
                 text: "References"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     app.root.current = "refs"
 
             Button:
                 text: "About Aloha BioChemistry"
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
                 on_release:
                     app.root.current = "about"
 
@@ -120,14 +162,13 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "It is recommended you follow the sections in order, but it is not necessary"
-        Label:
-            text: "Clicking outside of a popup window or pressing esc will close it"
-        Label:
-            text: "[u]Underlined text[/u] symbolizes a clickable link"
+            text: "It is recommended you follow the sections in order, but it is not necessary.\n\nClicking outside of a popup window or pressing esc will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through live BLAST search.\n\nIt is recommended when switching the query amino acid sequence."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             markup: True
-        Label:
-            text: "Reset button on the Home window deletes any data generated through live BLAST\nsearch. It is recommended when switching the query amino acid sequence. "
+
         Button:
             text: "Go back to Home"
             on_release:
