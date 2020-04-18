@@ -324,7 +324,7 @@ WindowManager:
             valign: "center"
 
         Button:
-            size_hint_y: 0.7
+            size_hint_y: 0.5
             text: "Learn about other bioinformatic tools"
             text_size: root.width, None
             size: self.texture_size
@@ -334,7 +334,7 @@ WindowManager:
                 app.root.current = "tools"
 
         Button:
-            size_hint_y: 0.7
+            size_hint_y: 0.5
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -378,7 +378,7 @@ WindowManager:
                     background_color: (1.81, 2.21, 2.16, 1)
 
                 Button:
-                    text:  "[color=#0B383C][b]PyMol[/color][/b]"
+                    text:  "[color=#0B383C][b]PyMOL[/color][/b]"
                     markup: True
                     on_release:
                         app.root.current = "pymol"
@@ -428,14 +428,24 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "UniProt is a data base of proteins that organizes proteomes of organisms, as well as\nsequence clusters of proteins. "
-        Label:
-            text: "Link to Uniprot: https://www.uniprot.org/"
+            text: "[u][ref=uniprot]UniProt[/u][/ref] is a data base of proteins that organizes proteomes of organisms, as well as sequence clusters of proteins. It is used to annotate protein encoding genes of geneomes and can be used to examine homologous protein families.\n\nUniProt is connected to other institutions and data bases: European Bioinformatics Institute (EMBL-EBI) and Swiss Institute of Bioinformatics (SIB), and Protein Information Resource (PIR). Collectively, these databases are peer-reviewed for quality resources to be accessed around the world.\n\nUniProt can be used in addition to BLAST to compare queried protein sequences to other proteins that have been examined."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.uniprot.org/")
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -470,21 +480,29 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Energetically favored and disfavored interactions between amino acid side chains\ncan be quantitatively assessed based on their proximity in space solved by\nexperimental data (NMR, CryoEM, X-ray crystallography).\n\nThe frustratometer can predict how point mutations in a protein can increase\nor decrease frustration of the protein.\n\nProtein Frustratometer 2 is a tool to localize energetic frustration in protein\nmolecules, now with electrostatics. "
-
-        Label:
-            text: "Link to Frustratometer: http://frustratometer.qb.fcen.uba.ar/ "
+            text: "Energetically favored and disfavored interactions between amino acid side chains can be quantitatively assessed based on their proximity in space solved by experimental data (NMR, CryoEM, X-Ray crystallography). [u][ref=frust]The frustratometer[/u][/ref] can predict how point mutations in a protein can increase or decrease frustration of the protein based on the protein sequence. This can be used to drive site specific mutations for in vitro studies. The frustrometer can also be used to predic secondary structure of protein sequences. Collectively this software is beneficial for supporting or driving experimental research.\n\nProtein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("http://frustratometer.qb.fcen.uba.ar/")
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <PymolWindow>:
     name: "pymol"
 
@@ -493,17 +511,23 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "PyMOL is one of the most widely used macromolecular visualization tools. It is an open source\nmolecular graphics tool used to visualize 3D structure of proteins, nucleic acids, small molecules\nelectron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on\nexperimental data of NMR, X-Ray crystallography, or Cryo-EM. PyMOL is written in Python and can be\nextended to Python plugins easily."
+            text: "[ref=pymol][u]PyMOL[/u][/ref] is a widely used macromolecular visualization tools. It is an open source molecular graphics tool used to visualize 3D structure of proteins, nucleic acids, small molecules electron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on experimental data of NMR, X-Ray crystallography, or Cryo-EM.\n\nApart from the visualization of structures, PyMOL can be used as an enhanced analysis tool for:\n- study protein-protein interactions,\n- protein-ligand docking,\n- real-time energy minimizing structures,\n- secondary structure prediction,\n- generating Ramachandran plots,\n- electrostatic map calculations,\n- predictions of protein function.\n\nPyMOL is written in Python, one of the most popular programming languages, and it can be extended to Python plugins easily."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://pymol.org/2/")
 
-        Label:
-            text: "Apart from the visualization of structures, PyMOL can be used as an enhanced analysis tool to study\nprotein-protein interactions, aligning protein structures, protein-ligand docking, real-time energy\nminimizing structures and secondary structure prediction, generating Ramachandran plots, electrostatic\nmap calculations, predictions of protein function etc."
-        Label:
-            text: "Link to PyMOL: https://pymol.org/2/"
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
