@@ -357,43 +357,60 @@ WindowManager:
                 cols: 2
 
                 Button:
-                    text: "1. UniProt"
+                    text: "[color=#0B383C][b]UniProt[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "uniprot"
+                    background_color: (2.08, 2.31, 2.02, 1)
 
                 Button:
-                    text: "2. Pfam"
+                    text: "[color=#0B383C][b]Pfam[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "pfam"
+                    background_color: (2.08, 2.31, 2.02, 1)
 
                 Button:
-                    text: "3. Frustratometer"
+                    text:  "[color=#0B383C][b]Frutratometer[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "frust"
+                    background_color: (1.81, 2.21, 2.16, 1)
 
                 Button:
-                    text: "4. PyMOL"
+                    text:  "[color=#0B383C][b]PyMol[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "pymol"
+                    background_color: (1.81, 2.21, 2.16, 1)
+
                 Button:
-                    text: "5. WALTZ"
+                    text:  "[color=#0B383C][b]Waltz[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "waltz"
+                    background_color: (1.55, 2.10, 2.25, 1)
 
                 Button:
-                    text: "6. CamSol"
+                    text:  "[color=#0B383C][b]Camsol[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "camsol"
+                    background_color: (1.55, 2.10, 2.25, 1)
 
                 Button:
-                    text: "7. WebLogo Plot"
+                    text: "[color=#0B383C][b]WebLogo Plot[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "logprot"
+                    background_color: (1.29, 1.96, 2.31, 1)
 
                 Button:
-                    text: "8. BLAST"
+                    text:  "[color=#0B383C][b]BLAST[/color][/b]"
+                    markup: True
                     on_release:
                         app.root.current = "blast"
+                    background_color: (1.29, 1.96, 2.31, 1)
 
             Button:
                 size_hint_y: 0.25
@@ -1113,40 +1130,48 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "1. Size-exclusion chromatography (SEC)"
+            text: "[color=#0B383C][b] Size-exclusion chromatography\n(SEC)[/color][/b]"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
                 app.root.current = "sec"
+            background_color: (1.68, 2.16, 2.20, 1)
 
         Button:
-            text: "2. Ion-exchange chromatography (IEX)"
+            text: "[color=#0B383C][b]Ion-exchange chromatography\n(IEX)[/color][/b]"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
                 app.root.current = "ionexchange"
+            background_color: (1.41, 2.03, 2.28, 1)
 
         Button:
-            text: "3. Hydrophobic interaction chromatography (HIC)"
+            text: "[color=#0B383C][b]Hydrophobic interaction chromatography\n(HIC)[/b][/color]"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
                 app.root.current = "hydrophobic"
+            background_color:(1.23, 1.88, 2.31, 1)
 
         Button:
-            text: "4. Affinity chromatography (AC)"
+            text: "[color=#0B383C][b]Affinity chromatography\n(AC)[/b][/color]"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
                 app.root.current = "affinity"
+            background_color:  (1.36, 1.65, 2.21, 1)
 
         Button:
             text: "Go back to Home"
