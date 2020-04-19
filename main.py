@@ -171,9 +171,6 @@ class BacterialWindow(Screen):
     def showpet(self):
         show_popup()
 
-    def revvec(self):
-        show_revvec1()
-
 class Expression3Window(Screen):
     pass
 
@@ -212,15 +209,11 @@ class StickyAmpicilinWindow(Screen):
     pass
 
 class LacWindow(Screen):
-    def bacexp(self):
-        show_popup55()
-
-def show_popup55():
-    popupWindow55 = Popup(title= "Bacterial Expression", content = Label(text="For E. coli, there are many different strains with different specialties,\nsuch as highly competent (having higher affinity for inserting DNA\ninto their systems) and high protein expression. The usage of different strains\nis dependent on the protein of choice.\n\nA widely used E. coli strain is BL21(DE3), and vectors are introduced to bacteria\nby transformation of the cells or “heat/shock”.\n\nTransformed cells are then grown to a certain Optical Density (OD) which is measured\nby Ultraviolet-visible spectroscopy. OD is the absorbance taken of cell growth at\na wavelength of 600, which is correlated to the amount of cells within the growth.\nProtein expression is induced with the addition of IPTG at OD of 0.5-0.8. Cells are collected\nfrom growth by centrifugation and can be stored for purification in -80C freezers."), size_hint = (0.8, 0.8))
-    popupWindow55.open()
+    pass
 
 class LastExpressionWindow(Screen):
     pass
+
 class RevvecquizWindow(Screen):
     pass
 #########################
