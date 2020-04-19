@@ -19,6 +19,7 @@ WindowManager:
     ProteinWindow:
     RevbeWindow:
     RevvecWindow:
+    RevvecquizWindow:
     RevclWindow:
     ExpressionWindow:
     WrongWindow:
@@ -938,6 +939,51 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<RevvecquizWindow>:
+    name: "revvecquiz"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Vectors are circular pieces of DNA that is used to recombinantly express large amounts of a protein of choice. There are many different types of vectors, however, they share many common features.\n\n[b]Cloning cassette:[/b] section of vector that genes of choice are cloned into using restriction enzymes.\n\n[b]Transcription switch:[/b] typically, lac operon which can be signaled to allow transcription and translation of the target gene using a molecule added to the growth.\n\n[b]Antibacterial resistance:[/b] depending on the vector and antibacterial resistance, bacteria with this vector can be selectively grown using antibiotics.\n\nYou can read about available vectors [ref=vec][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.emdmillipore.com/US/en/life-science-research/genomic-analysis/dna-preparation-cloning/pet-expression-vectors/qFSb.qB.mLQAAAFA6.VkiQ0G,nav")
+
+        Button:
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Go back to quiz question[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bacterial"
+            background_color: (1.81, 2.21, 2.16, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <RevclWindow>:
     name: "revcl"
 
@@ -1053,7 +1099,7 @@ WindowManager:
             Button:
                 text: "Review vectors"
                 on_release:
-                    app.root.current = "revvec"
+                    app.root.current = "revvecquiz"
                 background_color: (0.68, 1.70, 1.53, 1)
 
             Button:
