@@ -18,6 +18,8 @@ WindowManager:
     SecondWindow:
     ProteinWindow:
     RevbeWindow:
+    Revbequiz1Window:
+    Revbequiz2Window:
     RevvecWindow:
     RevvecquizWindow:
     RevclWindow:
@@ -849,6 +851,96 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<Revbequiz1Window>:
+    name: "revbequiz1"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "There are many different ways to recombinantly express protein; using bacteria, yeast, or even human cells. For the purpose of this application we will focus on bacterial recombinant expression.\n\nFor E. coli, there are many different strains with different specialties, such as highly competent (having higher affinity for inserting DNA into their systems) and high protein expression. The usage of different strains is dependent on the protein of choice. A widely used E. coli strain is BL21(E3), and vectors are introduced to bacteria by transformation of the cells or heat shock.\n\nTransformed cells are then grown to a certain Optical Density (OD) which is measured by Ultraviolet-visible spectroscopy. OD is the absorbance taken of cell growth at a wavelength of 600, which is correlated to the amount of cells within the growth. Protein expression is induced with the addition of IPTG at OD of 0.5 - 0.8. Cells are collected from growth by centrifugation and can be stored for purification in -80C freezers.\n\nMore information is available [ref=pe][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-protein-expression-systems.html")
+
+        Button:
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Go back to quiz question[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "expression"
+            background_color: (1.94, 2.27, 2.10, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Revbequiz2Window>:
+    name: "revbequiz2"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "There are many different ways to recombinantly express protein; using bacteria, yeast, or even human cells. For the purpose of this application we will focus on bacterial recombinant expression.\n\nFor E. coli, there are many different strains with different specialties, such as highly competent (having higher affinity for inserting DNA into their systems) and high protein expression. The usage of different strains is dependent on the protein of choice. A widely used E. coli strain is BL21(E3), and vectors are introduced to bacteria by transformation of the cells or heat shock.\n\nTransformed cells are then grown to a certain Optical Density (OD) which is measured by Ultraviolet-visible spectroscopy. OD is the absorbance taken of cell growth at a wavelength of 600, which is correlated to the amount of cells within the growth. Protein expression is induced with the addition of IPTG at OD of 0.5 - 0.8. Cells are collected from growth by centrifugation and can be stored for purification in -80C freezers.\n\nMore information is available [ref=pe][u]here[/ref][/u]."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_ref_press:
+                import webbrowser
+                webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-protein-expression-systems.html")
+
+        Button:
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Go back to quiz question[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "lac"
+            background_color: (1.94, 2.27, 2.10, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <RevbeWindow>:
     name: "revbe"
     GridLayout:
@@ -1051,7 +1143,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "revbe"
+                app.root.current = "revbequiz1"
             background_color: (0.68, 1.70, 1.53, 1)
 
         Button:
@@ -1346,13 +1438,13 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "Review bacterial expression"
+            text: "Review protein expression"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
-                root.bacexp()
+                app.root.current = "revbequiz2"
             background_color: (0.68, 1.70, 1.53, 1)
 
         Button:

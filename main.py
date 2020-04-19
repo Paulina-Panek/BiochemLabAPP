@@ -159,6 +159,10 @@ class RevvecWindow(Screen):
 
 class RevclWindow(Screen):
     pass
+class Revbequiz1Window(Screen):
+    pass
+class Revbequiz2Window(Screen):
+    pass
 
 class ExpressionWindow(Screen):
     def showrevexp(self):
