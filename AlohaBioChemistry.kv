@@ -35,6 +35,7 @@ WindowManager:
     LastExpressionWindow:
     LacWindow:
     SECWindow:
+    SEC1bWindow:
     SEC2Window
     BackPurificationWindow:
     AffinityWindow:
@@ -1310,14 +1311,15 @@ WindowManager:
         cols:1
 
         Label:
-            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes of the protein of choice (solubility, temperature of denaturantion, isoelectric point (pI)).\n\nBefore column chromatography, some proteins are purified using solubility or temperature as the varied method. Some proteins are soluble at high salt concentrations and other proteins are not, and therefore adding ammonium sulfate to a homogenate of protein can separate out the target protein.\n\nAfter these initial steps, the following types of chromatography can be employed:"
+            text: "Proteins can be purified in a variety of ways, depending on characteristic attributes of the protein of choice (solubility, temperature of denaturantion, isoelectric point (pI)). Before column chromatography, some proteins are purified using solubility or temperature as the varied method. Some proteins are soluble at high salt concentrations and other proteins are not, and therefore adding ammonium sulfate to a homogenate of protein can separate out the target protein. After these initial steps, chromatography can be performed.\n\nColumn chromatography has can be divided into a stationary phase and a mobile phase. The [b]stationary phase[/b] is made of a resin that can have different attributes to assist in separating proteins. The [b]mobile phase[/b] is buffer that can change interactions between the resin and the proteins for optimal separation."
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.15
             text: "[color=#0B383C][b] Size-exclusion chromatography (SEC)[/color][/b]"
             markup: True
             text_size: root.width, None
@@ -1329,7 +1331,7 @@ WindowManager:
             background_color: (1.68, 2.16, 2.20, 1)
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.15
             text: "[color=#0B383C][b]Ion-exchange chromatography (IEX)[/color][/b]"
             markup: True
             text_size: root.width, None
@@ -1341,7 +1343,7 @@ WindowManager:
             background_color: (1.41, 2.03, 2.28, 1)
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.15
             text: "[color=#0B383C][b]Hydrophobic interaction chromatography (HIC)[/b][/color]"
             markup: True
             text_size: root.width, None
@@ -1353,7 +1355,7 @@ WindowManager:
             background_color:(1.23, 1.88, 2.31, 1)
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.15
             text: "[color=#0B383C][b]Affinity chromatography (AC)[/b][/color]"
             markup: True
             text_size: root.width, None
@@ -1365,7 +1367,7 @@ WindowManager:
             background_color:  (1.36, 1.65, 2.21, 1)
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.15
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -1378,23 +1380,27 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "In ion-exchange chromatography, charged molecules in the sample are separated by the electrostatic forces of attraction when passed through the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the ions present in the solution and those present in the ion exchange resin."
+            text: "In ion-exchange chromatography, charged molecules in the sample are separated by the electrostatic forces of attraction when passed through the ionic resin at particular pH and temperature.\n\nThe separation occurs by reversible exchange of ions between the ions present in the solution and those present in the ion exchange resin.\n\nResins for ion exchange are typically attached to polar molecules that interact with proteins of the opposite charge. Proteins are positively charged if the buffer has a pH below the isoelectric point (PI) and are negatively charged if the buffer pH is above the PI. The addition of salt ions to the buffer out competes the protein to interact with the resin, the protein is allowed to elute from the column. The separation of proteins with similar PIs can be increased with different gradients of salt concentrations."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
+
         Button:
+            size_hint_y: 0.3
             text: "Show me how it works!"
             on_release:
                 root.showiex()
             background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
-            text: "Continue to next question"
+            size_hint_y: 0.3
+            text: "Continue"
             on_release:
                 app.root.current = "iex2"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -1424,7 +1430,7 @@ WindowManager:
             text: "You pI should be displayed here."
 
         Button:
-            text: "Continue to next question. You will need information from this window to answer."
+            text: "Continue. You will need information from this window to answer."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1527,27 +1533,62 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
-
 <SECWindow>:
     name: "sec"
 
     GridLayout:
         cols: 1
         Label:
-            text: "In size- exclusion chromatography, molecules are separated based on their size as they pass through a resin packed column.\n\nChoose the correct statement below:"
+            text: "In size- exclusion chromatography, molecules are separated based on their size as they pass through a resin packed column. The resin of size exclusion columns are unreactive molecules with small pores such as dextran and agarose. These resins allow proteins of different sizes to travel through with different retention times. To prevent unfavorable charge interactions between proteins, an isocratic salt buffer is used as the mobile phase. "
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
 
         Button:
+            size_hint_y: 0.3
             text: "Show me how it works!"
             on_release:
                 root.showSEC()
             background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
+            size_hint_y: 0.3
+            text: "Continue"
+            on_release:
+                app.root.current = "sec1b"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<SEC1bWindow>:
+    name: "sec1b"
+
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Choose the correct statement below:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
             text: "Larger molecules are eluted faster, because they are heavier."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Smaller molecules are eluted faster, because they don't undergo a chemical reaction with the resin."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
