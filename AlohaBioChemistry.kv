@@ -51,6 +51,7 @@ WindowManager:
     AffinityQcWindow:
     AffinityQdWindow:
     AffinityQeWindow:
+    Wrong1Window:
 
 <HomeWindow>:
     name: "home"
@@ -1146,10 +1147,11 @@ WindowManager:
                 app.root.current = "revbequiz1"
             background_color: (0.68, 1.70, 1.53, 1)
 
+
         Button:
             text: "Mammalian cell culture"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong1"
 
         Button:
             text: "Order it on Amazon"
@@ -2310,6 +2312,41 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong1Window>:
+    name: "wrong1"
+
+    GridLayout:
+        cols: 1
+
+
+        Label:
+            text: "You can express proteins using mammalian cell cultures. However, this is not the focus of this assignment."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+
+
+
+
+
+
 <FinalWindow>:
     name: "final"
 

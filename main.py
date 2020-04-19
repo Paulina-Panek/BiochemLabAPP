@@ -11,7 +11,9 @@ from Bio import SeqIO
 from kivy.uix.image import Image, AsyncImage
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
+from kivy.uix.widget import Widget
 from kivy.uix.label import Label
+from kivy.core.window import Window
 import os
 import webbrowser
 
@@ -165,8 +167,7 @@ class Revbequiz2Window(Screen):
     pass
 
 class ExpressionWindow(Screen):
-    def showrevexp(self):
-        showrevexp1()
+    pass
 
 class Exp01Window(Screen):
     pass
@@ -351,6 +352,26 @@ def show_popup5():
 
 class WrongWindow(Screen):
     pass
+
+class Wrong1Window(Screen):
+
+    def on_pre_enter(self, *args):
+        Window.clearcolor = (0.27, 0.21, 0.23, 1)
+    def on_pre_leave(self, *args):
+        Window.clearcolor =  (0,0,0,1)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class FinalWindow(Screen):
     def showallpurification(self):
