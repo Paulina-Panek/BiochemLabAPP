@@ -58,6 +58,13 @@ WindowManager:
     Wrong5Window:
     Wrong6Window:
     Wrong7Window:
+    Wrong8Window:
+    Wrong9Window:
+    Wrong10Window:
+    Wrong11Window:
+    Wrong12Window:
+    Wrong13Window:
+    Wrong14Window:
 
 
 <HomeWindow>:
@@ -1216,7 +1223,7 @@ WindowManager:
         Button:
             text: "3"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong3"
 
         Button:
             text: "4.6"
@@ -1226,12 +1233,12 @@ WindowManager:
         Button:
             text: "10"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong3"
 
         Button:
             text: "30"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong3"
         Button:
             text: "Go back to Home"
             on_release:
@@ -1256,7 +1263,7 @@ WindowManager:
         Button:
             text: "Heat shock"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong4"
 
         Button:
             text: "Restriction enzymes"
@@ -1270,7 +1277,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong5"
 
         Button:
             text: "Mix the vectors and the DNA for 24h in acidic solution."
@@ -1279,7 +1286,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong6"
 
         Button:
             text: "Go back to Home"
@@ -1312,9 +1319,9 @@ WindowManager:
             background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
-            text: "NdeI"
+            text: "SmaI"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong7"
 
         Button:
             text: "BamHI"
@@ -1324,12 +1331,12 @@ WindowManager:
         Button:
             text: "EcoRI"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong7"
 
         Button:
             text: "NcoI"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong7"
 
         Button:
             text: "Go back to Home"
@@ -1366,7 +1373,7 @@ WindowManager:
         Button:
             text: "Blunt ends are more desirable."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong8"
 
         Button:
             text: "Sticky ends are more desirable."
@@ -1400,7 +1407,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong9"
 
         Button:
             text: "Various stains are used to verify that."
@@ -1409,19 +1416,19 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong9"
 
         Button:
-            text: "The leftover vector concentration is quantified."
+            text: "The leftover vector concentration is easily quantified."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong9"
 
         Button:
-            text: "Vector contains antibiotic resistance genes, so only those bacteria survive."
+            text: "Vector contains antibiotic resistance genes, so only those bacteria survive in the presence of an antibiotic."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1466,7 +1473,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong10"
 
         Button:
             text: "By addition of lysozyme, which induces the lac operon."
@@ -1475,7 +1482,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong11"
 
         Button:
             text: "By addition of Isopropyl thiogalactopyranoside (IPTG), which induces the lac operon."
@@ -1493,7 +1500,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong10"
 
         Button:
             text: "Go back to Home"
@@ -2377,10 +2384,236 @@ WindowManager:
             background_color: (0.51, 0.34, 1.36, 1)
 
 <Wrong3Window>:
+    name: "wrong3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not correct. Go back to the question and look at the pET-3A vector again."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bacterial"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <Wrong4Window>:
+    name: "wrong4"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Heat shock is not used for incorporating genes into vectors. It is used to incorporate vectors into bacteria."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <Wrong5Window>:
+    name: "wrong5"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not a standard procedure done in a lab."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <Wrong6Window>:
+    name: "wrong6"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not correct."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <Wrong7Window>:
+    name: "wrong7"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not correct. Go back to the question and look at the pET-3A sequence again. Look for restriction enzyme cleavage site."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression4"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong8Window>:
+    name: "wrong8"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Go back to the question and look at the picture again. Which ends do you think are more specific?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bamhi"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong9Window>:
+    name: "wrong9"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "stickyampicilin"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong10Window>:
+    name: "wrong10"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true. Go back to the question and review protein expression."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "lac"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong11Window>:
+    name: "wrong11"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true. Lysozyme is used for cell lysis. You may want to review protein expression once you go back to the question."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "lac"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 
 
 

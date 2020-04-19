@@ -396,6 +396,53 @@ class Wrong7Window(Screen):
     def on_pre_leave(self, *args):
         color(2)
 
+class Wrong8Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong9Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong10Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong11Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong12Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong13Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong14Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+
 def color(a):
     #switched background color for incorrect answer
     if a == 1:
