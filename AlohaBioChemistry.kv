@@ -1173,7 +1173,7 @@ WindowManager:
         Button:
             text: "Order it on Fisher Scientific"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong2"
 
         Button:
             text: "Go back to Home"
@@ -2349,6 +2349,30 @@ WindowManager:
 
 <Wrong2Window>:
     name: "wrong2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "It's unlikely this vendor would have such a specific product."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "expression"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 <Wrong3Window>:
 <Wrong4Window>:
 <Wrong5Window>:
