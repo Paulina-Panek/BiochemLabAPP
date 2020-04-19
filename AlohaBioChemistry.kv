@@ -230,6 +230,7 @@ WindowManager:
                 valign: "center"
 
             Button:
+                size_hint_y: 0.3
                 text: "Show data for S6"
                 text_size: root.width, None
                 size: self.texture_size
@@ -239,6 +240,7 @@ WindowManager:
                     app.root.current = "preprogrammed"
 
             Button:
+                size_hint_y: 0.3
                 text: "Live search\n(requires internet connection)"
                 text_size: root.width, None
                 size: self.texture_size
@@ -248,6 +250,7 @@ WindowManager:
                     app.root.current = "main"
 
             Button:
+                size_hint_y: 0.3
                 text: "Go back to Home"
                 text_size: root.width, None
                 size: self.texture_size
@@ -781,6 +784,7 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <Exp01Window>:
     name: "exp01"
 
@@ -788,7 +792,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Choose where you'd like to start:"
+            text: "Protein expression module includes the following parts:"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -804,6 +808,7 @@ WindowManager:
             on_release:
                 app.root.current = "revbe"
             background_color: (2.08, 2.31, 2.02, 1)
+
         Button:
             text: "[color=#0B383C][b]Review vectors[/color][/b]"
             markup: True
@@ -860,7 +865,29 @@ WindowManager:
                 webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-protein-expression-systems.html")
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Continue: Review vectors[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "revvec"
+            background_color: (1.94, 2.27, 2.10, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -883,7 +910,29 @@ WindowManager:
                 webbrowser.open("https://www.emdmillipore.com/US/en/life-science-research/genomic-analysis/dna-preparation-cloning/pet-expression-vectors/qFSb.qB.mLQAAAFA6.VkiQ0G,nav")
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Continue: Review cell lysis[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "revcl"
+            background_color: (1.81, 2.21, 2.16, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -907,7 +956,29 @@ WindowManager:
                 webbrowser.open("https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/traditional-methods-cell-lysis.html")
 
         Button:
-            size_hint_y: 0.3
+            size_hint_y: 0.2
+            text: "[color=#0B383C][b]Continue: Quiz[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "expression"
+            background_color: (1.68, 2.16, 2.20, 1)
+
+        Button:
+            size_hint_y: 0.2
+            text: "Go to Module 2 table of contents"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "exp01"
+
+        Button:
+            size_hint_y: 0.2
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -1388,7 +1459,7 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Show me how it works!"
+            text: "Show me how IEX works!"
             on_release:
                 root.showiex()
             background_color: (1.36, 2.04, 2.38, 1)
@@ -1547,7 +1618,7 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Show me how it works!"
+            text: "Show me how SEC works!"
             on_release:
                 root.showSEC()
             background_color: (1.36, 2.04, 2.38, 1)
@@ -1572,7 +1643,7 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Choose the correct statement below:"
+            text: "Which proteins are eluted faster in SEC?"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1695,14 +1766,15 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Affinity chromatography utilizes reversible affinity interaction between target proteins and the stationary phase.\n\nFor example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. "
+            text: "Affinity chromatography utilizes reversible affinity interaction between target proteins and the stationary phase. For example, polyhistidine tag (His-tag) can be used with a nickle column.\n\nIn this setup, the target analyte is eluted with a buffer that contains imidazole. Affinity resins are different in design depending on what type of molecule is being targeted. Resins that are attached to nickel or other dielectric atoms are typically used to purify proteins with histidine tags. Histidine tags are 6-8 histidine residues attached to a terminus of the target protein. This column works by binding to His-tagged proteins, and after washing the column of other proteins, the mobile phase is changed to include imidazole. Imidazole out competes the protein to bind to the nickel and the protein is eluted from the column."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
 
         Button:
-            text: "Show me how it works!"
+            size_hint_y: 0.3
+            text: "Show me how AC works!"
             on_release:
                 root.showaffinity()
             background_color: (1.36, 2.04, 2.38, 1)
@@ -1712,7 +1784,8 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "Continue to next question"
+            size_hint_y: 0.3
+            text: "Continue"
             on_release:
                 app.root.current = "AffinityQuestion"
             text_size: root.width, None
@@ -1721,6 +1794,7 @@ WindowManager:
             valign: "center"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -1970,23 +2044,26 @@ WindowManager:
     GridLayout:
         cols: 1
         Label:
-            text: "Sample molecules containing hydrophobic and hydrophilic regions\nare applied to an HIC column in a high-salt buffer. The salt in the buffer\nreduces the solvation of sample solutes. As solvation decreases,\nhydrophobic regions that become exposed are adsorbed by the media.\nThe more hydrophobic the molecule, the less salt is needed\nto promote binding."
+            text: "Hydrophobic interaction chromatography uses resins with hydrophobic molecules, such as long carbon chains, and interacts with non-polar residues on the protein. Buffer with high salt concentration is used to load the protein sample and decreasing the salt concentration changes elutes proteins and can be a gradient for optimal separation."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
 
         Button:
+            size_hint_y: 0.3
             text: "Show me how HIC works!"
             on_release:
                 root.showhic()
             background_color: (1.36, 2.04, 2.38, 1)
         Button:
-            text: "Continue to next question"
+            size_hint_y: 0.3
+            text: "Continue"
             on_release:
                 app.root.current = "hic2"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -2006,17 +2083,20 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "Show me how amino acids are classified."
+            size_hint_y: 0.3
+            text: "Show amino acids classification"
             on_release:
                 root.showaa()
             background_color: (1.36, 2.04, 2.38, 1)
 
         Button:
-            text: "Continue to next question"
+            size_hint_y: 0.3
+            text: "Continue"
             on_release:
                 app.root.current = "hic3"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
