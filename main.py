@@ -356,11 +356,52 @@ class WrongWindow(Screen):
 class Wrong1Window(Screen):
 
     def on_pre_enter(self, *args):
-        Window.clearcolor = (0.27, 0.21, 0.23, 1)
+        color(1)
     def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong2Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong3Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong4Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong5Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong6Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class Wrong7Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+def color(a):
+    #switched background color for incorrect answer
+    if a == 1:
+        Window.clearcolor = (0.27, 0.21, 0.23, 1)
+    else:
         Window.clearcolor =  (0,0,0,1)
-
-
 
 
 
