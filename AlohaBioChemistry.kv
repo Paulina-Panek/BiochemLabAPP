@@ -65,6 +65,13 @@ WindowManager:
     Wrong12Window:
     Wrong13Window:
     Wrong14Window:
+    Wrong15Window:
+    Wrong16Window:
+    Wrong17Window:
+    Wrong18Window:
+    Wrong19Window:
+    Wrong20Window:
+    Wrong21Window:
 
 
 <HomeWindow>:
@@ -1147,7 +1154,8 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "To study a protein, you need to have a sample.\nHow would you produce your protein?"
+            text: "To study a protein[i] in vitro[/i], ug-mg quantities of protein are required depending on the analysis methods.\nHow would you like to produce your protein?"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1926,6 +1934,7 @@ WindowManager:
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
 
+
 <AffinityWindow>:
     name: "affinity"
 
@@ -1990,7 +1999,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong14"
 
         Button:
             text: "No, it has to be of a specific size."
@@ -1999,7 +2008,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong14"
 
         Button:
             text: "Yes, but the proteins need to be derivatized after extraction."
@@ -2008,7 +2017,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong14"
 
         Button:
             text: "No, the his-tag needs to be added during the expression step."
@@ -2042,7 +2051,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong15"
 
         Button:
             text: "You can only use this method with proteins naturally containing histidine."
@@ -2051,7 +2060,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong15"
 
         Button:
             text: "You choose a circular vector that has his-tag sequence."
@@ -2069,7 +2078,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong15"
         Button:
             text: "Go back to Home"
             on_release:
@@ -2673,6 +2682,60 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong14Window>:
+    name: "wrong14"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQuestion"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong15Window>:
+    name: "wrong15"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQb"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
 
 
 
