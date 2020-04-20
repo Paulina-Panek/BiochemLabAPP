@@ -1523,7 +1523,6 @@ WindowManager:
             halign: "center"
             valign: "center"
 
-
         Button:
             text: "Go back Home"
             size_hint_y: 0.3
@@ -1688,7 +1687,7 @@ WindowManager:
             text: "The molecule of interest and resin are both positive."
 
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong12"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1710,12 +1709,12 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong12"
 
         Button:
             text: "The molecule of interest and resin are both negative."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong12"
         Button:
             text: "Go back to Home"
             on_release:
@@ -1738,12 +1737,12 @@ WindowManager:
         Button:
             text: "7.5"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong13"
 
         Button:
             text: "6.3"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong13"
 
         Button:
             text: "5.0"
@@ -1753,7 +1752,7 @@ WindowManager:
         Button:
             text: "4.0"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong13"
 
         Button:
             text: "Go back to Home"
@@ -1904,13 +1903,23 @@ WindowManager:
 
         Label:
             text: "Correct! Proceed with the next technique."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to list of purification techniques"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
                 app.root.current = "purification"
 
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -2614,8 +2623,56 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<Wrong12Window>:
+    name: "wrong12"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "iex2b"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 
+<Wrong13Window>:
+    name: "wrong13"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "iex3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 
 

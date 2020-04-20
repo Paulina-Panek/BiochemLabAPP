@@ -217,7 +217,11 @@ class LacWindow(Screen):
     pass
 
 class LastExpressionWindow(Screen):
-    pass
+    def on_pre_enter(self, *args):
+        color(3)
+
+    def on_pre_leave(self, *args):
+        color(2)
 
 class RevvecquizWindow(Screen):
     pass
@@ -288,7 +292,11 @@ class SEC2Window(Screen):
     pass
 
 class BackPurificationWindow(Screen):
-    pass
+    def on_pre_enter(self, *args):
+        color(3)
+
+    def on_pre_leave(self, *args):
+        color(2)
 
 class HydrophobicWindow(Screen):
     def showhic(self):
@@ -445,10 +453,15 @@ class Wrong14Window(Screen):
 
 def color(a):
     #switched background color for incorrect answer
-    if a == 1:
+    if a == 1: #reddish incorrect answer
         Window.clearcolor = (0.27, 0.21, 0.23, 1)
-    else:
+
+    elif a == 2: #back to black
         Window.clearcolor =  (0,0,0,1)
+
+    elif a == 3: #greenish completed module
+        Window.clearcolor = (0.13, 0.33, 0.33, 1)
+
 
 
 
