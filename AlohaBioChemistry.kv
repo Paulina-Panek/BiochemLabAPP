@@ -1831,7 +1831,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong26"
 
         Button:
             text: "Smaller molecules are eluted faster, because they don't undergo a chemical reaction with the resin."
@@ -1840,7 +1840,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong27"
 
         Button:
             text: "Larger molecules are eluted faster, because they don't get trapped in the resin pores."
@@ -1872,7 +1872,8 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "E.coli might produce a protein that has the same size as the target protein."
+            text: "[i]E.coli[/i] might produce a protein that has the same size as the target protein."
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1887,7 +1888,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong28"
 
         Button:
             text: "This technique only works in a narrow pH range."
@@ -1896,12 +1897,12 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong29"
 
         Button:
             text: "Sometimes proteins bind irreversibly with the resin."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong30"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -1944,7 +1945,6 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
-
 
 <AffinityWindow>:
     name: "affinity"
@@ -2310,7 +2310,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong25"
 
         Button:
             text: "Our protein does not have hydrophilic amino acids."
@@ -2319,7 +2319,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong25"
 
         Button:
             text: "We need to use a special vector - to introduce hydrophobic amino acids to our protein."
@@ -2328,10 +2328,11 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong25"
 
         Button:
-            text: "It is not specific enough - many proteins in E.coli have similar hydrophobicity."
+            text: "It is not specific enough - many proteins in [i]E.coli[/i] have similar hydrophobicity."
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -2982,7 +2983,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "This is not true."
+            text: "S6 has a combination of hydrophilic and hydrophobic amino acids. Besides, lack of either type is not a problem."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -2992,7 +2993,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "iex2b"
+                app.root.current = "hic3"
 
         Button:
             size_hint_y: 0.3
@@ -3001,7 +3002,6 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
-
 <Wrong26Window>:
     name: "wrong26"
 
@@ -3009,7 +3009,8 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Additional histidine residues may significantly alter the protein function and stability."
+            text: "That's not correct. It's about [i]size[/i], not [i]weight[/i]"
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3019,7 +3020,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "AffinityQc"
+                app.root.current = "sec1b"
 
         Button:
             size_hint_y: 0.3
@@ -3034,7 +3035,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "Mercaptoethanol cleaves disulfide bonds and will not remove the His-tags."
+            text: "Neither large nor small molecules undergo a reaction with the column."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3044,7 +3045,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "AffinityQc"
+                app.root.current = "sec1b"
 
         Button:
             size_hint_y: 0.3
@@ -3059,7 +3060,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "HindIII is a restriction enzyme that cleaves DNA."
+            text: "Resin used in SEC does not cleave proteins."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3069,7 +3070,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "AffinityQc"
+                app.root.current = "sec2"
 
         Button:
             size_hint_y: 0.3
@@ -3084,7 +3085,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "C18 columns are typically used in High Performance Liquid Chromatography (HPLC), not Fast Protein Liquid Chromatography (FPLC)."
+            text: "pH can be easily controlled with a buffer."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3094,7 +3095,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "AffinityQd"
+                app.root.current = "sec2"
 
         Button:
             size_hint_y: 0.3
@@ -3103,14 +3104,13 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
-
 <Wrong30Window>:
     name: "wrong30"
     GridLayout:
         cols: 1
 
         Label:
-            text: "That's not correct."
+            text: "Proteins do not bind irreversibly with the resin used in SEC."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3120,7 +3120,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = "AffinityQd"
+                app.root.current = "sec2"
 
         Button:
             size_hint_y: 0.3
