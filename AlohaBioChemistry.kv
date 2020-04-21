@@ -165,9 +165,9 @@ WindowManager:
                 size: self.texture_size
                 halign: "center"
                 valign: "center"
-
                 on_release:
                     app.root.current = "linkstools"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Links to videos"
@@ -175,9 +175,9 @@ WindowManager:
                 size: self.texture_size
                 halign: "center"
                 valign: "center"
-
                 on_release:
                     app.root.current = "linksvideo"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "References"
@@ -185,9 +185,9 @@ WindowManager:
                 size: self.texture_size
                 halign: "center"
                 valign: "center"
-
                 on_release:
                     app.root.current = "refs"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "About Aloha BioChemistry"
@@ -195,10 +195,9 @@ WindowManager:
                 size: self.texture_size
                 halign: "center"
                 valign: "center"
-
                 on_release:
                     app.root.current = "about"
-
+                    root.manager.transition.direction = "left"
 
 <InstructionWindow>:
     name: "instruction"
@@ -469,6 +468,7 @@ WindowManager:
                 valign: "center"
                 on_release:
                     app.root.current = "preprogrammed"
+                    root.manager.transition.direction = "left"
 
             Button:
                 size_hint_y: 0.3
@@ -479,6 +479,7 @@ WindowManager:
                 valign: "center"
                 on_release:
                     app.root.current = "main"
+                    root.manager.transition.direction = "left"
 
             Button:
                 size_hint_y: 0.3
@@ -489,6 +490,7 @@ WindowManager:
                 valign: "center"
                 on_release:
                     app.root.current = "home"
+                    root.manager.transition.direction = "right"
                 background_color: (0.51, 0.34, 1.36, 1)
 
 <PreprogrammedWindow>:
@@ -527,6 +529,7 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "blast"
+                root.manager.transition.direction = "left"
 
         Button:
             text: "Go back to Home"
@@ -536,6 +539,7 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "home"
+                root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
 
 <BlastWindow>:
@@ -571,12 +575,14 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "tools"
+                root.manager.transition.direction = "left"
 
         Button:
             size_hint_y: 0.5
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
+                root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
 
 <ToolsWindow>:
@@ -590,7 +596,7 @@ WindowManager:
 
             Label:
                 size_hint_y: 0.3
-                text: "Following tools are available:"
+                text: "The following tools are available:"
 
             GridLayout:
                 cols: 2
@@ -600,6 +606,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "uniprot"
+                        root.manager.transition.direction = "left"
                     background_color: (2.08, 2.31, 2.02, 1)
 
                 Button:
@@ -607,6 +614,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "pfam"
+                        root.manager.transition.direction = "left"
                     background_color: (2.08, 2.31, 2.02, 1)
 
                 Button:
@@ -614,6 +622,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "frust"
+                        root.manager.transition.direction = "left"
                     background_color: (1.81, 2.21, 2.16, 1)
 
                 Button:
@@ -621,6 +630,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "pymol"
+                        root.manager.transition.direction = "left"
                     background_color: (1.81, 2.21, 2.16, 1)
 
                 Button:
@@ -628,6 +638,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "waltz"
+                        root.manager.transition.direction = "left"
                     background_color: (1.55, 2.10, 2.25, 1)
 
                 Button:
@@ -635,6 +646,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "camsol"
+                        root.manager.transition.direction = "left"
                     background_color: (1.55, 2.10, 2.25, 1)
 
                 Button:
@@ -642,6 +654,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "logprot"
+                        root.manager.transition.direction = "left"
                     background_color: (1.29, 1.96, 2.31, 1)
 
                 Button:
@@ -649,6 +662,7 @@ WindowManager:
                     markup: True
                     on_release:
                         app.root.current = "blast"
+                        root.manager.transition.direction = "left"
                     background_color: (1.29, 1.96, 2.31, 1)
 
             Button:
