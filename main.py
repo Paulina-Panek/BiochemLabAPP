@@ -40,7 +40,21 @@ class LinkstoolsWindow(Screen):
     pass
 
 class LinksvideoWindow(Screen):
-    pass
+
+    def OpenLink1(address):
+        webbrowser.open("https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/v/dna-cloning-and-recombinant-dna")
+
+    def OpenLink2(address):
+        webbrowser.open("https://www.khanacademy.org/science/ap-biology/gene-expression-and-regulation/biotechnology/v/dna-sequencing")
+
+    def OpenLink3(address):
+        webbrowser.open("https://www.khanacademy.org/science/biology/macromolecules/proteins-and-amino-acids/v/tertiary-structure-of-proteins")
+
+    def OpenLink4(address):
+        webbrowser.open("https://www.khanacademy.org/science/class-11-chemistry-india/xfbb6cb8fc2bd00c8:in-in-organic-chemistry-some-basic-principles-and-techniques/xfbb6cb8fc2bd00c8:in-in-methods-of-purification-of-organic-compounds/v/basics-of-chromatography")
+
+    def OpenLink5(address):
+        webbrowser.open("https://www.khanacademy.org/science/class-11-chemistry-india/xfbb6cb8fc2bd00c8:in-in-organic-chemistry-some-basic-principles-and-techniques/xfbb6cb8fc2bd00c8:in-in-methods-of-purification-of-organic-compounds/v/column-chromatography")
 
 class RefsWindow(Screen):
     pass

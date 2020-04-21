@@ -108,7 +108,9 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "choice"
+                root.manager.transition.direction = "left"
             background_color: (2.21, 2.36, 1.91, 1)
+
 
         Button:
             text: "[color=#0B383C][b]Module 2: [/b]Protein Expression[/color]"
@@ -119,6 +121,7 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "exp01"
+                root.manager.transition.direction = "left"
             background_color: (1.94, 2.27, 2.10, 1)
 
         Button:
@@ -130,6 +133,7 @@ WindowManager:
             valign: "center"
             on_release:
                 app.root.current = "purification"
+                root.manager.transition.direction = "left"
             background_color: (1.68, 2.16, 2.20, 1)
 
         GridLayout:
@@ -141,9 +145,9 @@ WindowManager:
                 size: self.texture_size
                 halign: "center"
                 valign: "center"
-
                 on_release:
                     app.root.current = "instruction"
+                    root.manager.transition.direction = "up"
 
             Button:
                 text: "Reset"
@@ -203,7 +207,8 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "It is recommended you follow the modules in order, but it is not necessary.\n\nClicking outside of a popup window or pressing [i]esc[/i] will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through a live BLAST search. It is recommended when switching the query amino acid sequence.\n\nIf you run into problems displaying images within the app, switch to a full-screen mode."
+            text: "It is recommended you follow the modules in order, but it is not necessary.\n\nClicking outside of a popup window or pressing [i]esc[/i] will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through a live BLAST search. It is recommended when switching the query amino acid sequence.\n\nIf you run into problems displaying images within the app, try switching to a full-screen mode.\n\nCitations are indicated with superscript (like this: [sup]1, 2, 3[/sup]). To find the list of literature we used, choose References button on Home screen."
+            markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -215,7 +220,7 @@ WindowManager:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
-                root.manager.transition.direction = "right"
+                root.manager.transition.direction = "down"
             background_color: (0.51, 0.34, 1.36, 1)
 
 <AboutWindow>:
@@ -260,7 +265,7 @@ WindowManager:
 
             Label:
                 size_hint_y: 0.3
-                text: "Click on the tool to find out more about it and links."
+                text: "Click on the tool to find out more about and get a link."
                 text_size: root.width, None
                 size: self.texture_size
                 halign: "center"
@@ -333,19 +338,78 @@ WindowManager:
                     root.manager.transition.direction = "right"
                 background_color: (0.51, 0.34, 1.36, 1)
 
-
 <LinksvideoWindow>:
     name: "linksvideo"
     GridLayout:
         cols: 1
 
         Label:
-            text: "This section is under construction"
+            text: "If you'd like to learn more, you can watch the following videos:"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             markup: True
+
+        Button:
+            size_hint_y: 0.3
+            text: "[color=#302528][b]DNA cloning and recombinant DNA[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLink1()
+            background_color: (1.26, 1.78, 2.28, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "[color=#302528][b]DNA sequencing[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLink2()
+            background_color: (1.36, 1.65, 2.21, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "[color=#302528][b]Tertiary structures of proteins[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLink3()
+            background_color: (1.47, 1.52, 2.10, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "[color=#302528][b]Basic chromatography[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLink4()
+            background_color: (1.55, 1.38, 1.96, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "[color=#302528][b]Column chromatography[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLink5()
+            background_color: (1.57, 1.25, 1.78, 1)
 
         Button:
             size_hint_y: 0.3
@@ -362,12 +426,14 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "This section is under construction"
+            text: "~~This module is under construction~~"
+
+        Label:
+            text: "1. Sayers, E.; Agarwala, R.; Bolton, E.; Brister, J.; Canese, K.; Clark, K.; Connor, R.; Fiorini, N.; Funk, K.; Hefferon, T.; Holmes, J.; Kim, S.; Kimchi, A.; Kitts, P.; Lathrop, S.; Lu, Z.; Madden, T.; Marchler-Bauer, A.; Phan, L.; Schneider, V.; Schoch, C.; Pruitt, K.; Ostell, J. Database Resources Of The National Center For Biotechnology Information. Nucleic Acids Research 2018, 47 (D1), D23-D28."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
-            markup: True
 
         Button:
             size_hint_y: 0.3
@@ -479,7 +545,7 @@ WindowManager:
         cols:1
         size: root.width, root.height
         Label:
-            text: "[u][ref=abcd]BLAST[/ref][/u] is the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice."
+            text: "[u][ref=abcd]BLAST[/ref][/u] is the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice.[sup]1[/sup]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
