@@ -82,7 +82,7 @@ WindowManager:
     Wrong28Window:
     Wrong29Window:
     Wrong30Window:
-
+    ToolsWindow:
 
 
 <HomeWindow>:
@@ -156,7 +156,7 @@ WindowManager:
                     root.remove_files()
 
             Button:
-                text: "Links to tools"
+                text: "Links to bioinformatic tools"
                 text_size: root.width, None
                 size: self.texture_size
                 halign: "center"
@@ -251,24 +251,88 @@ WindowManager:
 
 <LinkstoolsWindow>:
     name: "linkstools"
+
     GridLayout:
-        cols: 1
+        cols:2
 
-        Label:
-            text: "This section is under construction"
-            text_size: root.width, None
-            size: self.texture_size
-            halign: "center"
-            valign: "center"
-            markup: True
+        GridLayout:
+            cols: 1
 
-        Button:
-            size_hint_y: 0.3
-            text: "Go back to Home"
-            on_release:
-                app.root.current = "home"
-                root.manager.transition.direction = "right"
-            background_color: (0.51, 0.34, 1.36, 1)
+            Label:
+                size_hint_y: 0.3
+                text: "Click on the tool to find out more about it and links."
+                text_size: root.width, None
+                size: self.texture_size
+                halign: "center"
+                valign: "center"
+
+            GridLayout:
+                cols: 2
+
+                Button:
+                    text: "[color=#0B383C][b]UniProt[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "uniprot"
+                    background_color: (2.08, 2.31, 2.02, 1)
+
+                Button:
+                    text: "[color=#0B383C][b]Pfam[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "pfam"
+                    background_color: (2.08, 2.31, 2.02, 1)
+
+                Button:
+                    text:  "[color=#0B383C][b]Frutratometer[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "frust"
+                    background_color: (1.81, 2.21, 2.16, 1)
+
+                Button:
+                    text:  "[color=#0B383C][b]PyMOL[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "pymol"
+                    background_color: (1.81, 2.21, 2.16, 1)
+
+                Button:
+                    text:  "[color=#0B383C][b]Waltz[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "waltz"
+                    background_color: (1.55, 2.10, 2.25, 1)
+
+                Button:
+                    text:  "[color=#0B383C][b]CamSol[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "camsol"
+                    background_color: (1.55, 2.10, 2.25, 1)
+
+                Button:
+                    text: "[color=#0B383C][b]WebLogo Plot[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "logprot"
+                    background_color: (1.29, 1.96, 2.31, 1)
+
+                Button:
+                    text:  "[color=#0B383C][b]BLAST[/color][/b]"
+                    markup: True
+                    on_release:
+                        app.root.current = "blast"
+                    background_color: (1.29, 1.96, 2.31, 1)
+
+            Button:
+                size_hint_y: 0.25
+                text: "Go back to Home"
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+                background_color: (0.51, 0.34, 1.36, 1)
+
 
 <LinksvideoWindow>:
     name: "linksvideo"
