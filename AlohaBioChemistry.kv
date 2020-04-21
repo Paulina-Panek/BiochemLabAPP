@@ -6,7 +6,9 @@ WindowManager:
     ChoiceWindow:
     PreprogrammedWindow:
     BlastWindow:
-    ToolsWindow:
+    LinkstoolsWindow:
+    LinksvideoWindow:
+    RefsWindow:
     UniprotWindow:
     PfamWindow:
     FrustWindow:
@@ -46,7 +48,6 @@ WindowManager:
     hic2Window:
     hic3Window:
     AffinityQuestionWindow:
-    FinalWindow:
     AffinityQbWindow:
     AffinityQcWindow:
     AffinityQdWindow:
@@ -209,10 +210,8 @@ WindowManager:
             valign: "center"
             markup: True
 
-        Label:
-            text:""
-
         Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -241,6 +240,70 @@ WindowManager:
             text: "UH"
             on_release:
                 root.OpenLink()
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<LinkstoolsWindow>:
+    name: "linkstools"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This section is under construction"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            markup: True
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<LinksvideoWindow>:
+    name: "linksvideo"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This section is under construction"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            markup: True
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<refsWindow>:
+    name: "refs"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This section is under construction"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            markup: True
 
         Button:
             size_hint_y: 0.3
@@ -1527,6 +1590,8 @@ WindowManager:
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
 
+
+
 <LastExpressionWindow>:
     name: "lastexpression"
 
@@ -1610,6 +1675,18 @@ WindowManager:
             on_release:
                 app.root.current = "affinity"
             background_color:  (1.36, 1.65, 2.21, 1)
+
+        Button:
+            size_hint_y: 0.15
+            text: "[color=#082b2e][b]Techniques compared (figure)[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.showallpurification()
+            background_color: (1.55, 1.38, 1.96, 1)
 
         Button:
             size_hint_y: 0.15
@@ -3129,26 +3206,3 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
-
-<FinalWindow>:
-    name: "final"
-
-    GridLayout:
-        cols: 1
-
-        Label:
-            text: "Correct!"
-
-        Label:
-            text: "Thank you! That's all we had for you."
-
-        Button:
-            text: "Show summary of all purification techniques"
-            on_release:
-                root.showallpurification()
-            background_color: (1.36, 2.04, 2.38, 1)
-        Button:
-            text: "Go back to Home"
-            on_release:
-                app.root.current = "home"
-            background_color: (0.51, 0.34, 1.36, 1)

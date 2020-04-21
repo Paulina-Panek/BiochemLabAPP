@@ -36,6 +36,15 @@ class AboutWindow(Screen):
     def OpenLink(address):
         webbrowser.open("https://manoa.hawaii.edu/")
 
+class LinkstoolsWindow(Screen):
+    pass
+
+class LinksvideoWindow(Screen):
+    pass
+
+class RefsWindow(Screen):
+    pass
+
 ##############################
 #  PROTEIN IDENTITY MODULE  ##
 ##############################
@@ -230,7 +239,8 @@ class RevvecquizWindow(Screen):
 #########################
 
 class PurificationWindow(Screen):
-    pass
+    def showallpurification(self):
+        show_popup10()
 
 class IonExchangeWindow(Screen):
 
@@ -573,27 +583,10 @@ def color(a):
     elif a == 3: #greenish completed module
         Window.clearcolor = (0.13, 0.33, 0.33, 1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-class FinalWindow(Screen):
-    def showallpurification(self):
-        show_popup10()
-
-
 def show_popup10():
     allpur= Image(source='allPurification.jpg')
 
-    popupWindow10 = Popup(title="Comparison of different chromatographies", content=allpur, size_hint=(0.8, 0.8))
+    popupWindow10 = Popup(title="Chromatography types compared", content=allpur, size_hint=(0.8, 0.8))
     popupWindow10.open()
 
 class WindowManager(ScreenManager):
