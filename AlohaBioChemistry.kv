@@ -72,6 +72,16 @@ WindowManager:
     Wrong19Window:
     Wrong20Window:
     Wrong21Window:
+    Wrong22Window:
+    Wrong23Window:
+    Wrong24Window:
+    Wrong25Window:
+    Wrong26Window:
+    Wrong27Window:
+    Wrong28Window:
+    Wrong29Window:
+    Wrong30Window:
+
 
 
 <HomeWindow>:
@@ -1768,6 +1778,7 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
 <SECWindow>:
     name: "sec"
 
@@ -2106,7 +2117,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong16"
 
         Button:
             text: "You use thrombin cleavage kit."
@@ -2116,12 +2127,12 @@ WindowManager:
         Button:
             text: "You use mercaptoethanol."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong17"
 
         Button:
             text: "You use HindIII enzyme."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong18"
         Button:
             text: "Go back to Home"
             on_release:
@@ -2145,12 +2156,12 @@ WindowManager:
         Button:
             text: "C18 column"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong19"
 
         Button:
-            text: "Silica hel column"
+            text: "Silica gel column"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong20"
 
         Button:
             text: "Nickel column"
@@ -2160,7 +2171,8 @@ WindowManager:
         Button:
             text: "Desalting column"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong21"
+
         Button:
             text: "Go back to Home"
             on_release:
@@ -2190,22 +2202,22 @@ WindowManager:
         Button:
             text: "Size-exclusion chromatography"
             on_release:
-                app.root.current = "final"
+                app.root.current = "backPurification"
 
         Button:
             text: "Second run on nickel column"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong22"
 
         Button:
             text: "Extraction with water"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong23"
 
         Button:
             text: "It evaporates"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "wrong24"
         Button:
             text: "Go back to Home"
             on_release:
@@ -2735,8 +2747,387 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<Wrong16Window>:
+    name: "wrong16"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Additional histidine residues may significantly alter the protein function and stability."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong17Window>:
+    name: "wrong17"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Mercaptoethanol cleaves disulfide bonds and will not remove the His-tags."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong18Window>:
+    name: "wrong18"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "HindIII is a restriction enzyme that cleaves DNA."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong19Window>:
+    name: "wrong19"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "C18 columns are typically used in High Performance Liquid Chromatography (HPLC), not Fast Protein Liquid Chromatography (FPLC)."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 
+<Wrong20Window>:
+    name: "wrong20"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not correct."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong21Window>:
+    name: "wrong21"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Desalting columns are used in Size-exclusion chromatography (SEC) to separate imidazole or other salts from the protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong22Window>:
+    name: "wrong22"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Imidazole cannot be separated from the protein on a nickel column."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQe"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong23Window>:
+    name: "wrong23"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Your protein may be water-soluble. Also, diluting your protein may not be desirable."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQe"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong24Window>:
+    name: "wrong24"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Imidazole will not evaporate from your protein sample."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQe"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong25Window>:
+    name: "wrong25"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "This is not true."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "iex2b"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong26Window>:
+    name: "wrong26"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Additional histidine residues may significantly alter the protein function and stability."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong27Window>:
+    name: "wrong27"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Mercaptoethanol cleaves disulfide bonds and will not remove the His-tags."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong28Window>:
+    name: "wrong28"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "HindIII is a restriction enzyme that cleaves DNA."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQc"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Wrong29Window>:
+    name: "wrong29"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "C18 columns are typically used in High Performance Liquid Chromatography (HPLC), not Fast Protein Liquid Chromatography (FPLC)."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<Wrong30Window>:
+    name: "wrong30"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "That's not correct."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "AffinityQd"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 
 <FinalWindow>:
