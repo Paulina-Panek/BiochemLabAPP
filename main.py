@@ -178,7 +178,9 @@ class WaltzWindow(Screen):
     pass
 
 class CamsolWindow(Screen):
-    pass
+    def OpenLinkCamsol(address):
+        webbrowser.open("https://drive.google.com/file/d/10GpMevocaVDd2yDvAZihz1KzgI3ohe8h/view?usp=sharing")
+
 
 class LogprotWindow(Screen):
     pass

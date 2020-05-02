@@ -1026,11 +1026,27 @@ WindowManager:
                 import webbrowser
                 webbrowser.open("https://omictools.com/camsol-tool")
 
+        Image:
+            source: 'Camsol.jpg'
+            size: self.texture_size
+
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Camsol Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLinkCamsol()
+            background_color: (1.05, 1.77, 1.44, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "List of all bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+            background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
             size_hint_y: 0.3
