@@ -143,6 +143,18 @@ class ProteinWindow(Screen):
                         counter = counter + 1
         self.protname.text = reduced_title   #updates sequence identity on the app screen
 
+class BioinfChoiceWindow(Screen):
+    pass
+
+class pidWindow(Screen):
+    pass
+
+class bphysWindow(Screen):
+    pass
+
+class ThreeDWindow(Screen):
+    pass
+
 class BlastWindow(Screen):
     def OpenLink(address):
         webbrowser.open("https://blast.ncbi.nlm.nih.gov/Blast.cgi")

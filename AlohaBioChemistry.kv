@@ -4,6 +4,10 @@ WindowManager:
     InstructionWindow:
     AboutWindow:
     ChoiceWindow:
+    BioinfChoiceWindow:
+    pidWindow:
+    bphysWindow:
+    ThreeDWindow:
     PreprogrammedWindow:
     BlastWindow:
     LinkstoolsWindow:
@@ -107,7 +111,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "choice"
+                app.root.current = "bichoice"
                 root.manager.transition.direction = "left"
             background_color: (2.21, 2.36, 1.91, 1)
 
@@ -492,6 +496,183 @@ WindowManager:
                     app.root.current = "home"
                     root.manager.transition.direction = "right"
                 background_color: (0.51, 0.34, 1.36, 1)
+
+<BioinfChoiceWindow>:
+    name: "bichoice"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Bioinformatic tools module includes the following parts:"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "[color=#0B383C][b]3D visualization[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "threeD"
+            background_color: (2.52, 2.47, 2.13, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Protein Identity and homology[/color][/b]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pid"
+            background_color: (2.45, 2.43, 1.93, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Biophysical characterization[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bphys"
+            background_color: (2.34, 2.40, 1.81, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Quiz[/b][/color]"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "expression"
+            background_color: (2.21, 2.36, 1.91, 1)
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pidWindow>:
+    name: "pid"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "The following tools are available:"
+
+        Button:
+            text: "[color=#0B383C][b]UniProt[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "uniprot"
+                root.manager.transition.direction = "left"
+            background_color: (2.08, 2.31, 2.02, 1)
+
+        Button:
+            text: "[color=#0B383C][b]Pfam[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "pfam"
+                root.manager.transition.direction = "left"
+            background_color: (2.08, 2.31, 2.02, 1)
+
+        Button:
+            text: "[color=#0B383C][b]WebLogo Plot[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "logprot"
+                root.manager.transition.direction = "left"
+            background_color: (1.29, 1.96, 2.31, 1)
+
+        Button:
+            text:  "[color=#0B383C][b]BLAST[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "blast"
+                root.manager.transition.direction = "left"
+            background_color: (1.29, 1.96, 2.31, 1)
+
+    Button:
+        size_hint_y: 0.25
+        text: "Go back to Home"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+        background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bphysWindow>:
+    name: "bphys"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "The following tools are available:"
+
+        Button:
+            text:  "[color=#0B383C][b]Frutratometer[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "frust"
+                root.manager.transition.direction = "left"
+            background_color: (1.81, 2.21, 2.16, 1)
+
+        Button:
+            text:  "[color=#0B383C][b]Waltz[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "waltz"
+                root.manager.transition.direction = "left"
+            background_color: (1.55, 2.10, 2.25, 1)
+
+        Button:
+            text:  "[color=#0B383C][b]CamSol[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "camsol"
+                root.manager.transition.direction = "left"
+            background_color: (1.55, 2.10, 2.25, 1)
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<ThreeDWindow>:
+    name: "threeD"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "The following tools are available:"
+
+        Button:
+            text:  "[color=#0B383C][b]PyMOL[/color][/b]"
+            markup: True
+            on_release:
+                app.root.current = "pymol"
+                root.manager.transition.direction = "left"
+            background_color: (1.81, 2.21, 2.16, 1)
+
+        Button:
+            size_hint_y: 0.25
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 <PreprogrammedWindow>:
     name: "preprogrammed"
