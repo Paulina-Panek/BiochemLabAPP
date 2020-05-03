@@ -359,7 +359,7 @@ class SEC1bWindow(Screen):
 class SEC2Window(Screen):
     pass
 
-class BackPurificationWindow(Screen):
+class LastPurificationWindow(Screen):
     def on_pre_enter(self, *args):
         color(3)
 
