@@ -300,6 +300,9 @@ class PurificationWindow(Screen):
     def showallpurification(self):
         show_popup10()
 
+    def OpenLinkPur(address):
+        webbrowser.open("https://drive.google.com/file/d/158NFEha_-RYGfXSYtheN1EyvKwrnIvQJ/view?usp=sharing")
+
 class IonExchangeWindow(Screen):
 
     def showiex(self):
