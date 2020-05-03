@@ -163,16 +163,19 @@ class ToolsWindow(Screen):
     pass
 
 class UniprotWindow(Screen):
-    pass
+    def OpenLinkPfam(address):
+        webbrowser.open("https://drive.google.com/file/d/1IzliKPJ-4d4KsOanRBFEGBmwLBXOYSBx/view?usp=sharing")
 
 class PfamWindow(Screen):
-    pass
+    def OpenLinkPfam(address):
+        webbrowser.open("https://drive.google.com/file/d/1IzliKPJ-4d4KsOanRBFEGBmwLBXOYSBx/view?usp=sharing")
 
 class FrustWindow(Screen):
     pass
 
 class PymolWindow(Screen):
-    pass
+    def OpenLinkPyMOL(address):
+        webbrowser.open("https://drive.google.com/file/d/1_NsBqk78hfae3WKgf7ZhxfUi5W8JaUfJ/view?usp=sharing")
 
 class WaltzWindow(Screen):
     pass

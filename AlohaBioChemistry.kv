@@ -872,11 +872,27 @@ WindowManager:
                 import webbrowser
                 webbrowser.open("https://www.uniprot.org/")
 
+        Image:
+            source: 'Pfam_Uniprot.jpg'
+            size: self.texture_size
+
+        Button:
+            size_hint_y: 0.3
+            text: "Pfam & UniProt Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLinkPfam()
+            background_color: (1.05, 1.77, 1.44, 1)
+
         Button:
             size_hint_y: 0.3
             text: "Go back to list of bioinformatic tools"
             on_release:
                 app.root.current = "tools"
+
 
         Button:
             size_hint_y: 0.3
@@ -902,6 +918,21 @@ WindowManager:
             on_ref_press:
                 import webbrowser
                 webbrowser.open("https://pfam.xfam.org/")
+
+        Image:
+            source: 'Pfam_Uniprot.jpg'
+            size: self.texture_size
+
+        Button:
+            size_hint_y: 0.3
+            text: "Pfam & UniProt Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLinkPfam()
+            background_color: (1.05, 1.77, 1.44, 1)
 
         Button:
             size_hint_y: 0.3
@@ -955,7 +986,8 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "[ref=pymol][u]PyMOL[/u][/ref] is a widely used macromolecular visualization tools. It is an open source molecular graphics tool used to visualize 3D structure of proteins, nucleic acids, small molecules electron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on experimental data of NMR, X-Ray crystallography, or Cryo-EM.\n\nApart from the visualization of structures, PyMOL can be used as an enhanced analysis tool for:\n- study protein-protein interactions,\n- protein-ligand docking,\n- real-time energy minimizing structures,\n- secondary structure prediction,\n- generating Ramachandran plots,\n- electrostatic map calculations,\n- predictions of protein function.\n\nPyMOL is written in Python, one of the most popular programming languages, and it can be extended to Python plugins easily."
+            size_hint_y: 1.2
+            text: "[ref=pymol][u]PyMOL[/u][/ref] is a widely used macromolecular visualization program. This open source molecular graphics tool is used to visualize 3D structure of proteins, nucleic acids, small molecules electron densities, surfaces and trajectories. The visualization of structures in PyMOL are based on experimental data of NMR, X-Ray crystallography, or Cryo-EM.\n\nPyMOL can be also used as an enhanced analysis tool to study protein-protein interactions, protein-ligand docking, real-time energy minimizing structures, secondary structure prediction, generating Ramachandran plots, electrostatic map calculations, predictions of protein function.\n\nPyMOL is written in Python, one of the most popular programming languages, and it can be extended to Python plugins easily."
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -964,6 +996,22 @@ WindowManager:
             on_ref_press:
                 import webbrowser
                 webbrowser.open("https://pymol.org/2/")
+        Image:
+
+            source: 'pymol.jpg'
+            size: self.texture_size
+
+
+        Button:
+            size_hint_y: 0.3
+            text: "PyMOL Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                root.OpenLinkPyMOL()
+            background_color: (1.05, 1.77, 1.44, 1)
 
         Button:
             size_hint_y: 0.3
