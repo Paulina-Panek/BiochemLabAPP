@@ -1,10 +1,16 @@
 WindowManager:
+    InstructionWindow:
     HomeWindow:
     Exp01Window:
-    InstructionWindow:
     AboutWindow:
     ChoiceWindow:
     BioinfChoiceWindow:
+    bioinfquizWindow:
+    bq2Window:
+    bq3Window:
+    bq4Window:
+    bq5Window:
+    LastbioinfWindow:
     pidWindow:
     bphysWindow:
     ThreeDWindow:
@@ -88,6 +94,28 @@ WindowManager:
     Wrong30Window:
     ToolsWindow:
 
+<InstructionWindow>:
+    name: "instruction"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "[b]Quick instructions:[/b]\n\nIt is recommended you follow the modules in order, but it is not necessary.\n\nClicking outside of a popup window or pressing [i]esc[/i] will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through a live BLAST search. It is recommended when switching the query amino acid sequence.\n\nIf you run into problems displaying images within the app, try switching to a full-screen mode."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            markup: True
+
+        Button:
+            size_hint_y: 0.3
+            text: "Got it!"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "up"
+            background_color: (0.68, 1.70, 1.53, 1)
 
 <HomeWindow>:
     name: "home"
@@ -203,29 +231,6 @@ WindowManager:
                     app.root.current = "about"
                     root.manager.transition.direction = "left"
 
-<InstructionWindow>:
-    name: "instruction"
-
-    GridLayout:
-        cols: 1
-
-        Label:
-            text: "It is recommended you follow the modules in order, but it is not necessary.\n\nClicking outside of a popup window or pressing [i]esc[/i] will close it.\n\n[u]Underlined text[/u] symbolizes a clickable link.\n\nReset button on the Home window deletes any data generated through a live BLAST search. It is recommended when switching the query amino acid sequence.\n\nIf you run into problems displaying images within the app, try switching to a full-screen mode.\n\nCitations are indicated with superscript (like this: [sup]1, 2, 3[/sup]). To find the list of literature we used, choose References button on Home screen."
-            markup: True
-            text_size: root.width, None
-            size: self.texture_size
-            halign: "center"
-            valign: "center"
-            markup: True
-
-        Button:
-            size_hint_y: 0.3
-            text: "Go back to Home"
-            on_release:
-                app.root.current = "home"
-                root.manager.transition.direction = "down"
-            background_color: (0.51, 0.34, 1.36, 1)
-
 <AboutWindow>:
     name: "about"
 
@@ -234,7 +239,7 @@ WindowManager:
         size: root.width, root.height
 
         Label:
-            text: "Aloha Biochem was developed for [u][ref=abc]University of Hawaii[/ref][/u]"
+            text: "~*~this section is still under construction~*~\n\nAloha Biochem was developed for [u][ref=abc]University of Hawaii[/ref][/u]"
             markup: True
             on_ref_press:
                 import webbrowser
@@ -550,13 +555,286 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "expression"
+                app.root.current = "bioinfquiz"
             background_color: (2.21, 2.36, 1.91, 1)
 
         Button:
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bioinfquizWindow>:
+    name: "bioinfquiz"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "To use PyMOL, what information is required?"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Protein Data Bank Identification (PDB ID)"
+            on_release:
+                app.root.current = "bq2"
+
+        Button:
+            text: "Amino acid sequence"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "DNA Sequence"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Gene name"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq2Window>:
+    name: "bq2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Protein structures are determined using what experimental technique(s)?"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Nuclear Magnetic Resonance (NMR)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "X-Ray Crystallography"
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Cryo-Electron Microscopy (Cryo-EM)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "All of the above"
+            on_release:
+                app.root.current = "bq3"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq3Window>:
+    name: "bq3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "BLAST uses what types of sequences?"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Amino acid sequence"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "mRNA sequence"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "DNA sequence"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Amino acid sequence or DNA sequence"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bq4"
+
+        Button:
+            text: "Amino Acid sequence or mRNA sequence"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq4Window>:
+    name: "bq4"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "What do tools like WALTZ predict?"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Critical residues for increasing a protein's propensity for aggregation."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bq5"
+
+        Button:
+            text: "Critical residues for increasing a protein's stability."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "The isoelectric point of a protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Secondary structure elements of a protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq5Window>:
+    name: "bq5"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "How does WebLogo differ from BLAST alignments?"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "WebLogo compares any protein sequences provided by the user while BLAST uses homologous proteins only provided by the user."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "WebLogo compares homologous protein sequences provided by the user while BLAST compares any protein sequences provided by the user or to the database."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "Lastbioinf"
+
+        Button:
+            text: "WebLogo compares any protein sequences provided by the user or to the database while BLAST uses homologous proteins only provided by the user."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "There are no differences."
+            on_release:
+                app.root.current = "wrong"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<LastbioinfWindow>:
+    name: "Lastbioinf"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Correct! You are done with the bioinformatics module!"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Go back Home"
+            size_hint_y: 0.3
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
 
 <pidWindow>:

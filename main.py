@@ -146,6 +146,28 @@ class ProteinWindow(Screen):
 class BioinfChoiceWindow(Screen):
     pass
 
+class bioinfquizWindow(Screen):
+    pass
+
+class bq2Window(Screen):
+    pass
+
+class bq3Window(Screen):
+    pass
+
+class bq4Window(Screen):
+    pass
+
+class bq5Window(Screen):
+    pass
+
+class LastbioinfWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(3)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
 class pidWindow(Screen):
     pass
 
