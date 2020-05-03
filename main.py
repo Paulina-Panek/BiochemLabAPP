@@ -159,6 +159,9 @@ class BlastWindow(Screen):
     def OpenLink(address):
         webbrowser.open("https://blast.ncbi.nlm.nih.gov/Blast.cgi")
 
+    def OpenLinkBlast(address):
+        webbrowser.open("https://drive.google.com/file/d/1_hxb-hqc0CD3F3BrdXUcjSXDRXksEP3U/view?usp=sharing")
+
 class ToolsWindow(Screen):
     pass
 
@@ -171,22 +174,24 @@ class PfamWindow(Screen):
         webbrowser.open("https://drive.google.com/file/d/1IzliKPJ-4d4KsOanRBFEGBmwLBXOYSBx/view?usp=sharing")
 
 class FrustWindow(Screen):
-    pass
+    def OpenLinkFrust(address):
+        webbrowser.open("https://drive.google.com/file/d/1pnCdCOnIybvxA_2JmAdkNC_s6iVF2hQK/view?usp=sharing")
 
 class PymolWindow(Screen):
     def OpenLinkPyMOL(address):
         webbrowser.open("https://drive.google.com/file/d/1_NsBqk78hfae3WKgf7ZhxfUi5W8JaUfJ/view?usp=sharing")
 
 class WaltzWindow(Screen):
-    pass
+    def OpenLinkWaltz(address):
+        webbrowser.open("https://drive.google.com/open?id=1YDycii_5sMWtL-FYT0ilSG2-l7qs1Sv-")
 
 class CamsolWindow(Screen):
     def OpenLinkCamsol(address):
         webbrowser.open("https://drive.google.com/file/d/10GpMevocaVDd2yDvAZihz1KzgI3ohe8h/view?usp=sharing")
 
-
 class LogprotWindow(Screen):
-    pass
+    def OpenLinkWebLogo(address):
+        webbrowser.open("https://drive.google.com/file/d/1xaHEMzcDAQq-IRwrxSzLy_QTHsVoFqu9/view?usp=sharing")
 
 
 ########################

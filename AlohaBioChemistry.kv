@@ -600,14 +600,12 @@ WindowManager:
                 root.manager.transition.direction = "left"
             background_color: (1.29, 1.96, 2.31, 1)
 
-    Button:
-        size_hint_y: 0.25
-        text: "Go back to Home"
-        on_release:
-            app.root.current = "home"
-            root.manager.transition.direction = "right"
-        background_color: (0.51, 0.34, 1.36, 1)
-
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
 
 <bphysWindow>:
     name: "bphys"
@@ -729,6 +727,7 @@ WindowManager:
     GridLayout:
         cols:1
         size: root.width, root.height
+
         Label:
             text: "[u][ref=abcd]BLAST[/ref][/u] is the most cited tool for aligning genetic and protein sequences across different organisms. This allows users to determine the species origin of proteins/genes as well as determine homologs of the protein/gene of choice.[sup]1[/sup]"
             markup: True
@@ -740,6 +739,11 @@ WindowManager:
                 import webbrowser
                 webbrowser.open("https://blast.ncbi.nlm.nih.gov/Blast.cgi")
 
+        Image:
+            source: 'blastass.jpg'
+            size: self.texture_size
+
+
         Label:
             text: "There are four types of BLAST:\n1. nBLAST for searching DNA sequences against DNA database,\n2. pBLAST for searching amino acid sequences against amino acid database,\n3. BLASTx for searching translated nucleotides against amino acid database,\n4. tBLASTn for searching proteins against translated nucleotide databases."
             text_size: root.width, None
@@ -748,18 +752,29 @@ WindowManager:
             valign: "center"
 
         Button:
-            size_hint_y: 0.5
-            text: "Learn about other bioinformatic tools"
+            size_hint_y: 0.3
+            text: "BLAST Assignment (pdf)"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "tools"
-                root.manager.transition.direction = "left"
+                root.OpenLinkBlast()
+            background_color: (1.05, 1.77, 1.44, 1)
 
         Button:
-            size_hint_y: 0.5
+            size_hint_y: 0.3
+            text: "Go back to list of protein identification tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pid"
+            background_color: (0.78, 1.50, 1.88, 1)
+
+        Button:
+            size_hint_y: 0.3
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -889,9 +904,14 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Go back to list of protein identification tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "tools"
+                app.root.current = "pid"
+            background_color: (0.78, 1.50, 1.88, 1)
 
 
         Button:
@@ -936,9 +956,14 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Go back to list of protein identification tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "tools"
+                app.root.current = "pid"
+            background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
             size_hint_y: 0.3
@@ -964,12 +989,31 @@ WindowManager:
             on_ref_press:
                 import webbrowser
                 webbrowser.open("http://frustratometer.qb.fcen.uba.ar/")
+        Image:
+            source: 'frust.jpg'
+            size: self.texture_size
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Frustratometer Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "tools"
+                root.OpenLinkFrust()
+            background_color: (1.05, 1.77, 1.44, 1)
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to list of biophysical characterization tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bphys"
+            background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
             size_hint_y: 0.3
@@ -1001,7 +1045,6 @@ WindowManager:
             source: 'pymol.jpg'
             size: self.texture_size
 
-
         Button:
             size_hint_y: 0.3
             text: "PyMOL Assignment (pdf)"
@@ -1015,9 +1058,12 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Go back to list of 3D visualization tools"
+            text_size: root.width, None
+            size: self.texture_size
             on_release:
-                app.root.current = "tools"
+                app.root.current = "threeD"
+
         Button:
             size_hint_y: 0.3
             text: "Go back to Home"
@@ -1043,11 +1089,30 @@ WindowManager:
                 import webbrowser
                 webbrowser.open("https://omictools.com/waltz-tool")
 
+        Image:
+            source: 'waltz.jpg'
+            size: self.texture_size
+
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "Waltz Assignment (pdf)"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "tools"
+                root.OpenLinkWaltz()
+            background_color: (1.05, 1.77, 1.44, 1)
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to list of biophysical characterization tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bphys"
+            background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
             size_hint_y: 0.3
@@ -1091,9 +1156,13 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "List of all bioinformatic tools"
+            text: "Go back to list of biophysical characterization tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "tools"
+                app.root.current = "bphys"
             background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
@@ -1121,17 +1190,31 @@ WindowManager:
                 import webbrowser
                 webbrowser.open("https://weblogo.berkeley.edu/logo.cgi")
 
+        Image:
+            source: 'weblogo.jpg'
+            size: self.texture_size
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of bioinformatic tools"
+            text: "WebLogo Plot Assignment (pdf)"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "tools"
+                root.OpenLinkWebLogo()
+            background_color: (1.05, 1.77, 1.44, 1)
 
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to list of protein identification tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pid"
+            background_color: (0.78, 1.50, 1.88, 1)
         Button:
             size_hint_y: 0.3
             text: "Go back to Home"
