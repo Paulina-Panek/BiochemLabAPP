@@ -92,6 +92,21 @@ WindowManager:
     Wrong28Window:
     Wrong29Window:
     Wrong30Window:
+    bq1wrongWindow:
+    bq2wrongWindow:
+    bq3wrongWindow:
+    bq4wrongWindow:
+    bq5wrongWindow:
+    bq6wrongWindow:
+    bq7wrongWindow:
+    bq8wrongWindow:
+    bq9wrongWindow:
+    bq10wrongWindow:
+    bq11wrongWindow:
+    bq12wrongWindow:
+    bq13wrongWindow:
+    bq14wrongWindow:
+    bq16wrongWindow:
     ToolsWindow:
 
 <InstructionWindow>:
@@ -515,14 +530,14 @@ WindowManager:
             valign: "center"
 
         Button:
-            text: "[color=#0B383C][b]3D visualization[/b][/color]"
+            text: "[color=#0B383C][b]3D visualization with PyMOL[/b][/color]"
             markup: True
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "threeD"
+                app.root.current = "pymol"
             background_color: (2.52, 2.47, 2.13, 1)
 
         Button:
@@ -586,17 +601,17 @@ WindowManager:
         Button:
             text: "Amino acid sequence"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq1wrong"
 
         Button:
             text: "DNA Sequence"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq2wrong"
 
         Button:
             text: "Gene name"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq3wrong"
 
         Button:
             text: "Go back to Home"
@@ -625,14 +640,14 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq4wrong"
 
         Button:
-            text: "X-Ray Crystallography"
+            text: "X-ray Crystallography"
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq5wrong"
 
         Button:
             text: "Cryo-Electron Microscopy (Cryo-EM)"
@@ -641,7 +656,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq6wrong"
 
         Button:
             text: "All of the above"
@@ -671,17 +686,17 @@ WindowManager:
         Button:
             text: "Amino acid sequence"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq7wrong"
 
         Button:
             text: "mRNA sequence"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq9wrong"
 
         Button:
             text: "DNA sequence"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq8wrong"
 
         Button:
             text: "Amino acid sequence or DNA sequence"
@@ -699,7 +714,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq10wrong"
 
         Button:
             text: "Go back to Home"
@@ -737,7 +752,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq11wrong"
 
         Button:
             text: "The isoelectric point of a protein."
@@ -746,7 +761,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq12wrong"
 
         Button:
             text: "Secondary structure elements of a protein."
@@ -755,7 +770,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq13wrong"
 
         Button:
             text: "Go back to Home"
@@ -784,7 +799,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq14wrong"
 
         Button:
             text: "WebLogo compares homologous protein sequences provided by the user while BLAST compares any protein sequences provided by the user or to the database."
@@ -802,12 +817,12 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq14wrong"
 
         Button:
             text: "There are no differences."
             on_release:
-                app.root.current = "wrong"
+                app.root.current = "bq16wrong"
 
         Button:
             text: "Go back to Home"
@@ -852,7 +867,7 @@ WindowManager:
             on_release:
                 app.root.current = "uniprot"
                 root.manager.transition.direction = "left"
-            background_color: (0.96, 1.71, 1.58, 1)
+            background_color: (0.86, 1.81, 1.53, 1)
 
         Button:
             text: "[color=#0B383C][b]Pfam[/color][/b]"
@@ -860,7 +875,7 @@ WindowManager:
             on_release:
                 app.root.current = "pfam"
                 root.manager.transition.direction = "left"
-            background_color: (0.89, 1.65, 1.69, 1)
+            background_color: (0.79, 1.76, 1.64, 1)
 
         Button:
             text: "[color=#0B383C][b]WebLogo Plot[/color][/b]"
@@ -868,7 +883,7 @@ WindowManager:
             on_release:
                 app.root.current = "logprot"
                 root.manager.transition.direction = "left"
-            background_color: (0.84, 1.58, 1.79, 1)
+            background_color: (0.74, 1.68, 1.74, 1)
 
         Button:
             text:  "[color=#0B383C][b]BLAST[/color][/b]"
@@ -876,9 +891,21 @@ WindowManager:
             on_release:
                 app.root.current = "blast"
                 root.manager.transition.direction = "left"
+            background_color: (0.68, 1.60, 1.83, 1 )
+
+        Button:
+            size_hint_y: 0.6
+            text: "Go back to list bioinformatics tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bichoice"
             background_color: (0.78, 1.50, 1.88, 1)
 
         Button:
+            size_hint_y: 0.6
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -919,6 +946,18 @@ WindowManager:
             background_color: (1.05, 1.77, 1.44, 1.0)
 
         Button:
+            size_hint_y: 0.6
+            text: "Go back to list bioinformatics tools"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "bichoice"
+            background_color: (0.78, 1.50, 1.88, 1)
+
+        Button:
+            size_hint_y: 0.6
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -932,7 +971,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "The following tools are available:"
+            text: "The following 3D visualization tools are available:"
 
         Button:
             text:  "[color=#0B383C][b]PyMOL[/color][/b]"
@@ -943,7 +982,7 @@ WindowManager:
             background_color: (1.66, 1.90, 0.84, 1.0)
 
         Button:
-            size_hint_y: 0.25
+            size_hint_y: 0.4
             text: "Go back to Home"
             on_release:
                 app.root.current = "home"
@@ -1349,11 +1388,15 @@ WindowManager:
 
         Button:
             size_hint_y: 0.3
-            text: "Go back to list of 3D visualization tools"
+            text: "Go back to list bioinformatics tools"
             text_size: root.width, None
             size: self.texture_size
+            halign: "center"
+            valign: "center"
             on_release:
-                app.root.current = "threeD"
+                app.root.current = "bichoice"
+            background_color: (0.78, 1.50, 1.88, 1)
+
 
         Button:
             size_hint_y: 0.3
@@ -2476,7 +2519,7 @@ WindowManager:
             on_release:
                 root.OpenLinkPur()
             background_color: (2.04, 0.76, 0.02, 1)
-            
+
         Button:
             size_hint_y: 0.3
             text: "Go back to Home"
@@ -3983,4 +4026,385 @@ WindowManager:
             on_release:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
+
+<bq1wrongWindow>:
+    name: "bq1wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nThe amino acid sequence is provided in the PDB file, though it does not provide any structural elements."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bioinfquiz"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq2wrongWindow>:
+    name: "bq2wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nThe 3D structure of a protein is difficult to obtain from a DNA sequence"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bioinfquiz"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bq3wrongWindow>:
+    name: "bq3wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nThe name of a protein encoding gene does not provide information about the amino acid sequence or structural elements."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bioinfquiz"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq4wrongWindow>:
+    name: "bq4wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "NMR can provide an ensemble of native protein structures achieved in solution, though it is not the only technique available."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq2"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq5wrongWindow>:
+    name: "bq5wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "X-ray Crystallography is a snapshot image of protein structures frozen in one conformation, though it is not the only technique available."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq2"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq6wrongWindow>:
+    name: "bq6wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Cryo-EM is a snapshot image of protein structures frozen in one conformation, though it is not the only technique available."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq2"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bq7wrongWindow>:
+    name: "bq7wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nAmino acid sequences are used by BLAST to compare against other protein sequences in the database, though it is not the only sequence used."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq8wrongWindow>:
+    name: "bq8wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nDNA sequences are used by BLAST to compare against other gene sequences in the database, though it is not the only sequence used."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bq9wrongWindow>:
+    name: "bq9wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nThough mRNA sequences are associated with the protein sequence and DNA sequence, mRNA is not a used BLAST query."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq10wrongWindow>:
+    name: "bq10wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\n Amino acid sequences are used by BLAST to compare against other protein sequences in the database. However, though mRNA sequences are associated with the protein sequence and DNA sequence, mRNA is not a used BLAST query."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq3"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq11wrongWindow>:
+    name: "bq11wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nTools such as CamSol predict solubility in water, which is related to stability. "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq4"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq12wrongWindow>:
+    name: "bq12wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nOther tools such as ExPasy predict the isoelectric point of a protein."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq4"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<bq13wrongWindow>:
+    name: "bq13wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nOther tools such as ExPasy predict secondary structure elements of a protein. "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq4"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bq14wrongWindow>:
+    name: "bq14wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\nBLAST can compare sequences to a database and WebLogo typically uses a FASTA file of homologous proteins obtained from Pfam."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq5"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<bq16wrongWindow>:
+    name: "bq16wrong"
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Incorrect, try again."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "bq5"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
 

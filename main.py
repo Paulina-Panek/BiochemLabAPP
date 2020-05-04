@@ -633,6 +633,113 @@ class Wrong30Window(Screen):
     def on_pre_leave(self, *args):
         color(2)
 
+##Bioinf quiz wrong answers***********************************
+
+class bq1wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq2wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq3wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq4wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq5wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq6wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq7wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq8wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq9wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq10wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+
+class bq11wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq12wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq14wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq13wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class bq16wrongWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+
+
 def color(a):
     #switched background color for incorrect answer
     if a == 1: #reddish incorrect answer
