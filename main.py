@@ -426,6 +426,27 @@ def show_popup5():
     popupWindow5 = Popup(title="Imidazole structure", content=imidazole, size_hint=(0.8, 0.8))
     popupWindow5.open()
 
+class Epur1Window(Screen):
+    pass
+
+class Epur2Window(Screen):
+    pass
+
+class Epur3Window(Screen):
+    pass
+
+class Epur4Window(Screen):
+    pass
+
+class Epur5Window(Screen):
+    pass
+
+class Epur6Window(Screen):
+    pass
+
+class Epur7Window(Screen):
+    pass
+
 
 ##################################
 
@@ -738,6 +759,83 @@ class bq16wrongWindow(Screen):
     def on_pre_leave(self, *args):
         color(2)
 
+class pwrong1Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class pwrong2Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong3Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong4Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class pwrong5Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong6Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong7Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong8Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class pwrong9Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+class pwrong10Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class pwrong11Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
+
+class pwrong12Window(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+
+    def on_pre_leave(self, *args):
+        color(2)
 
 
 def color(a):

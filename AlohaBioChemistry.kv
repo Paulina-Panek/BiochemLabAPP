@@ -62,6 +62,13 @@ WindowManager:
     AffinityQcWindow:
     AffinityQdWindow:
     AffinityQeWindow:
+    Epur1Window:
+    Epur2Window:
+    Epur3Window:
+    Epur4Window:
+    Epur5Window:
+    Epur6Window:
+    Epur7Window:
     Wrong1Window:
     Wrong2Window:
     Wrong3Window:
@@ -108,6 +115,18 @@ WindowManager:
     bq14wrongWindow:
     bq16wrongWindow:
     ToolsWindow:
+    pwrong1Window:
+    pwrong2Window:
+    pwrong3Window:
+    pwrong4Window:
+    pwrong5Window:
+    pwrong6Window:
+    pwrong7Window:
+    pwrong8Window:
+    pwrong9Window:
+    pwrong10Window:
+    pwrong11Window:
+    pwrong12Window:
 
 <InstructionWindow>:
     name: "instruction"
@@ -3195,7 +3214,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: "What possible issues with this separation technique do you see?"
+            text: "What possible issues with HIC separation technique do you see?"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3244,6 +3263,390 @@ WindowManager:
                 app.root.current = "home"
                 root.manager.transition.direction = "right"
             background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur1Window>:
+    name: "Epur1"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "Your protein homogenate contains salt, and you want to run an IEX column. Are there any steps that need to be completed before binding your protein to the column?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "There is no other step needed, run the column."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong1"
+
+        Button:
+            text: "Dialyze away the salt, desalting column, dilute sample."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "Add more salt."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong1"
+
+        Button:
+            text: "Freeze the sample."
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong1"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur2Window>:
+    name: "Epur2"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "You use an affinity column to purify your protein, and the SDS-PAGE shows 3 bands at 50 kD, 25 kD, and 15 kD. Your protein is 25 kD. How should you continue your purification? "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: " Size-exclusion chromatography"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "Ammonium sulfate fractionation"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong2"
+
+        Button:
+            text: "Affinity column "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong3"
+
+        Button:
+            text: "Ion-Exchange chromatography "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong2"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur3Window>:
+    name: "Epur3"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "How do I know that I have purified the correct protein? "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "SDS-Page "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong4"
+
+        Button:
+            text: "Check the protein concentration "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong5"
+
+        Button:
+            text: "None of the above "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong6"
+
+        Button:
+            text: "Mass spec, activity assays, or N-terminal sequencing. "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur4Window>:
+    name: "Epur4"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "If I have a recombinantly expressed protein from a thermophilic bacterium, i.e. a protein that has evolved to survive in hot environments, what purification step would you use before chromatography to denature other proteins?  "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Cold "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong7"
+
+        Button:
+            text: "Heat "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "Ammonium sulfate fractionation "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong7"
+
+        Button:
+            text: "None of the above, run the column. "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong7"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur5Window>:
+    name: "Epur5"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "Can you purify an unstructured or unfolded protein?  "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Yes, but it is harder as it is more prone for degradation."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "No "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong8"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur6Window>:
+    name: "Epur6"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: "How do I get rid of DNA from my sample\n(Hint: DNA is negatively charged)? "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            text: "Dilute the sample with water "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "wrong9"
+
+        Button:
+            text: "Dialyze the sample "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong9"
+
+        Button:
+            text: "DNase and ion-exchange column. "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "Heat the sample "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong9"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<Epur7Window>:
+    name: "Epur7"
+
+    GridLayout:
+        cols:1
+
+        Label:
+            text: " What is commonly used to selectively precipitate proteins for purification?"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+
+        Button:
+            text: "Heat"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong10"
+
+        Button:
+            text: "Temperature"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong11"
+
+        Button:
+            text: "Ammonium sulfate"
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "CORRECT_"
+
+        Button:
+            text: "None of the above"
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "pwrong12"
+
+        Button:
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
 <WrongWindow>:
     name: "wrong"
 
@@ -4407,4 +4810,315 @@ WindowManager:
                 app.root.current = "home"
             background_color: (0.51, 0.34, 1.36, 1)
 
+<pwrong1Window>:
+    name: "pwrong1"
 
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong2Window>:
+    name: "pwrong2"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong3Window>:
+    name: "pwrong3"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong4Window>:
+    name: "pwrong4"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong5Window>:
+    name: "pwrong5"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong6Window>:
+    name: "pwrong6"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong7Window>:
+    name: "pwrong7"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong8Window>:
+    name: "pwrong8"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong9Window>:
+    name: "pwrong9"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+
+<pwrong10Window>:
+    name: "pwrong10"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong11Window>:
+    name: "pwrong11"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong12Window>:
+    name: "pwrong12"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: " "
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = " "
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
