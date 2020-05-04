@@ -496,6 +496,12 @@ class Wrong7Window(Screen):
     def on_pre_leave(self, *args):
         color(2)
 
+class pwrong7aWindow(Screen):
+    def on_pre_enter(self, *args):
+        color(1)
+    def on_pre_leave(self, *args):
+        color(2)
+
 class Wrong8Window(Screen):
     def on_pre_enter(self, *args):
         color(1)

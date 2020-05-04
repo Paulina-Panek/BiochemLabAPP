@@ -76,6 +76,7 @@ WindowManager:
     Wrong5Window:
     Wrong6Window:
     Wrong7Window:
+    pwrong7aWindow:
     Wrong8Window:
     Wrong9Window:
     Wrong10Window:
@@ -2525,7 +2526,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "sec1b"
+                app.root.current = "Epur4"
             background_color: (1.57, 1.25, 1.78, 1)
 
         Button:
@@ -2807,7 +2808,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "iex2"
+                app.root.current = "Epur1"
 
         Button:
             text: "The protein might be cleaved by the resin."
@@ -3118,7 +3119,7 @@ WindowManager:
         Button:
             text: "Size-exclusion chromatography"
             on_release:
-                app.root.current = "LastPurification"
+                app.root.current = "Epur2"
 
         Button:
             text: "Second run on nickel column"
@@ -3293,7 +3294,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "iex2"
 
         Button:
             text: "Add more salt."
@@ -3341,7 +3342,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "Epur6"
 
         Button:
             text: "Ammonium sulfate fractionation"
@@ -3410,6 +3411,16 @@ WindowManager:
                 app.root.current = "pwrong5"
 
         Button:
+            text: "Mass spec, activity assays, or N-terminal sequencing. "
+            markup: True
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+            on_release:
+                app.root.current = "LastPurification"
+
+        Button:
             text: "None of the above "
             text_size: root.width, None
             size: self.texture_size
@@ -3418,15 +3429,6 @@ WindowManager:
             on_release:
                 app.root.current = "pwrong6"
 
-        Button:
-            text: "Mass spec, activity assays, or N-terminal sequencing. "
-            markup: True
-            text_size: root.width, None
-            size: self.texture_size
-            halign: "center"
-            valign: "center"
-            on_release:
-                app.root.current = "CORRECT_"
 
         Button:
             text: "Go back to Home"
@@ -3464,7 +3466,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "Epur5"
 
         Button:
             text: "Ammonium sulfate fractionation "
@@ -3473,7 +3475,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "pwrong7"
+                app.root.current = "pwrong7a"
 
         Button:
             text: "None of the above, run the column. "
@@ -3483,7 +3485,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "pwrong7"
+                app.root.current = "pwrong7a"
 
         Button:
             text: "Go back to Home"
@@ -3512,10 +3514,10 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "Epur7"
 
         Button:
-            text: "No "
+            text: "No"
             markup: True
             text_size: root.width, None
             size: self.texture_size
@@ -3551,7 +3553,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "wrong9"
+                app.root.current = "pwrong9"
 
         Button:
             text: "Dialyze the sample "
@@ -3569,7 +3571,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "Epur3"
 
         Button:
             text: "Heat the sample "
@@ -3595,7 +3597,7 @@ WindowManager:
         cols:1
 
         Label:
-            text: " What is commonly used to selectively precipitate proteins for purification?"
+            text: "What is commonly used to selectively precipitate proteins for purification?"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3603,7 +3605,7 @@ WindowManager:
 
 
         Button:
-            text: "Heat"
+            text: "Water"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -3628,7 +3630,7 @@ WindowManager:
             halign: "center"
             valign: "center"
             on_release:
-                app.root.current = "CORRECT_"
+                app.root.current = "sec1b"
 
         Button:
             text: "None of the above"
@@ -4817,7 +4819,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\n Ion-exchange typically uses salt to elute proteins from the column, and if you load your sample with salt, your protein will not bind to the column. "
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4827,7 +4829,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur1"
 
         Button:
             size_hint_y: 0.3
@@ -4843,7 +4845,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nThis may work, however there is a more logical step available. "
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4853,7 +4855,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur2"
 
         Button:
             size_hint_y: 0.3
@@ -4869,7 +4871,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nIf you wanted to run another affinity column of the same type as before, you would obtain the same unpurified result. Though it is possible for a different affinity resin to have desirable results. "
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4879,7 +4881,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur2"
 
         Button:
             size_hint_y: 0.3
@@ -4895,7 +4897,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not Quite!\n\nThis is used to check protein purity, and is compared to a molecular weight standard, however this does not give 100% verification that the purified protein is the target protein."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4905,7 +4907,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur3"
 
         Button:
             size_hint_y: 0.3
@@ -4921,7 +4923,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nThis provides how much protein is in the sample, but does not provide any characteristic properties that portray the protein identity."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4931,7 +4933,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur3"
 
         Button:
             size_hint_y: 0.3
@@ -4947,7 +4949,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4957,7 +4959,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur3"
 
         Button:
             size_hint_y: 0.3
@@ -4973,7 +4975,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\n This may work, however there is a more logical step available. Thermophile proteins have evolved to be stable under high temperatures, cold environment may have a negative effect on the target protein. "
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -4983,7 +4985,33 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur4"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to Home"
+            on_release:
+                app.root.current = "home"
+            background_color: (0.51, 0.34, 1.36, 1)
+
+<pwrong7aWindow>:
+    name: "pwrong7a"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Not quite!\n\n This may work, however there is a more logical step available."
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            valign: "center"
+
+        Button:
+            size_hint_y: 0.3
+            text: "Go back to quiz question"
+            on_release:
+                app.root.current = "Epur4"
 
         Button:
             size_hint_y: 0.3
@@ -4999,7 +5027,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not Quite!"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -5009,7 +5037,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur5"
 
         Button:
             size_hint_y: 0.3
@@ -5025,7 +5053,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nThis does not remove the DNA."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -5035,7 +5063,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur6"
 
         Button:
             size_hint_y: 0.3
@@ -5052,7 +5080,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nThe native environment of cells is approximately 70% water."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -5062,7 +5090,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur7"
 
         Button:
             size_hint_y: 0.3
@@ -5078,7 +5106,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!\n\nThough selective heat/cold precipitation is sometimes used for purification, this is not the answer we are looking for in this application."
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -5088,7 +5116,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur7"
 
         Button:
             size_hint_y: 0.3
@@ -5104,7 +5132,7 @@ WindowManager:
         cols: 1
 
         Label:
-            text: " "
+            text: "Not quite!"
             text_size: root.width, None
             size: self.texture_size
             halign: "center"
@@ -5114,7 +5142,7 @@ WindowManager:
             size_hint_y: 0.3
             text: "Go back to quiz question"
             on_release:
-                app.root.current = " "
+                app.root.current = "Epur7"
 
         Button:
             size_hint_y: 0.3
